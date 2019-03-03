@@ -89,7 +89,6 @@
     <Content Include="js\jquery.js" />
     <Content Include="js\jquery.prettyPhoto.js" />
     <Content Include="js\wow.min.js" />
-    <Content Include="s.aspx" />
     <Content Include="packages.config" />
     <Content Include="EcoMonedas.Master" />
     <Content Include="fonts\fontawesome-webfont.eot" />
@@ -123,13 +122,6 @@
     </Compile>
     <Compile Include="Inicio.aspx.designer.cs">
       <DependentUpon>Inicio.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="s.aspx.cs">
-      <DependentUpon>s.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="s.aspx.designer.cs">
-      <DependentUpon>s.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
