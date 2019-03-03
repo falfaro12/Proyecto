@@ -124,61 +124,9 @@
 		</div>
 	</div>
 	
-	<div class="lates">
-		<div class="container">
-			<div class="text-center">
-				<h2>Lates News</h2>
-			</div>
-			<div class="col-md-4 wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="300ms">
-				<img src="images/4.jpg" class="img-responsive"/>
-				<h3>Template built with Twitter Bootstrap</h3>
-				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus interdum erat 
-				libero, pulvinar tincidunt leo consectetur eget. Curabitur lacinia pellentesque
-				libero, pulvinar tincidunt leo consectetur eget. Curabitur lacinia pellentesque
-				libero, pulvinar tincidunt leo consectetur eget. Curabitur lacinia pellentesque
-				</p>
-			</div>
-			
-			<div class="col-md-4 wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="600ms">
-				<img src="images/4.jpg" class="img-responsive"/>
-				<h3>Template built with Twitter Bootstrap</h3>
-				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus interdum erat 
-				libero, pulvinar tincidunt leo consectetur eget. Curabitur lacinia pellentesque
-				libero, pulvinar tincidunt leo consectetur eget. Curabitur lacinia pellentesque
-				libero, pulvinar tincidunt leo consectetur eget. Curabitur lacinia pellentesque
-				</p>
-			</div>
-			
-			<div class="col-md-4 wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="900ms">				
-				<img src="images/4.jpg" class="img-responsive"/>
-				<h3>Template built with Twitter Bootstrap</h3>
-				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus interdum erat 
-				libero, pulvinar tincidunt leo consectetur eget. Curabitur lacinia pellentesque
-				libero, pulvinar tincidunt leo consectetur eget. Curabitur lacinia pellentesque
-				libero, pulvinar tincidunt leo consectetur eget. Curabitur lacinia pellentesque
-				</p>
-			</div>
-		</div>
-	</div>
 	
-	<section id="partner">
-        <div class="container">
-            <div class="center wow fadeInDown">
-                <h2>Our Partners</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut <br> et dolore magna aliqua. Ut enim ad minim veniam</p>
-            </div>    
-
-            <div class="partners">
-                <ul>
-                    <li> <a href="#"><img class="img-responsive wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="300ms" src="images/partners/partner1.png"></a></li>
-                    <li> <a href="#"><img class="img-responsive wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="600ms" src="images/partners/partner2.png"></a></li>
-                    <li> <a href="#"><img class="img-responsive wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="900ms" src="images/partners/partner3.png"></a></li>
-                    <li> <a href="#"><img class="img-responsive wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="1200ms" src="images/partners/partner4.png"></a></li>
-                    <li> <a href="#"><img class="img-responsive wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="1500ms" src="images/partners/partner5.png"></a></li>
-                </ul>
-            </div>        
-        </div><!--/.container-->
-    </section><!--/#partner-->
+	
+	
 	
 	<section id="conatcat-info">
         <div class="container">
@@ -189,8 +137,8 @@
                             <i class="fa fa-phone"></i>
                         </div>
                         <div class="media-body">
-                            <h2>Have a question or need a custom quote?</h2>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation +0123 456 70 80</p>
+                            <h2>Tienes alguna duda?</h2>
+                            <p>Visitanos en cualquier centro de acopio o contactenos al 2454-1544</p>
                         </div>
                     </div>
                 </div>
@@ -215,13 +163,8 @@
 				
 				<div class="col-md-4 col-md-offset-4">
 					<div class="copyright">
-						&copy; June  2015 by <a target="_blank" href="http://bootstraptaste.com/" title="Free Twitter Bootstrap WordPress Themes and HTML templates">Bootstrap Themes</a>. All Rights Reserved.
-					</div>
-                    <!-- 
-                        All links in the footer should remain intact. 
-                        Licenseing information is available at: http://bootstraptaste.com/license/
-                        You can buy this theme without footer links online at: http://bootstraptaste.com/buy/?theme=Company
-                    -->
+						&copy; Proyeto UTN Jose Ramon Rodiguez y Fabiola Alfaro. Todos los derechos reservados
+					</div>                  
 				</div>						
 			</div>
 			
