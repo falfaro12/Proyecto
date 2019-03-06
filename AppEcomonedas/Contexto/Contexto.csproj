@@ -82,6 +82,11 @@
     <Compile Include="Enca_Factura.cs">
       <DependentUpon>EcomonedasContexto.tt</DependentUpon>
     </Compile>
+    <Compile Include="LN\CentroAcopioLN.cs" />
+    <Compile Include="LN\CuponLN.cs" />
+    <Compile Include="LN\MaterialLN.cs" />
+    <Compile Include="LN\ProvinciaLN.cs" />
+    <Compile Include="LN\RolLN.cs" />
     <Compile Include="Material.cs">
       <DependentUpon>EcomonedasContexto.tt</DependentUpon>
     </Compile>
