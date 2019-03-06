@@ -1,0 +1,670 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="EcomonedasContexto.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Billetera">
+          <Key>
+            <PropertyRef Name="Id_Billetera" />
+          </Key>
+          <Property Name="Id_Billetera" Type="int" Nullable="false" />
+          <Property Name="Total_Disponible" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="Total_Canjeadas" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="Total_Generada" Type="decimal" Precision="18" Scale="2" />
+        </EntityType>
+        <EntityType Name="CentroAcopio">
+          <Key>
+            <PropertyRef Name="Id_Centro" />
+          </Key>
+          <Property Name="Id_Centro" Type="int" Nullable="false" />
+          <Property Name="nombre" Type="varchar" MaxLength="100" />
+          <Property Name="direccionExacta" Type="varchar" MaxLength="100" />
+          <Property Name="IdUsuario" Type="int" />
+          <Property Name="Id_Provincia" Type="int" />
+          <Property Name="activo" Type="bit" />
+        </EntityType>
+        <EntityType Name="Cupon">
+          <Key>
+            <PropertyRef Name="Id_Cupon" />
+          </Key>
+          <Property Name="Id_Cupon" Type="int" Nullable="false" />
+          <Property Name="nombre" Type="varchar" MaxLength="50" />
+          <Property Name="descripcion" Type="varchar" MaxLength="50" />
+          <Property Name="Precio_Canje" Type="int" />
+          <Property Name="imagen" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="Cupon_Usuario">
+          <Key>
+            <PropertyRef Name="Id_Cupon" />
+            <PropertyRef Name="Id_Usuario" />
+          </Key>
+          <Property Name="Id_Cupon" Type="int" Nullable="false" />
+          <Property Name="Id_Usuario" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Detall_Factura">
+          <Key>
+            <PropertyRef Name="Id_detall" />
+          </Key>
+          <Property Name="Id_detall" Type="int" Nullable="false" />
+          <Property Name="Id_Enca" Type="int" />
+          <Property Name="Id_Material" Type="int" />
+          <Property Name="Id_Cupon" Type="int" />
+          <Property Name="Cantidad" Type="int" />
+          <Property Name="SubTotal" Type="decimal" Precision="18" Scale="2" />
+        </EntityType>
+        <EntityType Name="Enca_Factura">
+          <Key>
+            <PropertyRef Name="Id_Enca" />
+          </Key>
+          <Property Name="Id_Enca" Type="int" Nullable="false" />
+          <Property Name="Id_Usuario" Type="varchar" MaxLength="50" />
+          <Property Name="Id_Centro" Type="int" />
+          <Property Name="Fecha" Type="datetime" />
+          <Property Name="Total" Type="decimal" Precision="18" Scale="2" />
+        </EntityType>
+        <EntityType Name="Material">
+          <Key>
+            <PropertyRef Name="Id_Material" />
+          </Key>
+          <Property Name="Id_Material" Type="int" Nullable="false" />
+          <Property Name="nombre" Type="varchar" MaxLength="50" />
+          <Property Name="descripcion" Type="varchar" MaxLength="50" />
+          <Property Name="Precio_Material" Type="int" />
+          <Property Name="imagen" Type="nvarchar(max)" />
+          <Property Name="color" Type="nvarchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="Provincia">
+          <Key>
+            <PropertyRef Name="Id_Provincia" />
+          </Key>
+          <Property Name="Id_Provincia" Type="int" Nullable="false" />
+          <Property Name="descripcion" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Rol">
+          <Key>
+            <PropertyRef Name="Id_Rol" />
+          </Key>
+          <Property Name="Id_Rol" Type="int" Nullable="false" />
+          <Property Name="descripcion" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <EntityType Name="Usuario">
+          <Key>
+            <PropertyRef Name="Id_Usuario" />
+          </Key>
+          <Property Name="Id_Usuario" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Nombre" Type="varchar" MaxLength="50" />
+          <Property Name="Apellido1" Type="varchar" MaxLength="50" />
+          <Property Name="Apellido2" Type="varchar" MaxLength="50" />
+          <Property Name="Direccion" Type="varchar" MaxLength="50" />
+          <Property Name="telefono" Type="varchar" MaxLength="9" />
+          <Property Name="Id_Rol" Type="int" />
+          <Property Name="Id_Billetera" Type="int" />
+        </EntityType>
+        <Association Name="FK__CentroAco__Id_Pr__1A14E395">
+          <End Role="Provincia" Type="Self.Provincia" Multiplicity="0..1" />
+          <End Role="CentroAcopio" Type="Self.CentroAcopio" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Provincia">
+              <PropertyRef Name="Id_Provincia" />
+            </Principal>
+            <Dependent Role="CentroAcopio">
+              <PropertyRef Name="Id_Provincia" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Cupon_Usu__Id_Cu__20C1E124">
+          <End Role="Cupon" Type="Self.Cupon" Multiplicity="1" />
+          <End Role="Cupon_Usuario" Type="Self.Cupon_Usuario" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cupon">
+              <PropertyRef Name="Id_Cupon" />
+            </Principal>
+            <Dependent Role="Cupon_Usuario">
+              <PropertyRef Name="Id_Cupon" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Cupon_Usu__Id_Us__21B6055D">
+          <End Role="Usuario" Type="Self.Usuario" Multiplicity="1" />
+          <End Role="Cupon_Usuario" Type="Self.Cupon_Usuario" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuario">
+              <PropertyRef Name="Id_Usuario" />
+            </Principal>
+            <Dependent Role="Cupon_Usuario">
+              <PropertyRef Name="Id_Usuario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Detall_Fa__Id_En__286302EC">
+          <End Role="Enca_Factura" Type="Self.Enca_Factura" Multiplicity="0..1" />
+          <End Role="Detall_Factura" Type="Self.Detall_Factura" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Enca_Factura">
+              <PropertyRef Name="Id_Enca" />
+            </Principal>
+            <Dependent Role="Detall_Factura">
+              <PropertyRef Name="Id_Enca" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Detall_Fa__Id_Ma__29572725">
+          <End Role="Material" Type="Self.Material" Multiplicity="0..1" />
+          <End Role="Detall_Factura" Type="Self.Detall_Factura" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Material">
+              <PropertyRef Name="Id_Material" />
+            </Principal>
+            <Dependent Role="Detall_Factura">
+              <PropertyRef Name="Id_Material" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Enca_Fact__Id_Ce__276EDEB3">
+          <End Role="CentroAcopio" Type="Self.CentroAcopio" Multiplicity="0..1" />
+          <End Role="Enca_Factura" Type="Self.Enca_Factura" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CentroAcopio">
+              <PropertyRef Name="Id_Centro" />
+            </Principal>
+            <Dependent Role="Enca_Factura">
+              <PropertyRef Name="Id_Centro" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Enca_Fact__Id_Us__267ABA7A">
+          <End Role="Usuario" Type="Self.Usuario" Multiplicity="0..1" />
+          <End Role="Enca_Factura" Type="Self.Enca_Factura" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuario">
+              <PropertyRef Name="Id_Usuario" />
+            </Principal>
+            <Dependent Role="Enca_Factura">
+              <PropertyRef Name="Id_Usuario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Usuario__Id_Bill__15502E78">
+          <End Role="Billetera" Type="Self.Billetera" Multiplicity="0..1" />
+          <End Role="Usuario" Type="Self.Usuario" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Billetera">
+              <PropertyRef Name="Id_Billetera" />
+            </Principal>
+            <Dependent Role="Usuario">
+              <PropertyRef Name="Id_Billetera" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Usuario__Id_Rol__145C0A3F">
+          <End Role="Rol" Type="Self.Rol" Multiplicity="0..1" />
+          <End Role="Usuario" Type="Self.Usuario" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Rol">
+              <PropertyRef Name="Id_Rol" />
+            </Principal>
+            <Dependent Role="Usuario">
+              <PropertyRef Name="Id_Rol" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="EcomonedasContextoStoreContainer">
+          <EntitySet Name="Billetera" EntityType="Self.Billetera" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CentroAcopio" EntityType="Self.CentroAcopio" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Cupon" EntityType="Self.Cupon" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Cupon_Usuario" EntityType="Self.Cupon_Usuario" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Detall_Factura" EntityType="Self.Detall_Factura" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Enca_Factura" EntityType="Self.Enca_Factura" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Material" EntityType="Self.Material" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Provincia" EntityType="Self.Provincia" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Rol" EntityType="Self.Rol" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Usuario" EntityType="Self.Usuario" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__CentroAco__Id_Pr__1A14E395" Association="Self.FK__CentroAco__Id_Pr__1A14E395">
+            <End Role="Provincia" EntitySet="Provincia" />
+            <End Role="CentroAcopio" EntitySet="CentroAcopio" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Cupon_Usu__Id_Cu__20C1E124" Association="Self.FK__Cupon_Usu__Id_Cu__20C1E124">
+            <End Role="Cupon" EntitySet="Cupon" />
+            <End Role="Cupon_Usuario" EntitySet="Cupon_Usuario" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Cupon_Usu__Id_Us__21B6055D" Association="Self.FK__Cupon_Usu__Id_Us__21B6055D">
+            <End Role="Usuario" EntitySet="Usuario" />
+            <End Role="Cupon_Usuario" EntitySet="Cupon_Usuario" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Detall_Fa__Id_En__286302EC" Association="Self.FK__Detall_Fa__Id_En__286302EC">
+            <End Role="Enca_Factura" EntitySet="Enca_Factura" />
+            <End Role="Detall_Factura" EntitySet="Detall_Factura" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Detall_Fa__Id_Ma__29572725" Association="Self.FK__Detall_Fa__Id_Ma__29572725">
+            <End Role="Material" EntitySet="Material" />
+            <End Role="Detall_Factura" EntitySet="Detall_Factura" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Enca_Fact__Id_Ce__276EDEB3" Association="Self.FK__Enca_Fact__Id_Ce__276EDEB3">
+            <End Role="CentroAcopio" EntitySet="CentroAcopio" />
+            <End Role="Enca_Factura" EntitySet="Enca_Factura" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Enca_Fact__Id_Us__267ABA7A" Association="Self.FK__Enca_Fact__Id_Us__267ABA7A">
+            <End Role="Usuario" EntitySet="Usuario" />
+            <End Role="Enca_Factura" EntitySet="Enca_Factura" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Usuario__Id_Bill__15502E78" Association="Self.FK__Usuario__Id_Bill__15502E78">
+            <End Role="Billetera" EntitySet="Billetera" />
+            <End Role="Usuario" EntitySet="Usuario" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Usuario__Id_Rol__145C0A3F" Association="Self.FK__Usuario__Id_Rol__145C0A3F">
+            <End Role="Rol" EntitySet="Rol" />
+            <End Role="Usuario" EntitySet="Usuario" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="EcomonedasContexto" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Billetera">
+          <Key>
+            <PropertyRef Name="Id_Billetera" />
+          </Key>
+          <Property Name="Id_Billetera" Type="Int32" Nullable="false" />
+          <Property Name="Total_Disponible" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="Total_Canjeadas" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="Total_Generada" Type="Decimal" Precision="18" Scale="2" />
+          <NavigationProperty Name="Usuario" Relationship="Self.FK__Usuario__Id_Bill__15502E78" FromRole="Billetera" ToRole="Usuario" />
+        </EntityType>
+        <EntityType Name="CentroAcopio">
+          <Key>
+            <PropertyRef Name="Id_Centro" />
+          </Key>
+          <Property Name="Id_Centro" Type="Int32" Nullable="false" />
+          <Property Name="nombre" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="direccionExacta" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="IdUsuario" Type="Int32" />
+          <Property Name="Id_Provincia" Type="Int32" />
+          <Property Name="activo" Type="Boolean" />
+          <NavigationProperty Name="Provincia" Relationship="Self.FK__CentroAco__Id_Pr__1A14E395" FromRole="CentroAcopio" ToRole="Provincia" />
+          <NavigationProperty Name="Enca_Factura" Relationship="Self.FK__Enca_Fact__Id_Ce__276EDEB3" FromRole="CentroAcopio" ToRole="Enca_Factura" />
+        </EntityType>
+        <EntityType Name="Cupon">
+          <Key>
+            <PropertyRef Name="Id_Cupon" />
+          </Key>
+          <Property Name="Id_Cupon" Type="Int32" Nullable="false" />
+          <Property Name="nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="descripcion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Precio_Canje" Type="Int32" />
+          <Property Name="imagen" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Usuario" Relationship="Self.Cupon_Usuario" FromRole="Cupon" ToRole="Usuario" />
+        </EntityType>
+        <EntityType Name="Detall_Factura">
+          <Key>
+            <PropertyRef Name="Id_detall" />
+          </Key>
+          <Property Name="Id_detall" Type="Int32" Nullable="false" />
+          <Property Name="Id_Enca" Type="Int32" />
+          <Property Name="Id_Material" Type="Int32" />
+          <Property Name="Id_Cupon" Type="Int32" />
+          <Property Name="Cantidad" Type="Int32" />
+          <Property Name="SubTotal" Type="Decimal" Precision="18" Scale="2" />
+          <NavigationProperty Name="Enca_Factura" Relationship="Self.FK__Detall_Fa__Id_En__286302EC" FromRole="Detall_Factura" ToRole="Enca_Factura" />
+          <NavigationProperty Name="Material" Relationship="Self.FK__Detall_Fa__Id_Ma__29572725" FromRole="Detall_Factura" ToRole="Material" />
+        </EntityType>
+        <EntityType Name="Enca_Factura">
+          <Key>
+            <PropertyRef Name="Id_Enca" />
+          </Key>
+          <Property Name="Id_Enca" Type="Int32" Nullable="false" />
+          <Property Name="Id_Usuario" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Id_Centro" Type="Int32" />
+          <Property Name="Fecha" Type="DateTime" Precision="3" />
+          <Property Name="Total" Type="Decimal" Precision="18" Scale="2" />
+          <NavigationProperty Name="CentroAcopio" Relationship="Self.FK__Enca_Fact__Id_Ce__276EDEB3" FromRole="Enca_Factura" ToRole="CentroAcopio" />
+          <NavigationProperty Name="Detall_Factura" Relationship="Self.FK__Detall_Fa__Id_En__286302EC" FromRole="Enca_Factura" ToRole="Detall_Factura" />
+          <NavigationProperty Name="Usuario" Relationship="Self.FK__Enca_Fact__Id_Us__267ABA7A" FromRole="Enca_Factura" ToRole="Usuario" />
+        </EntityType>
+        <EntityType Name="Material">
+          <Key>
+            <PropertyRef Name="Id_Material" />
+          </Key>
+          <Property Name="Id_Material" Type="Int32" Nullable="false" />
+          <Property Name="nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="descripcion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Precio_Material" Type="Int32" />
+          <Property Name="imagen" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="color" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Detall_Factura" Relationship="Self.FK__Detall_Fa__Id_Ma__29572725" FromRole="Material" ToRole="Detall_Factura" />
+        </EntityType>
+        <EntityType Name="Provincia">
+          <Key>
+            <PropertyRef Name="Id_Provincia" />
+          </Key>
+          <Property Name="Id_Provincia" Type="Int32" Nullable="false" />
+          <Property Name="descripcion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="CentroAcopio" Relationship="Self.FK__CentroAco__Id_Pr__1A14E395" FromRole="Provincia" ToRole="CentroAcopio" />
+        </EntityType>
+        <EntityType Name="Rol">
+          <Key>
+            <PropertyRef Name="Id_Rol" />
+          </Key>
+          <Property Name="Id_Rol" Type="Int32" Nullable="false" />
+          <Property Name="descripcion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Usuario" Relationship="Self.FK__Usuario__Id_Rol__145C0A3F" FromRole="Rol" ToRole="Usuario" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="Usuario">
+          <Key>
+            <PropertyRef Name="Id_Usuario" />
+          </Key>
+          <Property Name="Id_Usuario" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Apellido1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Apellido2" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Direccion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="telefono" Type="String" MaxLength="9" FixedLength="false" Unicode="false" />
+          <Property Name="Id_Rol" Type="Int32" />
+          <Property Name="Id_Billetera" Type="Int32" />
+          <NavigationProperty Name="Billetera" Relationship="Self.FK__Usuario__Id_Bill__15502E78" FromRole="Usuario" ToRole="Billetera" />
+          <NavigationProperty Name="Enca_Factura" Relationship="Self.FK__Enca_Fact__Id_Us__267ABA7A" FromRole="Usuario" ToRole="Enca_Factura" />
+          <NavigationProperty Name="Rol" Relationship="Self.FK__Usuario__Id_Rol__145C0A3F" FromRole="Usuario" ToRole="Rol" />
+          <NavigationProperty Name="Cupon" Relationship="Self.Cupon_Usuario" FromRole="Usuario" ToRole="Cupon" />
+        </EntityType>
+        <Association Name="FK__Usuario__Id_Bill__15502E78">
+          <End Role="Billetera" Type="Self.Billetera" Multiplicity="0..1" />
+          <End Role="Usuario" Type="Self.Usuario" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Billetera">
+              <PropertyRef Name="Id_Billetera" />
+            </Principal>
+            <Dependent Role="Usuario">
+              <PropertyRef Name="Id_Billetera" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__CentroAco__Id_Pr__1A14E395">
+          <End Role="Provincia" Type="Self.Provincia" Multiplicity="0..1" />
+          <End Role="CentroAcopio" Type="Self.CentroAcopio" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Provincia">
+              <PropertyRef Name="Id_Provincia" />
+            </Principal>
+            <Dependent Role="CentroAcopio">
+              <PropertyRef Name="Id_Provincia" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Enca_Fact__Id_Ce__276EDEB3">
+          <End Role="CentroAcopio" Type="Self.CentroAcopio" Multiplicity="0..1" />
+          <End Role="Enca_Factura" Type="Self.Enca_Factura" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CentroAcopio">
+              <PropertyRef Name="Id_Centro" />
+            </Principal>
+            <Dependent Role="Enca_Factura">
+              <PropertyRef Name="Id_Centro" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Detall_Fa__Id_En__286302EC">
+          <End Role="Enca_Factura" Type="Self.Enca_Factura" Multiplicity="0..1" />
+          <End Role="Detall_Factura" Type="Self.Detall_Factura" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Enca_Factura">
+              <PropertyRef Name="Id_Enca" />
+            </Principal>
+            <Dependent Role="Detall_Factura">
+              <PropertyRef Name="Id_Enca" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Detall_Fa__Id_Ma__29572725">
+          <End Role="Material" Type="Self.Material" Multiplicity="0..1" />
+          <End Role="Detall_Factura" Type="Self.Detall_Factura" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Material">
+              <PropertyRef Name="Id_Material" />
+            </Principal>
+            <Dependent Role="Detall_Factura">
+              <PropertyRef Name="Id_Material" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Enca_Fact__Id_Us__267ABA7A">
+          <End Role="Usuario" Type="Self.Usuario" Multiplicity="0..1" />
+          <End Role="Enca_Factura" Type="Self.Enca_Factura" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuario">
+              <PropertyRef Name="Id_Usuario" />
+            </Principal>
+            <Dependent Role="Enca_Factura">
+              <PropertyRef Name="Id_Usuario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Usuario__Id_Rol__145C0A3F">
+          <End Role="Rol" Type="Self.Rol" Multiplicity="0..1" />
+          <End Role="Usuario" Type="Self.Usuario" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Rol">
+              <PropertyRef Name="Id_Rol" />
+            </Principal>
+            <Dependent Role="Usuario">
+              <PropertyRef Name="Id_Rol" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Cupon_Usuario">
+          <End Role="Cupon" Type="Self.Cupon" Multiplicity="*" />
+          <End Role="Usuario" Type="Self.Usuario" Multiplicity="*" />
+        </Association>
+        <EntityContainer Name="Entities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Billetera" EntityType="Self.Billetera" />
+          <EntitySet Name="CentroAcopio" EntityType="Self.CentroAcopio" />
+          <EntitySet Name="Cupon" EntityType="Self.Cupon" />
+          <EntitySet Name="Detall_Factura" EntityType="Self.Detall_Factura" />
+          <EntitySet Name="Enca_Factura" EntityType="Self.Enca_Factura" />
+          <EntitySet Name="Material" EntityType="Self.Material" />
+          <EntitySet Name="Provincia" EntityType="Self.Provincia" />
+          <EntitySet Name="Rol" EntityType="Self.Rol" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+          <EntitySet Name="Usuario" EntityType="Self.Usuario" />
+          <AssociationSet Name="FK__Usuario__Id_Bill__15502E78" Association="Self.FK__Usuario__Id_Bill__15502E78">
+            <End Role="Billetera" EntitySet="Billetera" />
+            <End Role="Usuario" EntitySet="Usuario" />
+          </AssociationSet>
+          <AssociationSet Name="FK__CentroAco__Id_Pr__1A14E395" Association="Self.FK__CentroAco__Id_Pr__1A14E395">
+            <End Role="Provincia" EntitySet="Provincia" />
+            <End Role="CentroAcopio" EntitySet="CentroAcopio" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Enca_Fact__Id_Ce__276EDEB3" Association="Self.FK__Enca_Fact__Id_Ce__276EDEB3">
+            <End Role="CentroAcopio" EntitySet="CentroAcopio" />
+            <End Role="Enca_Factura" EntitySet="Enca_Factura" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Detall_Fa__Id_En__286302EC" Association="Self.FK__Detall_Fa__Id_En__286302EC">
+            <End Role="Enca_Factura" EntitySet="Enca_Factura" />
+            <End Role="Detall_Factura" EntitySet="Detall_Factura" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Detall_Fa__Id_Ma__29572725" Association="Self.FK__Detall_Fa__Id_Ma__29572725">
+            <End Role="Material" EntitySet="Material" />
+            <End Role="Detall_Factura" EntitySet="Detall_Factura" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Enca_Fact__Id_Us__267ABA7A" Association="Self.FK__Enca_Fact__Id_Us__267ABA7A">
+            <End Role="Usuario" EntitySet="Usuario" />
+            <End Role="Enca_Factura" EntitySet="Enca_Factura" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Usuario__Id_Rol__145C0A3F" Association="Self.FK__Usuario__Id_Rol__145C0A3F">
+            <End Role="Rol" EntitySet="Rol" />
+            <End Role="Usuario" EntitySet="Usuario" />
+          </AssociationSet>
+          <AssociationSet Name="Cupon_Usuario" Association="Self.Cupon_Usuario">
+            <End Role="Cupon" EntitySet="Cupon" />
+            <End Role="Usuario" EntitySet="Usuario" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="EcomonedasContextoStoreContainer" CdmEntityContainer="Entities">
+          <EntitySetMapping Name="Billetera">
+            <EntityTypeMapping TypeName="EcomonedasContexto.Billetera">
+              <MappingFragment StoreEntitySet="Billetera">
+                <ScalarProperty Name="Id_Billetera" ColumnName="Id_Billetera" />
+                <ScalarProperty Name="Total_Disponible" ColumnName="Total_Disponible" />
+                <ScalarProperty Name="Total_Canjeadas" ColumnName="Total_Canjeadas" />
+                <ScalarProperty Name="Total_Generada" ColumnName="Total_Generada" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CentroAcopio">
+            <EntityTypeMapping TypeName="EcomonedasContexto.CentroAcopio">
+              <MappingFragment StoreEntitySet="CentroAcopio">
+                <ScalarProperty Name="Id_Centro" ColumnName="Id_Centro" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+                <ScalarProperty Name="direccionExacta" ColumnName="direccionExacta" />
+                <ScalarProperty Name="IdUsuario" ColumnName="IdUsuario" />
+                <ScalarProperty Name="Id_Provincia" ColumnName="Id_Provincia" />
+                <ScalarProperty Name="activo" ColumnName="activo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Cupon">
+            <EntityTypeMapping TypeName="EcomonedasContexto.Cupon">
+              <MappingFragment StoreEntitySet="Cupon">
+                <ScalarProperty Name="Id_Cupon" ColumnName="Id_Cupon" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+                <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+                <ScalarProperty Name="Precio_Canje" ColumnName="Precio_Canje" />
+                <ScalarProperty Name="imagen" ColumnName="imagen" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Detall_Factura">
+            <EntityTypeMapping TypeName="EcomonedasContexto.Detall_Factura">
+              <MappingFragment StoreEntitySet="Detall_Factura">
+                <ScalarProperty Name="Id_detall" ColumnName="Id_detall" />
+                <ScalarProperty Name="Id_Enca" ColumnName="Id_Enca" />
+                <ScalarProperty Name="Id_Material" ColumnName="Id_Material" />
+                <ScalarProperty Name="Id_Cupon" ColumnName="Id_Cupon" />
+                <ScalarProperty Name="Cantidad" ColumnName="Cantidad" />
+                <ScalarProperty Name="SubTotal" ColumnName="SubTotal" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Enca_Factura">
+            <EntityTypeMapping TypeName="EcomonedasContexto.Enca_Factura">
+              <MappingFragment StoreEntitySet="Enca_Factura">
+                <ScalarProperty Name="Id_Enca" ColumnName="Id_Enca" />
+                <ScalarProperty Name="Id_Usuario" ColumnName="Id_Usuario" />
+                <ScalarProperty Name="Id_Centro" ColumnName="Id_Centro" />
+                <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+                <ScalarProperty Name="Total" ColumnName="Total" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Material">
+            <EntityTypeMapping TypeName="EcomonedasContexto.Material">
+              <MappingFragment StoreEntitySet="Material">
+                <ScalarProperty Name="Id_Material" ColumnName="Id_Material" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+                <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+                <ScalarProperty Name="Precio_Material" ColumnName="Precio_Material" />
+                <ScalarProperty Name="imagen" ColumnName="imagen" />
+                <ScalarProperty Name="color" ColumnName="color" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Provincia">
+            <EntityTypeMapping TypeName="EcomonedasContexto.Provincia">
+              <MappingFragment StoreEntitySet="Provincia">
+                <ScalarProperty Name="Id_Provincia" ColumnName="Id_Provincia" />
+                <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Rol">
+            <EntityTypeMapping TypeName="EcomonedasContexto.Rol">
+              <MappingFragment StoreEntitySet="Rol">
+                <ScalarProperty Name="Id_Rol" ColumnName="Id_Rol" />
+                <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="EcomonedasContexto.sysdiagrams">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Usuario">
+            <EntityTypeMapping TypeName="EcomonedasContexto.Usuario">
+              <MappingFragment StoreEntitySet="Usuario">
+                <ScalarProperty Name="Id_Usuario" ColumnName="Id_Usuario" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="Apellido1" ColumnName="Apellido1" />
+                <ScalarProperty Name="Apellido2" ColumnName="Apellido2" />
+                <ScalarProperty Name="Direccion" ColumnName="Direccion" />
+                <ScalarProperty Name="telefono" ColumnName="telefono" />
+                <ScalarProperty Name="Id_Rol" ColumnName="Id_Rol" />
+                <ScalarProperty Name="Id_Billetera" ColumnName="Id_Billetera" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <AssociationSetMapping Name="Cupon_Usuario" TypeName="EcomonedasContexto.Cupon_Usuario" StoreEntitySet="Cupon_Usuario">
+            <EndProperty Name="Cupon">
+              <ScalarProperty Name="Id_Cupon" ColumnName="Id_Cupon" />
+            </EndProperty>
+            <EndProperty Name="Usuario">
+              <ScalarProperty Name="Id_Usuario" ColumnName="Id_Usuario" />
+            </EndProperty>
+          </AssociationSetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
