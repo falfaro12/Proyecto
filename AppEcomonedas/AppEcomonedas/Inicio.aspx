@@ -35,14 +35,14 @@
 							<span class="icon-bar"></span>
 						</button>
 						<div class="navbar-brand">
-							<a href="index.html"><h1><span>Eco</span>monedas</h1></a>
+							<a href="Inicio.aspx"><h1><span>Eco</span>monedas</h1></a>
 						</div>
 					</div>
 					
 					<div class="navbar-collapse collapse">							
 						<div class="menu">
 							<ul class="nav nav-tabs" role="tablist">
-								<li role="presentation"><a href="Inicio.html" class="active">Inicio</a></li>
+								<li role="presentation"><a href="Inicio.aspx" class="active">Inicio</a></li>
 								<li role="presentation"><a href="about.html">Centros de Acopio</a></li>
 								<li role="presentation"><a href="services.html">Tipos de Materiales</a></li>								
 								<li role="presentation"><a href="portfolio.html">Mi cuenta</a></li>													
