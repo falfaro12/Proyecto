@@ -90,5 +90,9 @@ namespace Contexto
                 .Property(e => e.telefono)
                 .IsUnicode(false);
         }
+        public void FixEProviderServicesProblem()
+        {
+            var instance = System.Data.Entity.SqlServer.SqlProviderServices.Instance;
+        }
     }
 }

@@ -8,21 +8,21 @@
          <div class="panel panel-success">
          <div class="panel-heading">Información del Centro de Acopio</div>
          <div class="panel-body">
-             <div class="form-group row">
+              <div class="form-group row" style="margin:5px;">
                  <label for="lblNombre" class="control-label">Nombre</label>
                  <asp:TextBox ID="txtNombre" runat="server" CssClass="form-control"></asp:TextBox>
                   <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="*El nombre del centro es requerido" 
                     ControlToValidate="txtNombre" ForeColor="Red" SetFocusOnError="true" Display="Dynamic" ValidationGroup="guardar"></asp:RequiredFieldValidator>
              </div>
              <br />
-               <div class="form-group row">
+               <div class="form-group row" style="margin:5px;">
                  <label for="lblNombre" class="control-label">Provincia</label>
                   <asp:DropDownList ID="ddlProvincia" 
                     runat="server" 
                     CssClass="form-control"
                     AutoPostBack="true"
-                    ItemType="Contexto.Provincia" OnSelectedIndexChanged="ddlProvincia_SelectedIndexChanged" DataTextField="nombre" 
-                    DataValueField="Id_Centro"
+                    ItemType="Contexto.Provincia" OnSelectedIndexChanged="ddlProvincia_SelectedIndexChanged" DataTextField="descripcion" 
+                    DataValueField="Id_Provincia"
                     >
                 </asp:DropDownList>
              </div>
