@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{7CFCB7A4-B16D-4698-B315-65E37B56406D}</ProjectGuid>
+    <ProjectGuid>{E8D3C48C-48DF-4F81-8973-79513C25A029}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Contexto</RootNamespace>
@@ -31,11 +31,11 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
@@ -51,83 +51,27 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Billetera.cs">
-      <DependentUpon>EcomonedasContexto.tt</DependentUpon>
-    </Compile>
-    <Compile Include="CentroAcopio.cs">
-      <DependentUpon>EcomonedasContexto.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Cupon.cs">
-      <DependentUpon>EcomonedasContexto.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Detall_Factura.cs">
-      <DependentUpon>EcomonedasContexto.tt</DependentUpon>
-    </Compile>
-    <Compile Include="EcomonedasContexto.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>EcomonedasContexto.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="EcomonedasContexto.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>EcomonedasContexto.tt</DependentUpon>
-    </Compile>
-    <Compile Include="EcomonedasContexto.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>EcomonedasContexto.edmx</DependentUpon>
-    </Compile>
-    <Compile Include="Enca_Factura.cs">
-      <DependentUpon>EcomonedasContexto.tt</DependentUpon>
-    </Compile>
+    <Compile Include="Billetera.cs" />
+    <Compile Include="CentroAcopio.cs" />
+    <Compile Include="Cupon.cs" />
+    <Compile Include="Detall_Factura.cs" />
+    <Compile Include="EcomonedasContexto.cs" />
+    <Compile Include="Enca_Factura.cs" />
     <Compile Include="LN\CentroAcopioLN.cs" />
     <Compile Include="LN\CuponLN.cs" />
     <Compile Include="LN\MaterialLN.cs" />
     <Compile Include="LN\ProvinciaLN.cs" />
     <Compile Include="LN\RolLN.cs" />
-    <Compile Include="Material.cs">
-      <DependentUpon>EcomonedasContexto.tt</DependentUpon>
-    </Compile>
+    <Compile Include="Material.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Provincia.cs">
-      <DependentUpon>EcomonedasContexto.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Rol.cs">
-      <DependentUpon>EcomonedasContexto.tt</DependentUpon>
-    </Compile>
-    <Compile Include="sysdiagrams.cs">
-      <DependentUpon>EcomonedasContexto.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Usuario.cs">
-      <DependentUpon>EcomonedasContexto.tt</DependentUpon>
-    </Compile>
+    <Compile Include="Provincia.cs" />
+    <Compile Include="Rol.cs" />
+    <Compile Include="sysdiagrams.cs" />
+    <Compile Include="Usuario.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <EntityDeploy Include="EcomonedasContexto.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>EcomonedasContexto.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <None Include="EcomonedasContexto.edmx.diagram">
-      <DependentUpon>EcomonedasContexto.edmx</DependentUpon>
-    </None>
     <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="EcomonedasContexto.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>EcomonedasContexto.edmx</DependentUpon>
-      <LastGenOutput>EcomonedasContexto.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="EcomonedasContexto.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>EcomonedasContexto.edmx</DependentUpon>
-      <LastGenOutput>EcomonedasContexto.cs</LastGenOutput>
-    </Content>
-  </ItemGroup>
-  <ItemGroup>
-    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
