@@ -40,8 +40,8 @@ namespace Contexto
 
         public int? Id_Billetera { get; set; }
 
-        [MaxLength(1)]
-        public byte[] contrasenna { get; set; }
+        [StringLength(50)]
+        public string contrasenna { get; set; }
 
         public virtual Billetera Billetera { get; set; }
 

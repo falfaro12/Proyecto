@@ -20,7 +20,6 @@ namespace Contexto
         public virtual DbSet<Material> Material { get; set; }
         public virtual DbSet<Provincia> Provincia { get; set; }
         public virtual DbSet<Rol> Rol { get; set; }
-        public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
         public virtual DbSet<Usuario> Usuario { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
@@ -92,6 +91,10 @@ namespace Contexto
 
             modelBuilder.Entity<Usuario>()
                 .Property(e => e.telefono)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<Usuario>()
+                .Property(e => e.contrasenna)
                 .IsUnicode(false);
         }
     }

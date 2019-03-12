@@ -30,7 +30,7 @@ namespace Contexto.LN
             //Creacion del libro
             miCentro.nombre = nombre;
             miCentro.Id_Provincia = Convert.ToInt32(idProvincia);
-            miCentro.IdUsuario = Convert.ToInt32(idUsr);
+            miCentro.Id_Usuario = idUsr;
             miCentro.direccionExacta = direccion;
             
             if(id.Equals("")|| !esNumero)
@@ -58,6 +58,8 @@ namespace Contexto.LN
                 CentroAcopioLN.queryListaCentroAcopio();
             return lista;
         }
+
+
         public static CentroAcopio obtenerCentroAcopio(int id)
         {
             EcomonedasContexto db = new EcomonedasContexto();
@@ -65,6 +67,22 @@ namespace Contexto.LN
                     Where(p => p.Id_Centro == id).
                     First<CentroAcopio>();
             return centro;
+        }
+
+        public static IEnumerable<Usuario> ObtenerUsuarios()
+        {
+            var db = new EcomonedasContexto();
+            IQueryable query = queryListaCentroAcopio();
+            IEnumerable<Usuario> lista;
+            List<Usuario> lista2 = new List<Usuario>();
+
+            foreach (CentroAcopio cen in query)
+            {
+                lista2.Add(cen.Usuario);
+            }
+            lista = (IEnumerable<Usuario>)lista2;
+
+            return lista;
         }
     }
 }

@@ -66,5 +66,40 @@ namespace Contexto.LN
                     First<Usuario>();
             return Usuario;
         }
+
+        public static IEnumerable<Usuario> ListaUsuarioAdmiCentro()
+        {
+
+            IEnumerable<Usuario> lista = ((IEnumerable<Usuario>)
+                UsuarioLN.queryListaUsuario()).Where(p => p.Id_Rol == 2);
+
+            return lista;
+        }
+
+        public static IEnumerable<Usuario> listaAdministradores()
+        {
+          
+            IEnumerable<Usuario> listaAdmi = ListaUsuarioAdmiCentro();
+            IEnumerable<Usuario> listausuariosCentro = CentroAcopioLN.ObtenerUsuarios();
+            List<Usuario> lista2 = (List<Usuario>)listaAdmi;
+
+            foreach (Usuario usuario in listaAdmi)
+            {
+                foreach (Usuario usuarioCentro in listausuariosCentro)
+                {
+                    if(usuario.Id_Usuario== usuarioCentro.Id_Usuario)
+                    {
+                        lista2.Remove(usuario);
+                    }
+                }
+            }
+
+
+
+            return lista2;
+
+        }
+
+
     }
 }

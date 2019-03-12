@@ -35,6 +35,18 @@
                      ControlToValidate="txtDetalle"
                      SetFocusOnError="true" ForeColor="Red" Display="Dynamic"></asp:RequiredFieldValidator>
              </div>
+              <br />
+               <div class="form-group row" style="margin:5px;">
+                 <label for="lblNombre" class="control-label">Administrador</label>
+                  <asp:DropDownList ID="ddlAdministrador" 
+                    runat="server" 
+                    CssClass="form-control"
+                    AutoPostBack="true"
+                    ItemType="Contexto.Usuario" OnSelectedIndexChanged="ddlAdministrador_SelectedIndexChanged" DataTextField="Nombre" 
+                    DataValueField="Id_Usuario"
+                    >
+                </asp:DropDownList>
+             </div>
              
 
          </div>

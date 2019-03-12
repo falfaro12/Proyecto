@@ -34,5 +34,22 @@ namespace AppEcomonedas
             ddlProvincia.DataSource = ProvinciaLN.listaCategorias().ToList();
             ddlProvincia.DataBind();
         }
+
+        public void cargarAdministradores()
+        {
+            ddlAdministrador.DataSource = UsuarioLN.listaAdministradores().ToList();
+            ddlAdministrador.DataBind();
+        }
+
+        protected void ddlAdministrador_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            // si ninguna provincia es seleccionada
+            if (ddlAdministrador.SelectedValue == null || ddlAdministrador.SelectedValue == "")
+            {
+                ddlAdministrador.SelectedValue = "1";
+            }
+
+            Usuario cate = UsuarioLN.obtenerUsuario(ddlAdministrador.SelectedValue);
+        }
     }
 }
