@@ -25,13 +25,16 @@ namespace Contexto
         [StringLength(100)]
         public string direccionExacta { get; set; }
 
-        public int? IdUsuario { get; set; }
+        [StringLength(50)]
+        public string Id_Usuario { get; set; }
 
         public int? Id_Provincia { get; set; }
 
         public bool? activo { get; set; }
 
         public virtual Provincia Provincia { get; set; }
+
+        public virtual Usuario Usuario { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Enca_Factura> Enca_Factura { get; set; }

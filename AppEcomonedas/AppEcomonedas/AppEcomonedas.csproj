@@ -318,7 +318,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Contexto\Contexto.csproj">
-      <Project>{e8d3c48c-48df-4f81-8973-79513c25a029}</Project>
+      <Project>{c299567e-c1ba-4fe1-be10-659859d8a9c4}</Project>
       <Name>Contexto</Name>
     </ProjectReference>
   </ItemGroup>

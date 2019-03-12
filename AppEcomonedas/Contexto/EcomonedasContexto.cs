@@ -33,6 +33,10 @@ namespace Contexto
                 .Property(e => e.direccionExacta)
                 .IsUnicode(false);
 
+            modelBuilder.Entity<CentroAcopio>()
+                .Property(e => e.Id_Usuario)
+                .IsUnicode(false);
+
             modelBuilder.Entity<Cupon>()
                 .Property(e => e.nombre)
                 .IsUnicode(false);
@@ -89,10 +93,6 @@ namespace Contexto
             modelBuilder.Entity<Usuario>()
                 .Property(e => e.telefono)
                 .IsUnicode(false);
-        }
-        public void FixEProviderServicesProblem()
-        {
-            var instance = System.Data.Entity.SqlServer.SqlProviderServices.Instance;
         }
     }
 }

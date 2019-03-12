@@ -12,8 +12,8 @@
                  <label for="lblNombre" class="control-label">Nombre</label>
                  <asp:TextBox ID="txtNombre" runat="server" CssClass="form-control"></asp:TextBox>
                   <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="*El nombre del centro es requerido" 
-                    ControlToValidate="txtNombre" ForeColor="Red" SetFocusOnError="true" Display="Dynamic" ValidationGroup="guardar"></asp:RequiredFieldValidator>
-             </div>
+                    ControlToValidate="txtNombre" ForeColor="Red" SetFocusOnError="true" Display="Dynamic" ValidationGroup="guardar"></asp:RequiredFieldValidator>                 
+              </div>
              <br />
                <div class="form-group row" style="margin:5px;">
                  <label for="lblNombre" class="control-label">Provincia</label>
@@ -25,6 +25,15 @@
                     DataValueField="Id_Provincia"
                     >
                 </asp:DropDownList>
+             </div>
+              <br />
+             <div class="form-group row" style="margin: 5px;">
+                 <asp:TextBox ID="txtDetalle" Rows="3" Cols="20" CssClass="form-control"
+                     runat="server" TextMode="MultiLine"></asp:TextBox>
+                 <asp:RequiredFieldValidator ID="RequiredFieldValidator2"
+                     runat="server" Text="* El detalle es requirido."
+                     ControlToValidate="txtDetalle"
+                     SetFocusOnError="true" ForeColor="Red" Display="Dynamic"></asp:RequiredFieldValidator>
              </div>
              
 

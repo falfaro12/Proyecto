@@ -12,6 +12,7 @@ namespace Contexto
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Usuario()
         {
+            CentroAcopio = new HashSet<CentroAcopio>();
             Enca_Factura = new HashSet<Enca_Factura>();
             Cupon = new HashSet<Cupon>();
         }
@@ -39,7 +40,13 @@ namespace Contexto
 
         public int? Id_Billetera { get; set; }
 
+        [MaxLength(1)]
+        public byte[] contrasenna { get; set; }
+
         public virtual Billetera Billetera { get; set; }
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<CentroAcopio> CentroAcopio { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Enca_Factura> Enca_Factura { get; set; }
