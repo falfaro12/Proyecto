@@ -81,7 +81,7 @@ namespace Contexto.LN
           
             IEnumerable<Usuario> listaAdmi = ListaUsuarioAdmiCentro();
             IEnumerable<Usuario> listausuariosCentro = CentroAcopioLN.ObtenerUsuarios();
-            List<Usuario> lista2 = (List<Usuario>)listaAdmi;
+            List<Usuario> lista2 = (List<Usuario>)listaAdmi.ToList();
 
             foreach (Usuario usuario in listaAdmi)
             {

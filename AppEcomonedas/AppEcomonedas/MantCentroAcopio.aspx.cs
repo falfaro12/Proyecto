@@ -16,6 +16,7 @@ namespace AppEcomonedas
             if (!IsPostBack)
             {
                 cargarProvincias();
+                cargarAdministradores();
             }
         }
 
