@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Contexto.LN
 {
-    class CentroAcopioLN
+   public class CentroAcopioLN
     {
 
         public static bool AgregarCentroAcopio(
