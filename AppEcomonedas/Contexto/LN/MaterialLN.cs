@@ -9,7 +9,7 @@ namespace Contexto.LN
     public class MaterialLN
     {
 
-        public bool agregarMateriales(
+        public static bool agregarMateriales(
             string nombre,
             string descripcion,
             string precio,
@@ -30,7 +30,7 @@ namespace Contexto.LN
             }
 
             miMaterial.nombre = nombre;
-            miMaterial.descripcion = 
+            miMaterial.descripcion = descripcion;
             miMaterial.imagen = imagen;
             miMaterial.Precio_Material = Convert.ToInt32(precio);
 

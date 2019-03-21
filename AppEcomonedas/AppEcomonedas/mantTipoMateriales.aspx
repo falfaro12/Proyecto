@@ -17,6 +17,16 @@
                   <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="*El nombre del centro es requerido" 
                     ControlToValidate="txtNombre" ForeColor="Red" SetFocusOnError="true" Display="Dynamic" ValidationGroup="guardar"></asp:RequiredFieldValidator>                 
               </div>
+             <br/>
+              <div class="form-group row" style="margin: 5px;">
+                  <label for="lblDireccion" class="control-label">Descripción</label>
+                 <asp:TextBox ID="txtDescripcion" Rows="3" Cols="20" CssClass="form-control"
+                     runat="server" TextMode="MultiLine"></asp:TextBox>
+                 <asp:RequiredFieldValidator ID="RequiredFieldValidator2"
+                     runat="server" Text="* La Descripción es requirido."
+                     ControlToValidate="txtDescripcion"
+                     SetFocusOnError="true" ForeColor="Red" Display="Dynamic" ValidationGroup="guardar"></asp:RequiredFieldValidator>
+             </div>
              <br />
                <div class="form-group row" style="margin:5px;">
                  <label for="lblNombre" class="control-label">Imagen</label>
@@ -52,15 +62,12 @@
                     ValidationExpression="^[0-9]*(\,)?[0-9]?[0-9]?$"></asp:RegularExpressionValidator>
             </div>
               <br />
-               <div class="form-group row" style="margin:5px;">
-                 <label for="lblNombre" class="control-label">Color</label>
-                   <asp:DropDownList ID="ddlColor"
-                       runat="server"
-                       CssClass="form-control"
-                       AutoPostBack="true"
-                       OnSelectedIndexChanged="" DataTextField="Nombre"
-                       DataValueField="color">
-                   </asp:DropDownList>
+             <div class="form-group row" style="margin: 5px;">
+                 <label for="lblcolor" class="control-label">Color</label>
+                 <div id="color">
+                     <input runat="server" id="txtColor" type='text' class="colores" />
+                 </div>
+                 
              </div>
              <br />
              <div class="form-group row" style="margin:5px;">
@@ -79,18 +86,17 @@
          <asp:HiddenField ID="hiddenID" runat="server" />
           <!-- Listado -->
             <h3><i class="fa fa-angle-right"></i>Listado Tipo de Materiales</h3>
-             <asp:GridView ID="grvListado" runat="server"
-                AutoGenerateColumns="false"
-                 CssClass="table" 
-                 GridLines="Both"
-                DataKeyNames="Id_Centro"                
-                AutoGenerateSelectButton="true"
-                OnSelectedIndexChanged="grvListado_SelectedIndexChanged">
-                 <Columns>
-                     <asp:BoundField DataField="nombre" HeaderText="Nombre"></asp:BoundField>
-                     <asp:BoundField DataField="Provincia.descripcion" HeaderText="Provincia"></asp:BoundField>
-                     <asp:BoundField DataField="direccionExacta" HeaderText="Direcci&#243;n"></asp:BoundField>
-                     <asp:BoundField HeaderText="Administrador" DataField="Usuario.nombre"></asp:BoundField>
+        <asp:GridView ID="grvListado" runat="server"
+            AutoGenerateColumns="false"
+            CssClass="table"
+            DataKeyNames="Id_Material"
+            AutoGenerateSelectButton="true"
+            OnSelectedIndexChanged="grvListado_SelectedIndexChanged">
+            <Columns>
+                <asp:BoundField DataField="nombre" HeaderText="Nombre"></asp:BoundField>
+                 <asp:BoundField DataField="descripcion" HeaderText="Descripción"></asp:BoundField>
+                <asp:BoundField DataField="Precio_Material" HeaderText="Precio"></asp:BoundField>
+                <asp:BoundField  DataField="color" HeaderText="Color"></asp:BoundField>                     
                  </Columns>
 
                  <HeaderStyle CssClass="table-success" ForeColor="#dff0d8"  />
@@ -98,5 +104,12 @@
 
 
     </div>
+    <script>
+        $(".colores").spectrum({
+            color: "#f00",
+        });
+    </script>
+  
+
 
 </asp:Content>

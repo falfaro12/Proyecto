@@ -201,6 +201,8 @@
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="Mantenimiento.Master" />
+    <Content Include="RecursoMante\css\spectrum.css" />
+    <Content Include="RecursoMante\css\spectrum.js" />
     <Content Include="RecursoMante\font-awesome\fonts\fontawesome-webfont.eot" />
     <Content Include="RecursoMante\font-awesome\fonts\fontawesome-webfont.ttf" />
     <Content Include="RecursoMante\font-awesome\fonts\fontawesome-webfont.woff" />
@@ -329,6 +331,9 @@
       <Project>{6a290ea5-9c86-4995-8e57-f03b1aa323e1}</Project>
       <Name>Contexto</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="images\materiales\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
