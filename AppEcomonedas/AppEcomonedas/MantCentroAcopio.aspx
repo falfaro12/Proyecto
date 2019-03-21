@@ -32,6 +32,7 @@
              </div>
               <br />
              <div class="form-group row" style="margin: 5px;">
+                  <label for="lblDireccion" class="control-label">Dirección</label>
                  <asp:TextBox ID="txtDireccion" Rows="3" Cols="20" CssClass="form-control"
                      runat="server" TextMode="MultiLine"></asp:TextBox>
                  <asp:RequiredFieldValidator ID="RequiredFieldValidator2"
@@ -51,23 +52,27 @@
                     >
                 </asp:DropDownList>
              </div>
-                <div class="form-group row">
-                <asp:Button ID="btnGuardar" CssClass="btn btn-primary" runat="server"
-                    Text="Guardar" ValidationGroup="guardar" OnClick="btnGuardar_Click"/>
-            </div>
-             
+             <br />
+             <div class="form-group row" style="margin:5px;">
 
+                 <asp:Button ID="btnGuardar" CssClass="btn btn-success" runat="server"
+                     Text="Guardar" ValidationGroup="guardar" OnClick="btnGuardar_Click" />
+                 <asp:Button ID="btnLimpiar" CssClass="btn btn-success" runat="server"
+                     Text="Limpiar" OnClick="btnLimpiar_Click" />
+
+             </div>            
          </div>
             </div>
         </div>
      <!--Este es el de la lista-->
     <div class="col-lg-7 main-chart">
+         <asp:HiddenField ID="hiddenID" runat="server" />
           <!-- Listado -->
             <h3><i class="fa fa-angle-right"></i>Listado Centros de Acopio</h3>
              <asp:GridView ID="grvListado" runat="server"
                 AutoGenerateColumns="false"
-                DataKeyNames="Id_Centro"
-                
+                 CssClass="table" 
+                DataKeyNames="Id_Centro"                
                 AutoGenerateSelectButton="true"
                 OnSelectedIndexChanged="grvListado_SelectedIndexChanged">
                  <Columns>
@@ -76,7 +81,8 @@
                      <asp:BoundField DataField="direccionExacta" HeaderText="Direcci&#243;n"></asp:BoundField>
                      <asp:BoundField HeaderText="Administrador" DataField="Usuario.nombre"></asp:BoundField>
                  </Columns>
-                 <HeaderStyle CssClass="table-success" />
+
+                 <HeaderStyle CssClass="table-success" ForeColor="#dff0d8"  />
             </asp:GridView>
 
 

@@ -35,7 +35,7 @@
 
           <header class="header black-bg">
             <div class="sidebar-toggle-box">
-                <div class="fa fa-bars tooltips" data-placement="right" data-original-title="Menú"></div>
+                <div class="fa fa-bars tooltips"style="background-color:#dff0d8" data-placement="right" data-original-title="Menú"></div>
             </div>
            
             <div class="dropdown pull-right logout" style="margin-top: 20px">

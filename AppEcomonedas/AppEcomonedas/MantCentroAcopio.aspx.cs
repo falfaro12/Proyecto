@@ -64,7 +64,7 @@ namespace AppEcomonedas
         {
             //guardar Centro
             CentroAcopioLN centro = new CentroAcopioLN();
-            bool confirmarGuardar = CentroAcopioLN.AgregarCentroAcopio(txtNombre.Text, txtDireccion.Text, ddlAdministrador.SelectedValue, ddlProvincia.SelectedValue);
+            bool confirmarGuardar = CentroAcopioLN.AgregarCentroAcopio(txtNombre.Text, txtDireccion.Text, ddlAdministrador.SelectedValue, ddlProvincia.SelectedValue,hiddenID.Value);
             if (confirmarGuardar)
             {
                 //recarga la pagina
@@ -99,11 +99,24 @@ namespace AppEcomonedas
             ddlAdministrador.DataSource = lista2;
             ddlAdministrador.DataBind();
             ddlAdministrador.SelectedValue = centro.Id_Usuario;
+            hiddenID.Value = centro.Id_Centro.ToString();              
             txtDireccion.Text = centro.direccionExacta;
           
 
             btnGuardar.Text = "Actualizar";
             
+        }
+
+        protected void btnLimpiar_Click(object sender, EventArgs e)
+        {
+            ddlAdministrador.Items.Clear();
+            ddlProvincia.Items.Clear();
+            cargarAdministradores();
+            cargarProvincias();
+            txtDireccion.Text = "";
+            txtNombre.Text = "";
+            hiddenID.Value = "";
+            btnGuardar.Text = "Guardar";
         }
     }
 }

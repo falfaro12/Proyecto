@@ -244,6 +244,7 @@ th {
   .table td,
   .table th {
     background-color: #fff !important;
+    color:#dff0d8;
   }
   .btn > .caret,
   .dropup > .btn > .caret {
@@ -258,6 +259,7 @@ th {
   .table-bordered th,
   .table-bordered td {
     border: 1px solid #ddd !important;
+    color:#dff0d8;
   }
 }
 @font-face {
@@ -910,12 +912,12 @@ textarea {
   line-height: inherit;
 }
 a {
-  color: darkblue;
+  color: #3c763d;
   text-decoration: none;
 }
 a:hover,
 a:focus {
-  color: #2a6496;
+  color: #fff;
   text-decoration: underline;
 }
 a:focus {
@@ -2061,6 +2063,7 @@ table {
   background-color: transparent;
 }
 th {
+    background-color:#3c763d;
   text-align: left;
 }
 .table {

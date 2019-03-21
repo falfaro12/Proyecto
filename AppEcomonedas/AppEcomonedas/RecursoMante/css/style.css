@@ -232,11 +232,11 @@ ul.top-menu > li > .logout {
     width: 210px;
     height: 100%;
     position: fixed;
-    background: rgba(0, 0, 0, 0.2);
+    background-color:#dff0d8 ;
 }
 
 #sidebar h5 {
-	color: darkblue;
+	color: #3c763d;
 	font-weight: 700;
 }
 
@@ -350,7 +350,7 @@ ul.sidebar-menu li a span{
 }
 
 ul.sidebar-menu li a{
-    color: darkblue;
+    color: #3c763d;
     text-decoration: none;
     display: block;
     padding: 15px 0 15px 10px;
@@ -413,7 +413,7 @@ ul.sidebar-menu li a.active i {
 }
 
 .black-bg {
-    background: #1BBD36;
+    background: #3c763d;
     border-bottom: 1px solid #c9aa5f;
 }
 
@@ -510,7 +510,7 @@ ul.top-menu > li > a:hover, ul.top-menu > li > a:focus {
     /* Safari and Chrome */
     .dropdown-menu.extended  {
         box-shadow: 0 2px 8px rgba(0, 0, 0, 0.176) !important;
-    };
+    }
     }
 
 .dropdown-menu.extended li p {
