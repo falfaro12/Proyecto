@@ -190,6 +190,7 @@
     <Content Include="js\jquery.js" />
     <Content Include="js\jquery.prettyPhoto.js" />
     <Content Include="js\wow.min.js" />
+    <Content Include="mantTipoMateriales.aspx" />
     <Content Include="packages.config" />
     <Content Include="EcoMonedas.Master" />
     <Content Include="fonts\fontawesome-webfont.eot" />
@@ -313,6 +314,13 @@
     </Compile>
     <Compile Include="Mantenimiento.Master.designer.cs">
       <DependentUpon>Mantenimiento.Master</DependentUpon>
+    </Compile>
+    <Compile Include="mantTipoMateriales.aspx.cs">
+      <DependentUpon>mantTipoMateriales.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="mantTipoMateriales.aspx.designer.cs">
+      <DependentUpon>mantTipoMateriales.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

@@ -30,6 +30,7 @@ namespace Contexto
         [StringLength(50)]
         public string Apellido2 { get; set; }
 
+   
         [StringLength(50)]
         public string Direccion { get; set; }
 

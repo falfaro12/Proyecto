@@ -257,7 +257,7 @@ th {
     border-collapse: collapse !important;
   }
   .table-bordered th,
-  .table-bordered td {
+    {
     border: 1px solid #ddd !important;
     color:#dff0d8;
   }
