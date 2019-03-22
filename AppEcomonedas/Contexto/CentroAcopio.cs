@@ -9,6 +9,12 @@ namespace Contexto
     [Table("CentroAcopio")]
     public partial class CentroAcopio
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public CentroAcopio()
+        {
+            Enca_Factura = new HashSet<Enca_Factura>();
+        }
+
         [Key]
         public int Id_Centro { get; set; }
 
@@ -28,5 +34,8 @@ namespace Contexto
         public virtual Provincia Provincia { get; set; }
 
         public virtual Usuario Usuario { get; set; }
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Enca_Factura> Enca_Factura { get; set; }
     }
 }
