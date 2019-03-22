@@ -21,10 +21,10 @@ namespace AppEcomonedas
                 switch (accion)
                 {
                     case "nuevo":
-                        lblMensaje.Text = "Libro registrado satisfactoriamente!";
+                        lblMensaje.Text = "Material reciclable registrado satisfactoriamente!";
                         break;
                     case "actu":
-                        lblMensaje.Text = "Libro actualizado satisfactoriamente!";
+                        lblMensaje.Text = "Material reciclable actualizado satisfactoriamente!";
                         break;
                     default:
                         lblMensaje.Visible = false;
@@ -60,7 +60,7 @@ namespace AppEcomonedas
             txtDescripcion.Text=mat.descripcion;
             txtPrecio.Text=mat.Precio_Material.ToString();
             txtColor.Value = mat.color;
-            imgLibro.ImageUrl = "~/imagenes/materiales/" + mat.imagen;
+            imgLibro.ImageUrl = "~/images/materiales/" + mat.imagen;                     
             btnGuardar.Text = "Actualizar";
            
         }
@@ -86,7 +86,7 @@ namespace AppEcomonedas
             {
                 try
                 {
-                    // Guardar imagen en la carpeta libros
+                    // Guardar imagen en la carpeta materiales
                     archivoImagen.PostedFile.SaveAs(path + "materiales/" + archivoImagen.FileName);
                 }
                 catch (Exception ex)
@@ -103,12 +103,12 @@ namespace AppEcomonedas
 
                     // Recargar la pagina
                     string accion = (hiddenID.Value == "" || hiddenID.Value == "0") ? "nuevo" : "actu";
-                    Response.Redirect("mantenimientoLibros.aspx?accion=" + accion);
+                    Response.Redirect("mantTipoMateriales.aspx?accion=" + accion);
                 }
                 else
                 {
                     lblMensaje.Visible = true;
-                    lblMensaje.Text = "No se puede agregar un nuevo producto a la BD";
+                    lblMensaje.Text = "No se puedo agregar un nuevo material, por favor intentar de nuevo";
                 }
             }
             else
@@ -122,7 +122,7 @@ namespace AppEcomonedas
         protected void btnLimpiar_Click(object sender, EventArgs e)
         {
             txtNombre.Text = "";
-                    txtDescripcion.Text = "";
+            txtDescripcion.Text = "";
             txtPrecio.Text = "";           
             txtColor.Value = "";
             hiddenID.Value = "";

@@ -98,5 +98,6 @@ namespace Contexto
                 .Property(e => e.contrasenna)
                 .IsUnicode(false);
         }
+        public void FixEProviderServicesProblem() { var instance = System.Data.Entity.SqlServer.SqlProviderServices.Instance; }
     }
 }
