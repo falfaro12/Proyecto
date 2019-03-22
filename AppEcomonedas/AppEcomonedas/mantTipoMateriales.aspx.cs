@@ -85,7 +85,7 @@ namespace AppEcomonedas
             {
                 try
                 {
-                    // Guardar imagen en la carpeta manteriales
+                    // Guardar imagen en la carpeta libros
                     archivoImagen.PostedFile.SaveAs(path + "materiales/" + archivoImagen.FileName);
                 }
                 catch (Exception ex)
@@ -96,24 +96,18 @@ namespace AppEcomonedas
 
                 // Agregar producto a la BD
 
-                bool confirmar = MaterialLN.agregarMateriales(
-                    txtNombre.Text,
-                    txtDescripcion.Text,               
-                    txtPrecio.Text,
-                    archivoImagen.FileName,
-                    txtColor.Value, 
-                    hiddenID.Value);
+                bool confirmar = MaterialLN.agregarMateriales(txtNombre.Text,txtDescripcion.Text,txtPrecio.Text,archivoImagen.FileName,txtColor.Value,hiddenID.Value);
                 if (confirmar)
                 {
 
                     // Recargar la pagina
                     string accion = (hiddenID.Value == "" || hiddenID.Value == "0") ? "nuevo" : "actu";
-                    Response.Redirect("mantTipoMateriales.aspx?accion=" + accion);
+                    Response.Redirect("mantenimientoLibros.aspx?accion=" + accion);
                 }
                 else
                 {
                     lblMensaje.Visible = true;
-                    lblMensaje.Text = "No se puedo guardar material, intentelo de nuevo";
+                    lblMensaje.Text = "No se puede agregar un nuevo producto a la BD";
                 }
             }
             else

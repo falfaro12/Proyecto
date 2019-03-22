@@ -327,12 +327,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Contexto\Contexto.csproj">
-      <Project>{6a290ea5-9c86-4995-8e57-f03b1aa323e1}</Project>
-      <Name>Contexto</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <Folder Include="images\materiales\" />
   </ItemGroup>
   <PropertyGroup>
