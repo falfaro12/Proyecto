@@ -1,4 +1,4 @@
-﻿using Contexto;
+﻿
 using Contexto.LN;
 using System;
 using System.Collections.Generic;
@@ -43,7 +43,7 @@ namespace AppEcomonedas
 
         public void cargarGrid()
         {
-            IEnumerable<Material> lista = (IEnumerable<Material>)MaterialLN.listaMateriales();
+            IEnumerable<MaterialLN> lista = (IEnumerable<Material>)MaterialLN.listaMateriales();
             grvListado.DataSource = lista.ToList();
             grvListado.DataBind();
         }
