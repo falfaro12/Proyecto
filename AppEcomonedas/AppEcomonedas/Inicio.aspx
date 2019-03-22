@@ -45,7 +45,7 @@
 								<li role="presentation"><a href="Inicio.aspx" class="active">Inicio</a></li>
 								<li role="presentation"><a href="about.html">Centros de Acopio</a></li>
 								<li role="presentation"><a href="services.html">Tipos de Materiales</a></li>								
-								<li role="presentation"><a href="portfolio.html">Mi cuenta</a></li>													
+								<li role="presentation"><a href="InicioSesion.aspx">Mi cuenta</a></li>													
 							</ul>
 						</div>
 					</div>						
