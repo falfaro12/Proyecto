@@ -16,7 +16,6 @@ namespace Contexto
         }
 
         [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int Id_Cupon { get; set; }
 
         [StringLength(50)]

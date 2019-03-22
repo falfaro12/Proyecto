@@ -16,7 +16,6 @@ namespace Contexto
         }
 
         [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int Id_Centro { get; set; }
 
         [StringLength(100)]

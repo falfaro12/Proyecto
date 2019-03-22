@@ -9,7 +9,6 @@ namespace Contexto
     public partial class Detall_Factura
     {
         [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int Id_detall { get; set; }
 
         public int? Id_Enca { get; set; }

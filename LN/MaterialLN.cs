@@ -34,7 +34,6 @@ namespace Contexto.LN
             miMaterial.imagen = imagen;
             miMaterial.color = color;
             miMaterial.Precio_Material = Convert.ToInt32(precio);
-           
 
             if (id.Equals("") || !esNumero)
             {//agrega

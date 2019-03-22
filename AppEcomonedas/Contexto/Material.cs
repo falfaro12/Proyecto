@@ -16,7 +16,6 @@ namespace Contexto
         }
 
         [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int Id_Material { get; set; }
 
         [StringLength(50)]

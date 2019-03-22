@@ -16,7 +16,6 @@ namespace Contexto
         }
 
         [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int Id_Billetera { get; set; }
 
         public decimal? Total_Disponible { get; set; }

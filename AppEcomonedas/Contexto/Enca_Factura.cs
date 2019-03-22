@@ -15,7 +15,6 @@ namespace Contexto
         }
 
         [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int Id_Enca { get; set; }
 
         [StringLength(50)]

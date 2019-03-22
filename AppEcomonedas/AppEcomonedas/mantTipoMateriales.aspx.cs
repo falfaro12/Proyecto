@@ -1,4 +1,5 @@
-﻿using Contexto;
+﻿
+using Contexto;
 using Contexto.LN;
 using System;
 using System.Collections.Generic;
@@ -20,10 +21,10 @@ namespace AppEcomonedas
                 switch (accion)
                 {
                     case "nuevo":
-                        lblMensaje.Text = "Libro registrado satisfactoriamente!";
+                        lblMensaje.Text = "Material reciclable registrado satisfactoriamente!";
                         break;
                     case "actu":
-                        lblMensaje.Text = "Libro actualizado satisfactoriamente!";
+                        lblMensaje.Text = "Material reciclable actualizado satisfactoriamente!";
                         break;
                     default:
                         lblMensaje.Visible = false;
@@ -59,7 +60,7 @@ namespace AppEcomonedas
             txtDescripcion.Text=mat.descripcion;
             txtPrecio.Text=mat.Precio_Material.ToString();
             txtColor.Value = mat.color;
-            imgLibro.ImageUrl = "~/imagenes/materiales/" + mat.imagen;
+            imgLibro.ImageUrl = "~/images/materiales/" + mat.imagen;                     
             btnGuardar.Text = "Actualizar";
            
         }
@@ -85,7 +86,7 @@ namespace AppEcomonedas
             {
                 try
                 {
-                    // Guardar imagen en la carpeta manteriales
+                    // Guardar imagen en la carpeta materiales
                     archivoImagen.PostedFile.SaveAs(path + "materiales/" + archivoImagen.FileName);
                 }
                 catch (Exception ex)
@@ -96,13 +97,7 @@ namespace AppEcomonedas
 
                 // Agregar producto a la BD
 
-                bool confirmar = MaterialLN.agregarMateriales(
-                    txtNombre.Text,
-                    txtDescripcion.Text,               
-                    txtPrecio.Text,
-                    archivoImagen.FileName,
-                    txtColor.Value, 
-                    hiddenID.Value);
+                bool confirmar = MaterialLN.agregarMateriales(txtNombre.Text,txtDescripcion.Text,txtPrecio.Text,archivoImagen.FileName,txtColor.Value,hiddenID.Value);
                 if (confirmar)
                 {
 
@@ -113,7 +108,7 @@ namespace AppEcomonedas
                 else
                 {
                     lblMensaje.Visible = true;
-                    lblMensaje.Text = "No se puedo guardar material, intentelo de nuevo";
+                    lblMensaje.Text = "No se puedo agregar un nuevo material, por favor intentar de nuevo";
                 }
             }
             else
@@ -127,7 +122,7 @@ namespace AppEcomonedas
         protected void btnLimpiar_Click(object sender, EventArgs e)
         {
             txtNombre.Text = "";
-                    txtDescripcion.Text = "";
+            txtDescripcion.Text = "";
             txtPrecio.Text = "";           
             txtColor.Value = "";
             hiddenID.Value = "";
