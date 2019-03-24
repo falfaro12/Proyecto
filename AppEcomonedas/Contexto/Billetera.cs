@@ -9,13 +9,8 @@ namespace Contexto
     [Table("Billetera")]
     public partial class Billetera
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Billetera()
-        {
-            Usuario = new HashSet<Usuario>();
-        }
-
         [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int Id_Billetera { get; set; }
 
         public decimal? Total_Disponible { get; set; }
@@ -24,7 +19,6 @@ namespace Contexto
 
         public decimal? Total_Generada { get; set; }
 
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Usuario> Usuario { get; set; }
+        public virtual Usuario Usuario { get; set; }
     }
 }

@@ -24,8 +24,7 @@ namespace Contexto
         [StringLength(100)]
         public string direccionExacta { get; set; }
 
-        [StringLength(50)]
-        public string Id_Usuario { get; set; }
+        public int? Id_Usuario { get; set; }
 
         public int? Id_Provincia { get; set; }
 

@@ -354,12 +354,6 @@
   <ItemGroup>
     <Folder Include="images\materiales\" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Contexto\Contexto.csproj">
-      <Project>{f3600fe0-7905-4e64-8ce5-fd07286689d8}</Project>
-      <Name>Contexto</Name>
-    </ProjectReference>
-  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
