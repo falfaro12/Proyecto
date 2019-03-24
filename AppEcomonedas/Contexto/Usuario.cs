@@ -18,8 +18,8 @@ namespace Contexto
         }
 
         [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
-        public int Id_Usuario { get; set; }
+        [StringLength(50)]
+        public string Id_Usuario { get; set; }
 
         [StringLength(50)]
         public string Nombre { get; set; }

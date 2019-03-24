@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{A1C7012C-EDD5-452C-AD17-C10704CF42A3}</ProjectGuid>
+    <ProjectGuid>{41CAA705-FD72-4614-916F-0B9CDB31CA6E}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Contexto</RootNamespace>
@@ -31,11 +31,11 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
@@ -53,6 +53,7 @@
   <ItemGroup>
     <Compile Include="Billetera.cs" />
     <Compile Include="CentroAcopio.cs" />
+    <Compile Include="Class1.cs" />
     <Compile Include="Cupon.cs" />
     <Compile Include="Detall_Factura.cs" />
     <Compile Include="EcomonedasContexto.cs" />
@@ -68,7 +69,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Provincia.cs" />
     <Compile Include="Rol.cs" />
-    <Compile Include="sysdiagrams.cs" />
     <Compile Include="Usuario.cs" />
   </ItemGroup>
   <ItemGroup>

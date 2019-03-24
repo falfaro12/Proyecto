@@ -20,17 +20,24 @@ namespace Contexto
         public virtual DbSet<Material> Material { get; set; }
         public virtual DbSet<Provincia> Provincia { get; set; }
         public virtual DbSet<Rol> Rol { get; set; }
-        public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
         public virtual DbSet<Usuario> Usuario { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
+            modelBuilder.Entity<Billetera>()
+                .Property(e => e.Id_Billetera)
+                .IsUnicode(false);
+
             modelBuilder.Entity<CentroAcopio>()
                 .Property(e => e.nombre)
                 .IsUnicode(false);
 
             modelBuilder.Entity<CentroAcopio>()
                 .Property(e => e.direccionExacta)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<CentroAcopio>()
+                .Property(e => e.Id_Usuario)
                 .IsUnicode(false);
 
             modelBuilder.Entity<Cupon>()
@@ -46,6 +53,10 @@ namespace Contexto
                 .WithMany(e => e.Cupon)
                 .Map(m => m.ToTable("Cupon_Usuario").MapLeftKey("Id_Cupon").MapRightKey("Id_Usuario"));
 
+            modelBuilder.Entity<Enca_Factura>()
+                .Property(e => e.Id_Usuario)
+                .IsUnicode(false);
+
             modelBuilder.Entity<Material>()
                 .Property(e => e.nombre)
                 .IsUnicode(false);
@@ -60,6 +71,10 @@ namespace Contexto
 
             modelBuilder.Entity<Rol>()
                 .Property(e => e.descripcion)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<Usuario>()
+                .Property(e => e.Id_Usuario)
                 .IsUnicode(false);
 
             modelBuilder.Entity<Usuario>()
@@ -89,6 +104,12 @@ namespace Contexto
             modelBuilder.Entity<Usuario>()
                 .HasOptional(e => e.Billetera)
                 .WithRequired(e => e.Usuario);
+        }
+
+        public void FixEProviderServicesProblem()
+        {
+            var instance =
+             System.Data.Entity.SqlServer.SqlProviderServices.Instance;
         }
     }
 }

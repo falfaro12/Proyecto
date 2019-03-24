@@ -10,8 +10,8 @@ namespace Contexto
     public partial class Billetera
     {
         [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
-        public int Id_Billetera { get; set; }
+        [StringLength(50)]
+        public string Id_Billetera { get; set; }
 
         public decimal? Total_Disponible { get; set; }
 

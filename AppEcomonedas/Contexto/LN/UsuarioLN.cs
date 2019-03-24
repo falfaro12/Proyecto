@@ -15,7 +15,7 @@ namespace Contexto.LN
             string direccion,
             int idRol,
             string telefono,
-            int idUsr
+            string idUsr
             )
         {
             EcomonedasContexto db = new EcomonedasContexto();
@@ -33,10 +33,9 @@ namespace Contexto.LN
                 miUsuario.Direccion = direccion;
                 miUsuario.Id_Rol = idRol;
                 miUsuario.Id_Usuario = idUsr;
-                db.Usuario.Add(miUsuario);
                 BilleteraLN.AgregarBilletera(idUsr);
-            }
-            else
+                db.Usuario.Add(miUsuario);
+            }else
             {
                 miUsuario.Nombre = nombre;
                 miUsuario.Apellido1 = apellido1;
@@ -95,7 +94,7 @@ namespace Contexto.LN
                 UsuarioLN.queryListaUsuario()).Where(p => p.Id_Rol == 3);
             return lista;
         }
-        public static Usuario obtenerUsuario(int? id)
+        public static Usuario obtenerUsuario(string id)
         {
             EcomonedasContexto db = new EcomonedasContexto();
             Usuario Usuario = db.Usuario.

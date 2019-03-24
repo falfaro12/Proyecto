@@ -30,7 +30,7 @@ namespace Contexto.LN
             //Creacion del libro
             miCentro.nombre = nombre;
             miCentro.Id_Provincia = Convert.ToInt32(idProvincia);
-            miCentro.Id_Usuario = int.Parse(idUsr);
+            miCentro.Id_Usuario = idUsr;
             miCentro.direccionExacta = direccion;
             
             if(id.Equals("")|| !esNumero)

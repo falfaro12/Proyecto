@@ -8,7 +8,7 @@ namespace Contexto.LN
 {
     public class BilleteraLN
     {
-        public static bool AgregarBilletera(int id)
+        public static bool AgregarBilletera(string id)
         {
             EcomonedasContexto db = new EcomonedasContexto();
             var miBilletera = new Billetera();
@@ -26,7 +26,7 @@ namespace Contexto.LN
             return true;
         }
 
-        public static Billetera obtenerBilletera(int id)
+        public static Billetera obtenerBilletera(string id)
         {
             EcomonedasContexto db = new EcomonedasContexto();
             Billetera billetera = db.Billetera.

@@ -57,7 +57,7 @@ namespace AppEcomonedas
                 ddlAdministrador.SelectedValue = "1";
             }
 
-            Usuario cate = UsuarioLN.obtenerUsuario(int.Parse(ddlAdministrador.SelectedValue));
+            Usuario cate = UsuarioLN.obtenerUsuario(ddlAdministrador.SelectedValue);
         }
 
         protected void btnGuardar_Click(object sender, EventArgs e)

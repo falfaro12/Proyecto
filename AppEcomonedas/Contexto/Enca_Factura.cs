@@ -17,7 +17,8 @@ namespace Contexto
         [Key]
         public int Id_Enca { get; set; }
 
-        public int? Id_Usuario { get; set; }
+        [StringLength(50)]
+        public string Id_Usuario { get; set; }
 
         public int? Id_Centro { get; set; }
 
