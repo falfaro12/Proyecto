@@ -59,6 +59,7 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Compile>
     <Compile Include="Enca_Factura.cs" />
+    <Compile Include="LN\BilleteraLN.cs" />
     <Compile Include="LN\CentroAcopioLN.cs" />
     <Compile Include="LN\CuponLN.cs" />
     <Compile Include="LN\MaterialLN.cs" />
