@@ -19,21 +19,31 @@ namespace Contexto.LN
             )
         {
             EcomonedasContexto db = new EcomonedasContexto();
-            Usuario miUsuario = new Usuario();
-            miUsuario = db.Usuario.Where(u => u.Id_Usuario == idUsr).First<Usuario>();
+            Usuario miUsuario;
+            miUsuario = db.Usuario.Where(u => u.Id_Usuario == idUsr).FirstOrDefault<Usuario>();
 
-            miUsuario.Nombre = nombre;
-            miUsuario.Apellido1 = apellido1;
-            miUsuario.Apellido2 = apellido2;
-            miUsuario.telefono = telefono;
-            miUsuario.Direccion = direccion;
-            miUsuario.Id_Rol = idRol;
-            if (miUsuario.Id_Usuario.Equals(""))
+            
+            if (miUsuario == null)
             {
+                miUsuario = new Usuario();
+                miUsuario.Nombre = nombre;
+                miUsuario.Apellido1 = apellido1;
+                miUsuario.Apellido2 = apellido2;
+                miUsuario.telefono = telefono;
+                miUsuario.Direccion = direccion;
+                miUsuario.Id_Rol = idRol;
                 miUsuario.Id_Usuario = idUsr;
                 BilleteraLN.AgregarBilletera(idUsr);
                 miUsuario.Id_Billetera = int.Parse(idUsr);
                 db.Usuario.Add(miUsuario);
+            }else
+            {
+                miUsuario.Nombre = nombre;
+                miUsuario.Apellido1 = apellido1;
+                miUsuario.Apellido2 = apellido2;
+                miUsuario.telefono = telefono;
+                miUsuario.Direccion = direccion;
+                miUsuario.Id_Rol = idRol;
             }
             db.SaveChanges();
             return true;

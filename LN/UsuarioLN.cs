@@ -10,13 +10,47 @@ namespace Contexto.LN
     {
         public static bool AgregarUsuario(
             string nombre,
+            string apellido1,
+            string apellido2,
+            string direccion,
             int idRol,
-            int telefono,
-            string idUsr = ""
+            string telefono,
+            string idUsr
             )
         {
             EcomonedasContexto db = new EcomonedasContexto();
-            var miUsuario = new Usuario();
+            Usuario miUsuario;
+            miUsuario = db.Usuario.Where(u => u.Id_Usuario == idUsr).FirstOrDefault<Usuario>();
+
+            
+            if (miUsuario == null)
+            {
+                miUsuario = new Usuario();
+                miUsuario.Nombre = nombre;
+                miUsuario.Apellido1 = apellido1;
+                miUsuario.Apellido2 = apellido2;
+                miUsuario.telefono = telefono;
+                miUsuario.Direccion = direccion;
+                miUsuario.Id_Rol = idRol;
+                miUsuario.Id_Usuario = idUsr;
+                BilleteraLN.AgregarBilletera(idUsr);
+                miUsuario.Id_Billetera = int.Parse(idUsr);
+                db.Usuario.Add(miUsuario);
+            }else
+            {
+                miUsuario.Nombre = nombre;
+                miUsuario.Apellido1 = apellido1;
+                miUsuario.Apellido2 = apellido2;
+                miUsuario.telefono = telefono;
+                miUsuario.Direccion = direccion;
+                miUsuario.Id_Rol = idRol;
+            }
+            db.SaveChanges();
+            return true;
+
+
+
+            /*var miUsuario = new Usuario();
             int idUser = 0;
             string idUsuario = "";
             bool esNumero = int.TryParse(idUsr, out idUser);
@@ -28,8 +62,11 @@ namespace Contexto.LN
                 // Busca Usuario en la DB
                 miUsuario = db.Usuario.Where(p => p.Id_Usuario == idUsuario).First<Usuario>();
             }
-            //Creacion del libro
+            //Creacion del Usuario
             miUsuario.Nombre = nombre;
+            miUsuario.Apellido1 = apellido1;
+            miUsuario.Apellido2 = apellido2;
+            miUsuario.telefono = telefono;
             miUsuario.Id_Usuario = idUsr;
             miUsuario.Id_Rol = idRol;
 
@@ -40,7 +77,7 @@ namespace Contexto.LN
             db.SaveChanges();
 
             // Confirmacion
-            return true;
+            return true; */
         }
 
 
@@ -52,10 +89,10 @@ namespace Contexto.LN
             return query;
         }
 
-        public static IEnumerable<Usuario> listaUsuarios()
+        public static IEnumerable<Usuario> listaUsuariosClientes()
         {
-            IEnumerable<Usuario> lista = (IEnumerable<Usuario>)
-                UsuarioLN.queryListaUsuario();
+            IEnumerable<Usuario> lista = ((IEnumerable<Usuario>)
+                UsuarioLN.queryListaUsuario()).Where(p => p.Id_Rol == 3);
             return lista;
         }
         public static Usuario obtenerUsuario(string id)
