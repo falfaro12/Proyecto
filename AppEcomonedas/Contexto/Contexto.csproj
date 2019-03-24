@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{F3600FE0-7905-4E64-8CE5-FD07286689D8}</ProjectGuid>
+    <ProjectGuid>{A1C7012C-EDD5-452C-AD17-C10704CF42A3}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Contexto</RootNamespace>
@@ -31,11 +31,11 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
@@ -55,10 +55,9 @@
     <Compile Include="CentroAcopio.cs" />
     <Compile Include="Cupon.cs" />
     <Compile Include="Detall_Factura.cs" />
-    <Compile Include="EcomonedasContexto.cs">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Compile>
+    <Compile Include="EcomonedasContexto.cs" />
     <Compile Include="Enca_Factura.cs" />
+    <Compile Include="LN\BilleteraLN.cs" />
     <Compile Include="LN\CentroAcopioLN.cs" />
     <Compile Include="LN\CuponLN.cs" />
     <Compile Include="LN\MaterialLN.cs" />

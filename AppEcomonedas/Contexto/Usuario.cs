@@ -18,8 +18,8 @@ namespace Contexto
         }
 
         [Key]
-        [StringLength(50)]
-        public string Id_Usuario { get; set; }
+        [DatabaseGenerated(DatabaseGeneratedOption.None)]
+        public int Id_Usuario { get; set; }
 
         [StringLength(50)]
         public string Nombre { get; set; }
@@ -37,8 +37,6 @@ namespace Contexto
         public string telefono { get; set; }
 
         public int? Id_Rol { get; set; }
-
-        public int? Id_Billetera { get; set; }
 
         [StringLength(50)]
         public string contrasenna { get; set; }

@@ -33,10 +33,6 @@ namespace Contexto
                 .Property(e => e.direccionExacta)
                 .IsUnicode(false);
 
-            modelBuilder.Entity<CentroAcopio>()
-                .Property(e => e.Id_Usuario)
-                .IsUnicode(false);
-
             modelBuilder.Entity<Cupon>()
                 .Property(e => e.nombre)
                 .IsUnicode(false);
@@ -49,10 +45,6 @@ namespace Contexto
                 .HasMany(e => e.Usuario)
                 .WithMany(e => e.Cupon)
                 .Map(m => m.ToTable("Cupon_Usuario").MapLeftKey("Id_Cupon").MapRightKey("Id_Usuario"));
-
-            modelBuilder.Entity<Enca_Factura>()
-                .Property(e => e.Id_Usuario)
-                .IsUnicode(false);
 
             modelBuilder.Entity<Material>()
                 .Property(e => e.nombre)
@@ -68,10 +60,6 @@ namespace Contexto
 
             modelBuilder.Entity<Rol>()
                 .Property(e => e.descripcion)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<Usuario>()
-                .Property(e => e.Id_Usuario)
                 .IsUnicode(false);
 
             modelBuilder.Entity<Usuario>()
@@ -97,7 +85,10 @@ namespace Contexto
             modelBuilder.Entity<Usuario>()
                 .Property(e => e.contrasenna)
                 .IsUnicode(false);
+
+            modelBuilder.Entity<Usuario>()
+                .HasOptional(e => e.Billetera)
+                .WithRequired(e => e.Usuario);
         }
-        public void FixEProviderServicesProblem() { var instance = System.Data.Entity.SqlServer.SqlProviderServices.Instance; }
     }
 }
