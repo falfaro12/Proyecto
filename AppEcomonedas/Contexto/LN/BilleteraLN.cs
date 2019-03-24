@@ -8,13 +8,13 @@ namespace Contexto.LN
 {
     public class BilleteraLN
     {
-        public static bool AgregarBilletera(string id)
+        public static bool AgregarBilletera(int id)
         {
             EcomonedasContexto db = new EcomonedasContexto();
             var miBilletera = new Billetera();
 
             //Creacion de la billetera
-            miBilletera.Id_Billetera = int.Parse(id);
+            miBilletera.Id_Billetera = id;
             miBilletera.Total_Disponible = 0;
             miBilletera.Total_Generada = 0;
             miBilletera.Total_Canjeadas = 0;

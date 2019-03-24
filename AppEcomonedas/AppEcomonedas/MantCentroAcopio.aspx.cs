@@ -57,7 +57,7 @@ namespace AppEcomonedas
                 ddlAdministrador.SelectedValue = "1";
             }
 
-            Usuario cate = UsuarioLN.obtenerUsuario(ddlAdministrador.SelectedValue);
+            Usuario cate = UsuarioLN.obtenerUsuario(int.Parse(ddlAdministrador.SelectedValue));
         }
 
         protected void btnGuardar_Click(object sender, EventArgs e)
@@ -98,7 +98,7 @@ namespace AppEcomonedas
             lista2.Add(usu);
             ddlAdministrador.DataSource = lista2;
             ddlAdministrador.DataBind();
-            ddlAdministrador.SelectedValue = centro.Id_Usuario;
+            ddlAdministrador.SelectedValue = centro.Id_Usuario.ToString();
             hiddenID.Value = centro.Id_Centro.ToString();              
             txtDireccion.Text = centro.direccionExacta;
           
