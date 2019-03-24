@@ -3,6 +3,7 @@ using Contexto;
 using Contexto.LN;
 using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -60,9 +61,11 @@ namespace AppEcomonedas
             txtDescripcion.Text=mat.descripcion;
             txtPrecio.Text=mat.Precio_Material.ToString();
             txtColor.Value = mat.color;
+            hiddenID.Value = mat.Id_Material.ToString();
             imgLibro.ImageUrl = "~/images/materiales/" + mat.imagen;                     
             btnGuardar.Text = "Actualizar";
-           
+            e.Row.Cells[4].BackColor = Color.FromName(e.Row.Cells[4].Text);
+
         }
 
         protected void btnGuardar_Click(object sender, EventArgs e)
@@ -128,6 +131,15 @@ namespace AppEcomonedas
             hiddenID.Value = "";
             archivoImagen = null;
             btnGuardar.Text = "Guardar";
+        }
+
+        protected void grvListado_RowDataBound(object sender, GridViewRowEventArgs e)
+        {
+            
+                                  
+                e.Row.Cells[4].BackColor = Color.FromName(e.Row.Cells[4].Text);
+                              
+                       
         }
     }
 }

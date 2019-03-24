@@ -4,7 +4,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
      <!--Este es el primer div que divide el panel de info-->
     <div class="col-lg-5 main-chart">
-         <div class="col-lg-12 ">
+         <div class="col-lg-12 container">
         <asp:Label ID="lblMensaje" runat="server" CssClass="alert alert-dismissible alert-warning" Visible="false" Text=""></asp:Label>
          </div>
        <h3><i class="fa fa-angle-right"></i>Materiales reciclables</h3>
@@ -64,10 +64,7 @@
               <br />
              <div class="form-group row" style="margin: 5px;">
                  <label for="lblcolor" class="control-label">Color</label>
-                 <div id="color">
-                     <input runat="server" id="txtColor" type='text' class="colores" />
-                 </div>
-                 
+                 <input runat="server" id="txtColor" type="color" name="favcolor" value="#0080c0" />
              </div>
              <br />
              <div class="form-group row" style="margin:5px;">
@@ -75,7 +72,7 @@
                  <asp:Button ID="btnGuardar" CssClass="btn btn-success" runat="server"
                      Text="Guardar" ValidationGroup="guardar" OnClick="btnGuardar_Click" />
                  <asp:Button ID="btnLimpiar" CssClass="btn btn-success" runat="server"
-                     Text="Limpiar" OnClick="btnLimpiar_Click" />
+                     Text="Limpiar" OnClick="btnLimpiar_Click"/>
 
              </div>            
          </div>
@@ -91,7 +88,8 @@
             CssClass="table"
             DataKeyNames="Id_Material"
             AutoGenerateSelectButton="true"
-            OnSelectedIndexChanged="grvListado_SelectedIndexChanged">
+            OnSelectedIndexChanged="grvListado_SelectedIndexChanged"
+            OnRowDataBound="grvListado_RowDataBound">
             <Columns>
                 <asp:BoundField DataField="nombre" HeaderText="Nombre"></asp:BoundField>
                  <asp:BoundField DataField="descripcion" HeaderText="Descripción"></asp:BoundField>
@@ -104,12 +102,7 @@
 
 
     </div>
-    <script>
-        $(".colores").spectrum({
-            color: "#f00",
-        });
-    </script>
-  
+
 
 
 </asp:Content>
