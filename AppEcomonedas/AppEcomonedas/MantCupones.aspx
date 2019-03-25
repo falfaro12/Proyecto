@@ -4,7 +4,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
       <!--Este es el primer div que divide el panel de info-->
     <div class="col-lg-5 main-chart">
-         <div class="col-lg-12 container">
+         <div class="row">
         <asp:Label ID="lblMensaje" runat="server" CssClass="alert alert-dismissible alert-warning" Visible="false" Text=""></asp:Label>
          </div>
        <h3><i class="fa fa-angle-right"></i>Cupones de Canje</h3>
@@ -67,7 +67,8 @@
                  <asp:Button ID="btnGuardar" CssClass="btn btn-success" runat="server"
                      Text="Guardar" ValidationGroup="guardar" OnClick="btnGuardar_Click" />
                  <asp:Button ID="btnLimpiar" CssClass="btn btn-success" runat="server"
-                     Text="Limpiar" OnClick="btnLimpiar_Click"/>
+                     Text="Limpiar" OnClick="btnLimpiar_Click" CausesValidation="false"
+                     />
 
              </div>            
          </div>

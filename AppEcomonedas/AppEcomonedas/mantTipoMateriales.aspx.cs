@@ -123,6 +123,7 @@ namespace AppEcomonedas
 
         protected void btnLimpiar_Click(object sender, EventArgs e)
         {
+            
             txtNombre.Text = "";
             txtDescripcion.Text = "";
             txtPrecio.Text = "";           

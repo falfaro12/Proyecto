@@ -58,7 +58,7 @@
                  <asp:Button ID="btnGuardar" CssClass="btn btn-success" runat="server"
                      Text="Guardar" ValidationGroup="guardar" OnClick="btnGuardar_Click" />
                  <asp:Button ID="btnLimpiar" CssClass="btn btn-success" runat="server"
-                     Text="Limpiar" OnClick="btnLimpiar_Click" />
+                     Text="Limpiar" OnClick="btnLimpiar_Click" CausesValidation="false" />
 
              </div>            
          </div>
