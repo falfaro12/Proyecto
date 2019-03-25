@@ -10,7 +10,7 @@
 namespace AppEcomonedas {
     
     
-    public partial class mantTipoMateriales {
+    public partial class MantCupones {
         
         /// <summary>
         /// lblMensaje control.
@@ -110,15 +110,6 @@ namespace AppEcomonedas {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RegularExpressionValidator RegularExpressionValidator1;
-        
-        /// <summary>
-        /// txtColor control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl txtColor;
         
         /// <summary>
         /// btnGuardar control.

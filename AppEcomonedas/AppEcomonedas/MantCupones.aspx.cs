@@ -1,9 +1,7 @@
-﻿
-using Contexto;
+﻿using Contexto;
 using Contexto.LN;
 using System;
 using System.Collections.Generic;
-using System.Drawing;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -11,7 +9,7 @@ using System.Web.UI.WebControls;
 
 namespace AppEcomonedas
 {
-    public partial class mantTipoMateriales : System.Web.UI.Page
+    public partial class MantCupones : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -22,10 +20,10 @@ namespace AppEcomonedas
                 switch (accion)
                 {
                     case "nuevo":
-                        lblMensaje.Text = "Material reciclable registrado satisfactoriamente!";
+                        lblMensaje.Text = "Cupón de canje registrado satisfactoriamente!";
                         break;
                     case "actu":
-                        lblMensaje.Text = "Material reciclable actualizado satisfactoriamente!";
+                        lblMensaje.Text = "Cupón de canje actualizado satisfactoriamente!";
                         break;
                     default:
                         lblMensaje.Visible = false;
@@ -33,19 +31,16 @@ namespace AppEcomonedas
                         break;
                 }
 
-
-
             }
             if (!IsPostBack)
             {
                 cargarGrid();
             }
         }
-      
 
         public void cargarGrid()
         {
-            IEnumerable<Material> lista = (IEnumerable<Material>)MaterialLN.listaMateriales();
+            IEnumerable<Cupon> lista = (IEnumerable<Cupon>)CuponLN.listaCupones();
             grvListado.DataSource = lista.ToList();
             grvListado.DataBind();
         }
@@ -54,18 +49,32 @@ namespace AppEcomonedas
         {
             int id = Convert.ToInt32(grvListado.DataKeys[grvListado.SelectedIndex].Values[0]);
 
-            Material mat =
-                   MaterialLN.listaMateriales().
-                   Where(p => p.Id_Material == id).FirstOrDefault<Material>();
-            txtNombre.Text=mat.nombre;
-            txtDescripcion.Text=mat.descripcion;
-            txtPrecio.Text=mat.Precio_Material.ToString();
-            txtColor.Value = mat.color;
-            hiddenID.Value = mat.Id_Material.ToString();
-            imgLibro.ImageUrl = "~/images/materiales/" + mat.imagen;                     
+            Cupon mat =
+                   CuponLN.listaCupones().
+                   Where(p => p.Id_Cupon == id).FirstOrDefault<Cupon>();
+            txtNombre.Text = mat.nombre;
+            txtDescripcion.Text = mat.descripcion;
+            txtPrecio.Text = mat.Precio_Canje.ToString();          
+            hiddenID.Value = mat.Id_Cupon.ToString();
+            imgLibro.ImageUrl = "~/images/materiales/" + mat.imagen;
             btnGuardar.Text = "Actualizar";
             rfImagen.Enabled = false;
+        }
 
+        protected void btnLimpiar_Click(object sender, EventArgs e)
+        {
+            int id = Convert.ToInt32(grvListado.DataKeys[grvListado.SelectedIndex].Values[0]);
+
+            Cupon mat =
+                   CuponLN.listaCupones().
+                   Where(p => p.Id_Cupon == id).FirstOrDefault<Cupon>();
+            txtNombre.Text = mat.nombre;
+            txtDescripcion.Text = mat.descripcion;
+            txtPrecio.Text = mat.Precio_Canje.ToString();          
+            hiddenID.Value = mat.Id_Cupon.ToString();
+            imgLibro.ImageUrl = "~/images/cupones/" + mat.imagen;
+            btnGuardar.Text = "Actualizar";
+            rfImagen.Enabled = false;
         }
 
         protected void btnGuardar_Click(object sender, EventArgs e)
@@ -84,12 +93,13 @@ namespace AppEcomonedas
                     }
                 }
 
+
                 if (archivoOK)
                 {
                     try
                     {
                         // Guardar imagen en la carpeta materiales
-                        archivoImagen.PostedFile.SaveAs(path + "materiales/" + archivoImagen.FileName);
+                        archivoImagen.PostedFile.SaveAs(path + "cupones/" + archivoImagen.FileName);
                     }
                     catch (Exception ex)
                     {
@@ -102,44 +112,25 @@ namespace AppEcomonedas
 
                     lblMensaje.Visible = true;
                     lblMensaje.Text = "No se puede aceptar el tipo de archivo.";
+                    return;
                 }
             }
+
             // Agregar producto a la BD
 
-            bool confirmar = MaterialLN.agregarMateriales(txtNombre.Text, txtDescripcion.Text, txtPrecio.Text, archivoImagen.FileName, txtColor.Value, hiddenID.Value);
+            bool confirmar = CuponLN.agregarCupones(txtNombre.Text, txtDescripcion.Text, txtPrecio.Text, archivoImagen.FileName, hiddenID.Value);
             if (confirmar)
             {
 
                 // Recargar la pagina
                 string accion = (hiddenID.Value == "" || hiddenID.Value == "0") ? "nuevo" : "actu";
-                Response.Redirect("mantTipoMateriales.aspx?accion=" + accion);
+                Response.Redirect("MantCupones.aspx?accion=" + accion);
             }
             else
             {
                 lblMensaje.Visible = true;
-                lblMensaje.Text = "No se puedo agregar un nuevo material, por favor intentar de nuevo";
+                lblMensaje.Text = "No se puedo agregar un nuevo cupón, por favor intentar de nuevo";
             }
-        }
-
-        protected void btnLimpiar_Click(object sender, EventArgs e)
-        {
-            txtNombre.Text = "";
-            txtDescripcion.Text = "";
-            txtPrecio.Text = "";           
-            txtColor.Value = "";
-            hiddenID.Value = "";
-            archivoImagen = null;
-            btnGuardar.Text = "Guardar";
-            rfImagen.Enabled = true;
-        }
-
-        protected void grvListado_RowDataBound(object sender, GridViewRowEventArgs e)
-        {
-            
-                                  
-                e.Row.Cells[4].BackColor = Color.FromName(e.Row.Cells[4].Text);
-                              
-                       
         }
     }
 }

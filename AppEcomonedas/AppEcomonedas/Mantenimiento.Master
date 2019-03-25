@@ -88,7 +88,13 @@
                       </a>
                   </li>
                   <li class="sub-menu">
-                      <a href="faces/UsuarioPorPrograma.xhtml">
+                      <a href="mantTipoMateriales.aspx">
+                          <i class="fa fa-tasks"></i>
+                          <span>Material reciblable</span>
+                      </a>
+                  </li> 
+                   <li class="sub-menu">
+                      <a href="MantCupones.aspx">
                           <i class="fa fa-tasks"></i>
                           <span>Material reciblable</span>
                       </a>

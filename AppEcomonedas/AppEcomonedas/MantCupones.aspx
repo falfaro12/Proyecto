@@ -1,15 +1,15 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Mantenimiento.Master" AutoEventWireup="true" CodeBehind="mantTipoMateriales.aspx.cs" Inherits="AppEcomonedas.mantTipoMateriales" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Mantenimiento.Master" AutoEventWireup="true" CodeBehind="MantCupones.aspx.cs" Inherits="AppEcomonedas.MantCupones" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-     <!--Este es el primer div que divide el panel de info-->
+      <!--Este es el primer div que divide el panel de info-->
     <div class="col-lg-5 main-chart">
          <div class="col-lg-12 container">
         <asp:Label ID="lblMensaje" runat="server" CssClass="alert alert-dismissible alert-warning" Visible="false" Text=""></asp:Label>
          </div>
-       <h3><i class="fa fa-angle-right"></i>Materiales reciclables</h3>
+       <h3><i class="fa fa-angle-right"></i>Cupones de Canje</h3>
          <div class="panel panel-success">
-         <div class="panel-heading">Información de Materiales reciclables</div>
+         <div class="panel-heading">Información de Cupones de Canje</div>
          <div class="panel-body">
               <div class="form-group row" style="margin:5px;">
                  <label for="lblNombre" class="control-label">Nombre</label>
@@ -34,14 +34,13 @@
                 <asp:FileUpload ID="archivoImagen" CssClass="form-control-file" runat="server" />
                 <asp:RequiredFieldValidator ID="rfImagen"
                     runat="server" Text="* Imagen requerida."
-                    Enabled="true"
                     ControlToValidate="archivoImagen"
                     SetFocusOnError="true" ForeColor="Red" Display="Dynamic"></asp:RequiredFieldValidator>
            
              </div>
               <br />
              <div class="form-group row" style="margin: 5px;">
-                  <label for="lblDireccion" class="control-label">Precio</label>
+                  <label for="lblDireccion" class="control-label">Precio equivalente</label>
                  <div class="input-group mb-3">
                     <div class="input-group-prepend">
                         <span class="input-group-text">&cent;</span>
@@ -62,12 +61,7 @@
                     SetFocusOnError="true" ForeColor="Red" Display="Dynamic"
                     ValidationExpression="^[0-9]*(\,)?[0-9]?[0-9]?$"></asp:RegularExpressionValidator>
             </div>
-              <br />
-             <div class="form-group row" style="margin: 5px;">
-                 <label for="lblcolor" class="control-label">Color</label>
-                 <input runat="server" id="txtColor" type="color" name="favcolor" value="#0080c0" />
-             </div>
-             <br />
+              <br />            
              <div class="form-group row" style="margin:5px;">
 
                  <asp:Button ID="btnGuardar" CssClass="btn btn-success" runat="server"
@@ -83,27 +77,24 @@
     <div class="col-lg-7 main-chart">
          <asp:HiddenField ID="hiddenID" runat="server" />
           <!-- Listado -->
-            <h3><i class="fa fa-angle-right"></i>Listado Tipo de Materiales</h3>
+            <h3><i class="fa fa-angle-right"></i>Listado Cupones de Canje</h3>
         <asp:GridView ID="grvListado" runat="server"
             AutoGenerateColumns="false"
             CssClass="table"
-            DataKeyNames="Id_Material"
+            DataKeyNames="Id_Cupon"
             AutoGenerateSelectButton="true"
-            OnSelectedIndexChanged="grvListado_SelectedIndexChanged"
-            OnRowDataBound="grvListado_RowDataBound">
+            OnSelectedIndexChanged="grvListado_SelectedIndexChanged">
             <Columns>
                 <asp:BoundField DataField="nombre" HeaderText="Nombre"></asp:BoundField>
-                 <asp:BoundField DataField="descripcion" HeaderText="Descripción"></asp:BoundField>
-                <asp:BoundField DataField="Precio_Material" HeaderText="Precio"></asp:BoundField>
-                <asp:BoundField  DataField="color" HeaderText="Color"></asp:BoundField>                     
-                 </Columns>
+                <asp:BoundField DataField="descripcion" HeaderText="Descripción"></asp:BoundField>
+                <asp:BoundField DataField="Precio_Canje" HeaderText="Precio Equivalente"></asp:BoundField>
 
-                 <HeaderStyle CssClass="table-success" ForeColor="#dff0d8"  />
-            </asp:GridView>
+            </Columns>
+
+            <HeaderStyle CssClass="table-success" ForeColor="#dff0d8" />
+        </asp:GridView>
 
 
     </div>
-
-
 
 </asp:Content>

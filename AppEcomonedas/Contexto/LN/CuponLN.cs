@@ -8,7 +8,7 @@ namespace Contexto.LN
 {
     public class CuponLN
     {
-        public bool agregarCupones(
+        public static bool agregarCupones(
             string nombre,
             string descripcion,
             string precio,

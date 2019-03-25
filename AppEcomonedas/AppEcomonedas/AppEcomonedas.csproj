@@ -193,6 +193,7 @@
     <Content Include="js\jquery.js" />
     <Content Include="js\jquery.prettyPhoto.js" />
     <Content Include="js\wow.min.js" />
+    <Content Include="MantCupones.aspx" />
     <Content Include="mantTipoMateriales.aspx" />
     <Content Include="mantUsuarios.aspx" />
     <Content Include="packages.config" />
@@ -328,6 +329,13 @@
     <Compile Include="Inicio.aspx.designer.cs">
       <DependentUpon>Inicio.aspx</DependentUpon>
     </Compile>
+    <Compile Include="MantCupones.aspx.cs">
+      <DependentUpon>MantCupones.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MantCupones.aspx.designer.cs">
+      <DependentUpon>MantCupones.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Mantenimiento.Master.cs">
       <DependentUpon>Mantenimiento.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -352,6 +360,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="images\cupones\" />
     <Folder Include="images\materiales\" />
   </ItemGroup>
   <ItemGroup>
