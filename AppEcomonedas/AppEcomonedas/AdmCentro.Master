@@ -1,14 +1,13 @@
-﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Mantenimiento.master.cs" Inherits="AppEcomonedas.Mantenimiento" %>
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="AdmCentro.master.cs" Inherits="AppEcomonedas.AdmCentro" %>
 
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title>Ecomonedas - Administrador</title>
+    <title>Ecomonedas - Administrador de Centro de Acopio</title>
     <meta charset="utf-8"/>
     <!-- Bootstrap core CSS -->
-     <script src="Scripts/jquery-3.0.0.js"></script> 
-    <script src="Scripts/jquery-3.3.1.js"></script>
+  <script src="Scripts/jquery-3.0.0.js"></script>
     <script src="Scripts/bootstrap.js"></script>
     <link href="Content/bootstrap.min.css" rel="stylesheet" />
     <link href="Content/sticky-footer.css" rel="stylesheet" />
@@ -56,19 +55,12 @@
               <ul class="sidebar-menu">
               
                   <p class="centered"><a href="faces/Mantenimiento.xhtml"><img src="Recursos/images/logo.png" alt=""/></a></p>
-              	  <h5 class="centered">Panel de Administración</h5>
+              	  <h5 class="centered">Panel de Administrador de Centro Acopio</h5>
               	  	
-                  <li class="mt">
-                      <a class="active" href="faces/Mantenimiento.xhtml">
-                          <i class="fa fa-dashboard"></i>
-                          <span>Inicio</span>
-                      </a>
-                  </li>
-
-                  <li class="sub-menu" >
+                   <li class="sub-menu" >
                       <a href="MantCentroAcopio.aspx" >
                           <i class="fa fa-desktop"></i>
-                          <span>Administradores Centro de Acopio</span>
+                          <span>Materiales Reciclables</span>
 
                       </a>
                   </li>
@@ -76,34 +68,15 @@
                   <li class="sub-menu">
                       <a href="faces/CursoPorPrograma.xhtml" >
                           <i class="fa fa-cogs"></i>
-                          <span>Clientes</span>
+                          <span>Canje</span>
                       </a>
                   </li>
                   <li class="sub-menu">
                       <a href="MantCentroAcopio.aspx" >
                           <i class="fa fa-book"></i>
-                          <span>Centro de Acopio</span>
+                          <span>Todos los Canjes</span>
                       </a>
-                  </li>
-                  <li class="sub-menu">
-                      <a href="mantTipoMateriales.aspx">
-                          <i class="fa fa-tasks"></i>
-                          <span>Material reciblable</span>
-                      </a>
-                  </li> 
-                   <li class="sub-menu">
-                      <a href="MantCupones.aspx">
-                          <i class="fa fa-tasks"></i>
-                          <span>Cupones Canjeables</span>
-                      </a>
-                  </li>                 
-                  <li class="sub-menu">
-                      <a href="#">
-                          <i class=" fa fa-bar-chart-o"></i>
-                          <span>Reportes</span>
-                      </a>
-                  </li>
-
+                  </li>   
               </ul>
               <!-- sidebar menu end-->
           </div>
@@ -187,5 +160,6 @@
             console.log('nav ' + nav + ' to: ' + to.month + '/' + to.year);
         }
     </script>
-</body>
+    </body>
+    
 </html>

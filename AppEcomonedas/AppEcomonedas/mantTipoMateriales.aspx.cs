@@ -142,5 +142,10 @@ namespace AppEcomonedas
                               
                        
         }
+
+        protected void validaColor_ServerValidate(object source, ServerValidateEventArgs args)
+        {
+
+        }
     }
 }
