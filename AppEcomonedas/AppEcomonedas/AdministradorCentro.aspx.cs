@@ -23,8 +23,9 @@ namespace AppEcomonedas
         protected void linkAgregar_Click(object sender, EventArgs e)
         {
             ListViewDataItem fila = (ListViewDataItem)(sender as Control).Parent;
-            int idMaterial = Convert.ToInt32(lvMaterial.DataKeys[fila.DataItemIndex].Values[0]);
-           
+            hdId_Material.Value = Convert.ToString(lvMaterial.DataKeys[fila.DataItemIndex].Values[0]);
+            
+
         }
 
         protected void Button1_Click(object sender, EventArgs e)

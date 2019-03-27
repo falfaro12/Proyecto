@@ -9,6 +9,7 @@
        <h3><i class="fa fa-angle-right"></i>Materiales reciclables</h3>
     <br />
     <div class="row">
+         <asp:HiddenField ID="hdId_Material" runat="server" />
      <asp:ListView ID="lvMaterial" runat="server"
         DataKeyNames="Id_Material" GroupItemCount="3"
         ItemType="Contexto.Material" SelectMethod="listadoMateriales">
@@ -36,7 +37,8 @@
                         <center> <p class="card-text" style="color:black"><b>Precio </b><%#:String.Format("₡{0:N2}", Item.Precio_Material)%></p></center>
                     </div>
                     <div class="card-footer text-muted border-dark" style="color: black; background-color: <%#:Item.color%>">
-                        <center> <asp:LinkButton ID="linkAgregar" CssClass="btn btn-light w-50" Onclick="linkAgregar_Click"  runat="server" >Agregar</asp:LinkButton></center>
+                         <center><asp:LinkButton  CssClass="btn btn-light w-50" onclick="linkAgregar_Click" runat="server">Agregar</asp:LinkButton>
+                        </center>
                     </div>
                 </div>
             </div>
@@ -47,27 +49,9 @@
                     </div>
                 </LayoutTemplate>
             </asp:ListView>
+        <asp:Button ID="btnInvisible" style="display: none;" data-toggle="modal" data-target="#myModal"  runat="server"  Text="Button" />
         </div>
-    <%-- Modal de cantidad --%>
-    <div runat="server" class="modal fade" id="myModal" role="dialog">
-    <div class="modal-dialog">
-    
-      <!-- Modal content-->
-      <div class="modal-content">
-        <div class="modal-header">
-          <h4 class="modal-title">Cantidad de Material que se recibe</h4>
-             <button type="button" class="close" data-dismiss="modal">&times;</button>
-        </div>
-        <div class="modal-body">
-          <p>Some text in the modal.</p>
-        </div>
-        <div class="modal-footer">
-            <asp:Button ID="Button1" class="btn btn-default" OnClick="Button1_Click"  runat="server" Text="Agregar" />            
-          <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
-        </div>
-      </div>
-      
-    </div>
-  </div>
-    
+   
+  
+   
 </asp:Content>

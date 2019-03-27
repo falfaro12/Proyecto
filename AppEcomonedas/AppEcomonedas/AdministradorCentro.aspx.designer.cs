@@ -22,6 +22,15 @@ namespace AppEcomonedas {
         protected global::System.Web.UI.WebControls.Label lblMensaje;
         
         /// <summary>
+        /// hdId_Material control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField hdId_Material;
+        
+        /// <summary>
         /// lvMaterial control.
         /// </summary>
         /// <remarks>
@@ -31,21 +40,12 @@ namespace AppEcomonedas {
         protected global::System.Web.UI.WebControls.ListView lvMaterial;
         
         /// <summary>
-        /// myModal control.
+        /// btnInvisible control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl myModal;
-        
-        /// <summary>
-        /// Button1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button1;
+        protected global::System.Web.UI.WebControls.Button btnInvisible;
     }
 }
