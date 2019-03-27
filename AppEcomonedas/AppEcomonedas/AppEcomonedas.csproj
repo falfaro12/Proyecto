@@ -215,8 +215,6 @@
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="Mantenimiento.Master" />
-    <Content Include="RecursoMante\css\spectrum.css" />
-    <Content Include="RecursoMante\css\spectrum.js" />
     <Content Include="RecursoMante\font-awesome\fonts\fontawesome-webfont.eot" />
     <Content Include="RecursoMante\font-awesome\fonts\fontawesome-webfont.ttf" />
     <Content Include="RecursoMante\font-awesome\fonts\fontawesome-webfont.woff" />

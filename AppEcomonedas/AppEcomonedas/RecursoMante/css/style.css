@@ -10,14 +10,14 @@ Premium: http://www.gridgum.com
 @import url(http://fonts.googleapis.com/css?family=Ruda:400,700,900);
 
 /* BASIC THEME CONFIGURATION */
-body {
+/*body {
     color: #797979;
     background: white;
     font-family: 'Ruda', sans-serif;
     padding: 0px !important;
     margin: 0px !important;
     font-size:13px;
-}
+}*/
 
 ul li {
     list-style: none;
@@ -27,11 +27,11 @@ a, a:hover, a:focus {
     text-decoration: none;
     outline: none;
 }
-::selection {
+/*::selection {
 
     background: #1BBD36;
     color: #fff;
-}
+}*/
 ::-moz-selection {
     background: #1BBD36;
     color: #fff;
@@ -1105,12 +1105,12 @@ PANELS CONFIGURATIONS
 }
 
 /*STOCK CARD Panel*/
-.card {
+/*.card {
   background: white;
   box-shadow: 0 2px 1px rgba(0, 0, 0, 0.2);
   margin-bottom: 1em; 
   height: 250px;
-}
+}*/
 .stock .stock-chart {
   background: #00c5de;
 }
