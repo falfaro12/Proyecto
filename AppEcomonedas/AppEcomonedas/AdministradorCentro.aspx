@@ -37,7 +37,7 @@
                         <center> <p class="card-text" style="color:black"><b>Precio </b><%#:String.Format("₡{0:N2}", Item.Precio_Material)%></p></center>
                     </div>
                     <div class="card-footer text-muted border-dark" style="color: black; background-color: <%#:Item.color%>">
-                         <center><asp:LinkButton  CssClass="btn btn-light w-50" onclick="linkAgregar_Click" runat="server">Agregar</asp:LinkButton>
+                         <center style="color: black;">Cantidad:<asp:TextBox id="txtCantidad" TextMode="Number" runat="server" min="1" max="100" step="1"/> <asp:LinkButton  CssClass="btn btn-light w-50" onclick="linkAgregar_Click" runat="server  ValidationGroup="agregar"">Agregar</asp:LinkButton>
                         </center>
                     </div>
                 </div>
@@ -51,6 +51,10 @@
             </asp:ListView>
         <asp:Button ID="btnInvisible" style="display: none;" data-toggle="modal" data-target="#myModal"  runat="server"  Text="Button" />
         </div>
+    <asp:RequiredFieldValidator ID="RequiredFieldValidator2"
+                     runat="server" Text="* La Cantidad es requirido."
+                     ControlToValidate="txtCantidad"
+                     SetFocusOnError="true" ForeColor="Red" Display="Dynamic" ValidationGroup="agregar"></asp:RequiredFieldValidator>
    
   
    
