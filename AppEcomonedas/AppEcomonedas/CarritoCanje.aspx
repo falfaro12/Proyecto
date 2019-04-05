@@ -17,7 +17,7 @@
                     runat="server" 
                     CssClass="form-control"
                     AutoPostBack="true"
-                    ItemType="Contexto.Usuario" OnSelectedIndexChanged="ddlClientes_SelectedIndexChanged" DataTextField="Nombre" 
+                    ItemType="Contexto.Usuario" DataTextField="Nombre" 
                     DataValueField="Id_Usuario"
                     >
                 </asp:DropDownList>
@@ -42,7 +42,7 @@
                                 OnRowDeleting="grvCarrito_RowDeleting">
                                 <Columns>
                                     <asp:BoundField DataField="Material.nombre" HeaderText="Material"></asp:BoundField>
-                                    <asp:BoundField DataField="Precio_Material" DataFormatString="${0:N2}" HeaderText="Precio equivalente"></asp:BoundField>                                   
+                                    <asp:BoundField DataField="precioMaterial" DataFormatString="₡{0:N2}" HeaderText="Precio equivalente"></asp:BoundField>                                   
                                     <asp:TemplateField HeaderText="Cantidad">
                                         <ItemTemplate>
                                             <asp:TextBox
@@ -54,7 +54,7 @@
 
                                         </ItemTemplate>
                                     </asp:TemplateField>
-                                  <asp:BoundField DataField="subtotal" DataFormatString="${0:N2}" HeaderText="Subtotal"></asp:BoundField>
+                                  <asp:BoundField DataField="subtotal" DataFormatString="₡{0:N2}" HeaderText="Subtotal"></asp:BoundField>
                                   
                                 </Columns>
                                 <HeaderStyle CssClass="table-primary" />

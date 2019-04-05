@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace appLibros.CarritoLN
+namespace appLibros.CarritosLN
 {
     /**
 * 
@@ -43,7 +43,7 @@ namespace appLibros.CarritoLN
         /**
          * AgregarItem (): agrega un artículo a la compra
          */
-        public void AgregarItem(int materialId)
+        public void AgregarItem(int materialId, int cantidad)
         {
             // Crear un nuevo artículo para agregar al carrito
             CarritoCanje nuevoItem = new CarritoCanje(materialId);
@@ -53,11 +53,11 @@ namespace appLibros.CarritoLN
             if (Items.Exists(x => x.Id_Material == materialId))
             {
                 CarritoCanje item = Items.Find(x => x.Id_Material == materialId);
-                item.cantidad++;
+                item.cantidad+= cantidad;
                 return;
             }
 
-            nuevoItem.cantidad = 1;
+            nuevoItem.cantidad = cantidad;
             Items.Add(nuevoItem);
 
         }
@@ -108,10 +108,7 @@ namespace appLibros.CarritoLN
 
             return total;
         }
-        /**
-         * GetTotalPeso() - Devuelve el total de peso de todos los libros.
-         */
-      
+        
         public void eliminarCarrito()
         {
             Items.Clear();

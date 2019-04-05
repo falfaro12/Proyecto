@@ -24,9 +24,21 @@ namespace Contexto
         }
 
         public virtual Material material { get; set; }
-      
-     
-        public decimal subTotal { get; set; }
+
+
+        public decimal subTotal
+        {
+            get
+            {
+                return calculoSubtotal();
+            }
+        }
+
+        private decimal calculoSubtotal()
+        {
+            return precioMaterial * cantidad;
+        }
+
         public CarritoCanje()
         {
 
