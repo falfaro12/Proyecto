@@ -1,4 +1,5 @@
-﻿using appLibros.CarritosLN;
+﻿using AppEcomonedas.LogIn;
+using appLibros.CarritosLN;
 using Contexto;
 using Contexto.LN;
 using System;
@@ -53,16 +54,43 @@ namespace AppEcomonedas
 
         protected void grvCarrito_RowDeleting(object sender, GridViewDeleteEventArgs e)
         {
-
+            int idMaterial = Convert.ToInt32(grvCarrito.DataKeys[e.RowIndex].Values[0]);
+            Carrito.Instancia.EliminarItem(idMaterial);
+            llenarListaCarrito();
         }
 
         protected void CantidadComprar_TextChanged(object sender, EventArgs e)
         {
+            //Obtener fila actual
+            GridViewRow currentRow = (GridViewRow)((TextBox)sender).Parent.Parent;
+            TextBox txtCantidad = (TextBox)currentRow.FindControl("CantidadComprar");
+            if (txtCantidad.Text != "")
+            {
+                int cantidad = Convert.ToInt32(txtCantidad.Text);
+                int idMaterial = Convert.ToInt32(grvCarrito.DataKeys[currentRow.RowIndex].Values[0]);
+                //Actualizar cantidad en la sesión del carrito
+                Carrito.Instancia.SetItemcantidad(idMaterial, cantidad);
+                llenarListaCarrito();
+            }
 
         }
 
         protected void btnOrdenar_Click(object sender, EventArgs e)
         {
+            //buscar el centro que tenga el usuario logeado 
+            string idAdmi = SesionUsr.Instancia.Id_Usuario;
+            CentroAcopio centro = CentroAcopioLN.obtenerUsuariodeCentroAcopio(idAdmi);
+
+            if (grvCarrito.Rows.Count >= 1)
+            {
+                if (OrdenCompraLN.registrarOrden
+                    (ddlClientes.SelectedValue,centro.Id_Centro,
+                    Carrito.Instancia.Items))
+                {
+                    Carrito.Instancia.eliminarCarrito();
+                    Response.Redirect("listaOrdenesCompra.aspx?accion=registro");
+                }
+            }
 
         }
     }

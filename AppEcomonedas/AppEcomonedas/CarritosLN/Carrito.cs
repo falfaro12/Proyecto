@@ -80,6 +80,7 @@ namespace appLibros.CarritosLN
             {
                 CarritoCanje item = Items.Find(x => x.Id_Material == libroId);
                 item.cantidad = cantidad;
+            
                 return;
             }
            
