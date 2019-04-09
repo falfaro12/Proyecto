@@ -45,7 +45,7 @@ namespace Contexto
         }
         public CarritoCanje(int idMaterial)
         {
-            this.Id_Cliente = idMaterial;
+            this.Id_Material = idMaterial;
             this.material = new Material();
             material = MaterialLN.obtenerMaterial(idMaterial);
         }
