@@ -77,9 +77,9 @@ namespace AppEcomonedas
 
         protected void btnOrdenar_Click(object sender, EventArgs e)
         {
-            //buscar el centro que tenga el usuario logeado 
-            string idAdmi = SesionUsr.Instancia.Id_Usuario;
-            CentroAcopio centro = CentroAcopioLN.obtenerUsuariodeCentroAcopio(idAdmi);
+            //buscar el centro que tenga el usuario logeado           
+            Usuario usu = UsuarioLN.obtenerUsuario(SesionUsr.Instancia.Id_Usuario);
+            CentroAcopio centro = CentroAcopioLN.obtenerUsuariodeCentroAcopio(usu.Id_Usuario);
 
             if (grvCarrito.Rows.Count >= 1)
             {
@@ -87,8 +87,9 @@ namespace AppEcomonedas
                     (ddlClientes.SelectedValue,centro.Id_Centro,
                     Carrito.Instancia.Items))
                 {
+                    usu.Billetera.Total_Disponible += Convert.ToInt32(lblTotal.Text);
                     Carrito.Instancia.eliminarCarrito();
-                    Response.Redirect("listaOrdenesCompra.aspx?accion=registro");
+                    Response.Redirect("AdministradorCentro.aspx?accion=registro");
                 }
             }
 

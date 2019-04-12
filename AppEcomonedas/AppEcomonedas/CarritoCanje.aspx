@@ -54,7 +54,7 @@
 
                                         </ItemTemplate>
                                     </asp:TemplateField>
-                                  <asp:BoundField DataField="subtotal" DataFormatString="₡{0:N2}" HeaderText="Subtotal"></asp:BoundField>
+                                  <asp:BoundField  DataField="subtotal" DataFormatString="₡{0:N2}" HeaderText="Subtotal"></asp:BoundField>
                                   
                                 </Columns>
                                 <HeaderStyle CssClass="table-primary" />

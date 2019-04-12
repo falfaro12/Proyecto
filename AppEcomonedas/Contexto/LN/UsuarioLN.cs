@@ -33,7 +33,7 @@ namespace Contexto.LN
                 miUsuario.Direccion = direccion;
                 miUsuario.Id_Rol = idRol;
                 miUsuario.Id_Usuario = idUsr;
-                BilleteraLN.AgregarBilletera(idUsr);
+                BilleteraLN.AgregarBilletera(idUsr,0,0);
                 db.Usuario.Add(miUsuario);
             }else
             {
