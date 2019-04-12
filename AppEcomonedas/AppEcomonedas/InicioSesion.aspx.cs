@@ -41,7 +41,9 @@ namespace AppEcomonedas
                 Telefono.Visible = true;
                 Direccion.Visible = true;
                 Rol.Visible = true;
-            }else
+                Response.Redirect("AdministradorCentro.aspx");
+            }
+            else
             {
                 mensaje.Text = "Usuario on contraseña incorrectos. Intentelo de nuevo.";
             }
