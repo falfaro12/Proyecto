@@ -29,7 +29,10 @@ namespace Contexto.LN
 
             miCupon.nombre = nombre;
             miCupon.descripcion = descripcion;
-            miCupon.imagen = imagen;
+            if (imagen != "")
+            {
+                miCupon.imagen = imagen;
+            }
             miCupon.Precio_Canje = Convert.ToInt32(precio);
 
             if(id.Equals("") || !esNumero)

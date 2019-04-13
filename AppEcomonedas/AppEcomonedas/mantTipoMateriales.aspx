@@ -42,13 +42,13 @@
               <br />
              <div class="form-group row" style="margin: 5px;">
                   <label for="lblDireccion" class="control-label">Precio</label>
-                 <div class="input-group mb-3">
+                <div class="input-group mb-3">
                     <div class="input-group-prepend">
                         <span class="input-group-text">&cent;</span>
                     </div>
                     <asp:TextBox ID="txtPrecio" CssClass="form-control" runat="server"></asp:TextBox>
                 </div>
-
+                  </div>
                 <asp:RequiredFieldValidator
                     ID="RequiredFieldValidator3"
                     runat="server" Text="* Precio Requerido."
@@ -61,12 +61,32 @@
                     ControlToValidate="txtPrecio"
                     SetFocusOnError="true" ForeColor="Red" Display="Dynamic"
                     ValidationExpression="^[0-9]*(\,)?[0-9]?[0-9]?$"></asp:RegularExpressionValidator>
-            </div>
+           
               <br />
              <div class="form-group row" style="margin: 5px;">
                  <label for="lblcolor" class="control-label">Color</label>
-                 <input runat="server" id="txtColor" type="color" name="favcolor" value="#0080c0" />
+                 <input runat="server" id="txtColor" type="color" name="favcolor" list="colors" value="#0080c0" />
+                 <datalist id="colors">
+                     <option>#00a854</option>
+                     <option>#9a44bb</option>
+                     <option>#ff4242</option>
+                     <option>#c0c0c0</option>
+                     <option>#a8be50</option>
+                     <option>#48c4ff</option>
+                     <option>#efda43</option>
+                     <option>#de5d83</option>
+                     <option>#4eeda7</option>
+                     <option>#119e10</option>
+                     <option>#88654e</option>
+                     <option>#ffb03c</option>
+                     <option>#9394b8</option>
+                     <option>#f4bb9f</option>
+                     <option>#acace6</option>
+                     <option>#c9c9c9</option>
+
+                 </datalist>
              </div>
+             <asp:CustomValidator ID="validaColor" ControlToValidate="txtColor" SetFocusOnError="true" ForeColor="Red" Display="Dynamic" OnServerValidate="validaColor_ServerValidate" runat="server" ErrorMessage="* El color ya esta asignado a otro material"></asp:CustomValidator>
              <br />
              <div class="form-group row" style="margin:5px;">
 
@@ -74,9 +94,8 @@
                      Text="Guardar" ValidationGroup="guardar" OnClick="btnGuardar_Click" />
                  <asp:Button ID="btnLimpiar" CssClass="btn btn-success" runat="server"
                      Text="Limpiar" OnClick="btnLimpiar_Click" CausesValidation="false"/>
-
              </div>            
-         </div>
+     </div>
             </div>
         </div>
      <!--Este es el de la lista-->

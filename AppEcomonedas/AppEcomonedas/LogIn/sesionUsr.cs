@@ -15,6 +15,7 @@ namespace AppEcomonedas.LogIn
         // Las propiedades de solo lectura solo se pueden establecer en la inicialización o en un constructor
         public static readonly  Usuario Instancia;
 
+   
 
         // Se llama al constructor estático tan pronto como la clase se carga en la memoria
         static SesionUsr()
@@ -22,8 +23,8 @@ namespace AppEcomonedas.LogIn
             // Si el carrito no está en la sesión, cree uno y guarde los items.
             if (HttpContext.Current.Session["usuario"] == null)
             {
-                Instancia = new Usuario();
-                HttpContext.Current.Session["usuario"] = Instancia;
+                Instancia = new Usuario();            
+               HttpContext.Current.Session["usuario"] = Instancia;
             }
             else
             {
@@ -40,7 +41,7 @@ namespace AppEcomonedas.LogIn
             Usuario miUsuario = UsuarioLN.obtenerUsuario(id);
             if (miUsuario.contrasenna.Equals(password))
             {
-                HttpContext.Current.Session["usuario"] = miUsuario;
+                HttpContext.Current.Session["usuario"] = miUsuario;               
                 return true;
             }else
             {

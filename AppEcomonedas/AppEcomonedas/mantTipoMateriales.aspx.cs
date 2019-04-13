@@ -104,6 +104,8 @@ namespace AppEcomonedas
                     lblMensaje.Text = "No se puede aceptar el tipo de archivo.";
                 }
             }
+                
+            
             // Agregar producto a la BD
 
             bool confirmar = MaterialLN.agregarMateriales(txtNombre.Text, txtDescripcion.Text, txtPrecio.Text, archivoImagen.FileName, txtColor.Value, hiddenID.Value);
@@ -141,6 +143,11 @@ namespace AppEcomonedas
                 e.Row.Cells[4].BackColor = Color.FromName(e.Row.Cells[4].Text);
                               
                        
+        }
+
+        protected void validaColor_ServerValidate(object source, ServerValidateEventArgs args)
+        {
+
         }
     }
 }

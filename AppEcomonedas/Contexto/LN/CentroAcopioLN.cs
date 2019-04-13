@@ -68,6 +68,14 @@ namespace Contexto.LN
                     First<CentroAcopio>();
             return centro;
         }
+        public static CentroAcopio obtenerUsuariodeCentroAcopio(string id)
+        {
+            EcomonedasContexto db = new EcomonedasContexto();
+            CentroAcopio centro = db.CentroAcopio.
+                    Where(p => p.Id_Usuario == id).
+                    First<CentroAcopio>();
+            return centro;
+        }
 
         public static IEnumerable<Usuario> ObtenerUsuarios()
         {

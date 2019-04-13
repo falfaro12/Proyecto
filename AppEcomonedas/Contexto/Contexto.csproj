@@ -52,6 +52,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Billetera.cs" />
+    <Compile Include="CarritoCanje.cs" />
     <Compile Include="CentroAcopio.cs" />
     <Compile Include="Class1.cs" />
     <Compile Include="Cupon.cs" />
@@ -62,6 +63,7 @@
     <Compile Include="LN\CentroAcopioLN.cs" />
     <Compile Include="LN\CuponLN.cs" />
     <Compile Include="LN\MaterialLN.cs" />
+    <Compile Include="LN\OrdenCompraLN.cs" />
     <Compile Include="LN\ProvinciaLN.cs" />
     <Compile Include="LN\RolLN.cs" />
     <Compile Include="LN\UsuarioLN.cs" />
