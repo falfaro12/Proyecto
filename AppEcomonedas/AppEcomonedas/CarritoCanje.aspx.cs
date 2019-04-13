@@ -78,10 +78,12 @@ namespace AppEcomonedas
         protected void btnOrdenar_Click(object sender, EventArgs e)
         {
 
-            //buscar el centro que tenga el usuario logeado           
-            Usuario usu = UsuarioLN.obtenerUsuario(SesionUsr.Instancia.Id_Usuario);
-            CentroAcopio centro = CentroAcopioLN.obtenerUsuariodeCentroAcopio(usu.Id_Usuario);
+            //buscar el centro que tenga el usuario logeado    
+            Usuario usuario = UsuarioLN.obtenerUsuario("fabi.alfaro988@gmail.com");
+            Usuario usuario2 = (Usuario)Session["usuario"];
+            CentroAcopio centro = CentroAcopioLN.obtenerUsuariodeCentroAcopio(usuario.Id_Usuario);
 
+            Usuario cliente = UsuarioLN.obtenerUsuario(ddlClientes.SelectedValue);
             if (grvCarrito.Rows.Count >= 1)
             {
                 if (OrdenCompraLN.registrarOrden
@@ -89,10 +91,15 @@ namespace AppEcomonedas
                     Carrito.Instancia.Items))
                 {
 
-                    BilleteraLN.AgregarBilletera(usu.Billetera.Id_Billetera, 0, Convert.ToInt32(lblTotal.Text));
+
+                    BilleteraLN.AgregarBilletera(cliente.Billetera.Id_Billetera, 0, Convert.ToInt32(Carrito.Instancia.GetTotal()));
                     Carrito.Instancia.eliminarCarrito();
                     Response.Redirect("AdministradorCentro.aspx?accion=registro");
                 }
+            }else
+            {
+                lblMensaje.Visible = true;
+                lblMensaje.Text = "No existen canjes para guardar";
             }
 
         }

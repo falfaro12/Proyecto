@@ -17,7 +17,7 @@ namespace Contexto.LN
             var miOrden = new Enca_Factura();
             miOrden.Fecha = DateTime.Now;
             miOrden.Id_Usuario = idCliente;
-
+            miOrden.Id_Centro = idCentro;
             //Calcular total
             decimal calculoTotal = carritoItems.Sum(x => x.subTotal);
             miOrden.Total = calculoTotal;
