@@ -27,7 +27,7 @@ namespace Contexto.LN
                 // Busca centro en la DB
                 miCentro = db.CentroAcopio.Where(p => p.Id_Centro == idCentro).First<CentroAcopio>();
             }
-            //Creacion del libro
+            //Creacion del centro
             miCentro.nombre = nombre;
             miCentro.Id_Provincia = Convert.ToInt32(idProvincia);
             miCentro.Id_Usuario = idUsr;

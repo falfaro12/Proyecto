@@ -17,7 +17,7 @@ namespace AppEcomonedas
 
         protected void ButtonReg_Click(object sender, EventArgs e)
         {
-            UsuarioLN.AgregarUsuario(nombre.Text, apellido1.Text, apellido2.Text, direccion.Text, 3, telefono.Text, id.Text);
+            UsuarioLN.AgregarUsuario(nombre.Text, apellido1.Text, apellido2.Text, direccion.Text, 3, telefono.Text,password.Text,id.Text);
         }
     }
 }
