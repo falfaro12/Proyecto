@@ -18,13 +18,15 @@ namespace Contexto.LN
 
             if (miBilletera == null)
             {
-                //Creacion de la billetera
-            miBilletera.Id_Billetera = id;
-            miBilletera.Total_Disponible = 0;
-            miBilletera.Total_Generada = 0;
-            miBilletera.Total_Canjeadas = 0;
+                //Creacion de la billetera 
+                miBilletera = new Billetera();
+                miBilletera.Id_Billetera = id;
+                miBilletera.Total_Disponible = 0;
+                miBilletera.Total_Generada = 0;
+                miBilletera.Total_Canjeadas = 0;
 
-            db.Billetera.Add(miBilletera);       
+                db.Billetera.Add(miBilletera);
+                db.SaveChanges();       
           
             // Confirmacion
             return true;

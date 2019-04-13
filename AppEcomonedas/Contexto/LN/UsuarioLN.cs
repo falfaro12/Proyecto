@@ -34,11 +34,11 @@ namespace Contexto.LN
                 miUsuario.Direccion = direccion;
                 miUsuario.Id_Rol = idRol;
                 miUsuario.Id_Usuario = idUsr;
-                
+                miUsuario.contrasenna = contrasenha;
                 db.Usuario.Add(miUsuario);
                 db.SaveChanges();
                 if(miUsuario.Id_Rol == 3 )
-                BilleteraLN.AgregarBilletera(idUsr);
+                BilleteraLN.AgregarBilletera(idUsr, 0, 0);
             }
             else
             {

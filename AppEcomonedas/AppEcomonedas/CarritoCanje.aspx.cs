@@ -79,9 +79,9 @@ namespace AppEcomonedas
         {
 
             //buscar el centro que tenga el usuario logeado    
-            Usuario usuario = UsuarioLN.obtenerUsuario("fabi.alfaro988@gmail.com");
+            //Usuario usuario = UsuarioLN.obtenerUsuario("fabi.alfaro988@gmail.com");
             Usuario usuario2 = (Usuario)Session["usuario"];
-            CentroAcopio centro = CentroAcopioLN.obtenerUsuariodeCentroAcopio(usuario.Id_Usuario);
+            CentroAcopio centro = CentroAcopioLN.obtenerUsuariodeCentroAcopio(usuario2.Id_Usuario);
 
             Usuario cliente = UsuarioLN.obtenerUsuario(ddlClientes.SelectedValue);
             if (grvCarrito.Rows.Count >= 1)
