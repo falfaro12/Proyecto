@@ -12,7 +12,7 @@ namespace Contexto.LN
             string nombre,
             string descripcion,
             string precio,
-            string imagen,
+            string imagen,           
             string id = ""    
             )
         {
@@ -29,6 +29,7 @@ namespace Contexto.LN
 
             miCupon.nombre = nombre;
             miCupon.descripcion = descripcion;
+            miCupon.activo = true;
             if (imagen != "")
             {
                 miCupon.imagen = imagen;
