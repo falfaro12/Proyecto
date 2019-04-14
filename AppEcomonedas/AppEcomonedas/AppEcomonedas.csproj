@@ -79,6 +79,7 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="css\registro.css" />
     <Content Include="InicioSesion.aspx" />
+    <Content Include="ListaCanjesRealizados.aspx" />
     <Content Include="MantCentroAcopio.aspx" />
     <Content Include="css\animate.css" />
     <Content Include="css\animate.min.css" />
@@ -383,6 +384,13 @@
     </Compile>
     <Compile Include="InicioSesion.aspx.designer.cs">
       <DependentUpon>InicioSesion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ListaCanjesRealizados.aspx.cs">
+      <DependentUpon>ListaCanjesRealizados.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ListaCanjesRealizados.aspx.designer.cs">
+      <DependentUpon>ListaCanjesRealizados.aspx</DependentUpon>
     </Compile>
     <Compile Include="LogIn\SesionUsr.cs" />
     <Compile Include="MantCentroAcopio.aspx.cs">

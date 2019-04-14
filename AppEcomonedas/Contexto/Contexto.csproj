@@ -62,6 +62,7 @@
     <Compile Include="LN\BilleteraLN.cs" />
     <Compile Include="LN\CentroAcopioLN.cs" />
     <Compile Include="LN\CuponLN.cs" />
+    <Compile Include="LN\Enca_FacturaLN.cs" />
     <Compile Include="LN\MaterialLN.cs" />
     <Compile Include="LN\OrdenCompraLN.cs" />
     <Compile Include="LN\ProvinciaLN.cs" />

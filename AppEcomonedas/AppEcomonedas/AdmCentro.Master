@@ -39,14 +39,15 @@
                 <div class="fa fa-bars tooltips"style="background-color:#dff0d8" data-placement="right" data-original-title="Menú"></div>
             </div>
            
-            <div class="dropdown pull-right logout" style="margin-top: 20px">
-                <a class="dropdown-toggle top-menu" data-toggle="dropdown" href="#"><span>Fabiola Alfaro</span>
-                <span class="caret"></span></a>
-            	<ul class="nav dropdown-menu">
+              <div class="menu pull-right logout" style="margin-top: 2px">
+                   <div class="dropdown pull-right logout" style="margin-top: 20px">
+             <a class="dropdown-toggle top-menu" data-toggle="dropdown" href="#" > <asp:Label runat="server" ID="txtUsuario" CssClass="text-white"><span class="caret"></span></asp:Label></a> 
+                                  	<ul class="nav dropdown-menu">
                     <li><a href="faces/../view/InicioSesion.xhtml">Configuraciones</a></li>
-                    <li><a href="faces/../view/InicioSesion.xhtml">Cerrar Sesión</a></li>
+                    <li><asp:LinkButton runat="server" ID="cerrar" OnClick="Unnamed_Click" Text="Cerrar"></asp:LinkButton></li>
             	</ul>
             </div>
+              </div>
       </header>
 
 
@@ -57,6 +58,7 @@
               <ul class="sidebar-menu">
               
                   <p class="centered"><a href="faces/Mantenimiento.xhtml"><img src="Recursos/images/logo.png" alt=""/></a></p>
+               
               	  <h5 class="centered">Panel de Administrador de Centro Acopio</h5>
               	  	
                    <li class="sub-menu" >
@@ -74,7 +76,7 @@
                       </a>
                   </li>
                   <li class="sub-menu">
-                      <a href="MantCentroAcopio.aspx" >
+                      <a href="ListaCanjesRealizados.aspx" >
                           <i class="fa fa-book"></i>
                           <span>Todos los Canjes</span>
                       </a>

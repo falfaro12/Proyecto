@@ -83,7 +83,7 @@
                      <asp:BoundField HeaderText="Administrador" DataField="Usuario.nombre"></asp:BoundField>
                  </Columns>
 
-                 <HeaderStyle CssClass="table-success" ForeColor="#dff0d8"  />
+                 <HeaderStyle CssClass="table text-white" ForeColor="#3c763d"  BorderColor="Black"  />
             </asp:GridView>
 
 

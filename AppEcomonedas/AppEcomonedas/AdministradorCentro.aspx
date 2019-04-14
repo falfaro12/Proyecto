@@ -4,7 +4,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     
     <div class="row">
-        <asp:Label ID="lblMensaje" runat="server" CssClass="alert alert-dismissible alert-warning" Visible="false" Text=""></asp:Label>
+        <asp:Label ID="lblMensaje" runat="server"  CssClass="alert alert-dismissible alert-warning w-100" Visible="false" Text=""></asp:Label>
          </div>
        <h3><i class="fa fa-angle-right"></i>Materiales reciclables</h3>
     <br />

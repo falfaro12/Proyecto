@@ -49,6 +49,19 @@ namespace AppEcomonedas.LogIn
             }
 
         }
+        public static bool CerrarSesion()
+        {
+            if (HttpContext.Current.Session["usuario"] != null)
+            {
+                HttpContext.Current.Session["usuario"] = null;
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+
+        }
 
 
     }
