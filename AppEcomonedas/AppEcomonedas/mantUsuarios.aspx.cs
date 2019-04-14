@@ -13,6 +13,7 @@ namespace AppEcomonedas
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            cargarGrid();
             string accioncentro = Request.QueryString["accion"];
             if (accioncentro == "guardar")
             {
@@ -23,22 +24,19 @@ namespace AppEcomonedas
 
         protected void grvListado_SelectedIndexChanged(object sender, EventArgs e)
         {
-            /*ddlCentroAcopio.Items.Clear();
-            string id = Convert.ToInt32(grvListado.DataKeys[grvListado.SelectedIndex].Values[0]);
-            Usuario usr = UsuarioLN.obtenerUsuario()
-            txtNombre.Text = centro.nombre;
-            Usuario usu = UsuarioLN.obtenerUsuario(centro.Id_Usuario);
-            IEnumerable<Usuario> listaAdmi = UsuarioLN.listaAdministradores();
-            List<Usuario> lista2 = (List<Usuario>)listaAdmi.ToList();
-            lista2.Add(usu);
-            ddlAdministrador.DataSource = lista2;
-            ddlAdministrador.DataBind();
-            ddlAdministrador.SelectedValue = centro.Id_Usuario.ToString();
-            hiddenID.Value = centro.Id_Centro.ToString();
-            txtDireccion.Text = centro.direccionExacta;
+            string id = grvListado.DataKeys[grvListado.SelectedIndex].Values[0].ToString();
+            Usuario usr = UsuarioLN.obtenerUsuario(id);
+            txtNombre.Text = usr.Nombre;
+            txtApellido1.Text = usr.Apellido1;
+            txtApellido2.Text = usr.Apellido2;
+            txtDireccion.Text = usr.Direccion;
+            txtTelefono.Text = usr.telefono;
+            txtCorreo.Text = usr.Id_Usuario;
+
+            hiddenID.Value = usr.Id_Usuario;
 
 
-            btnGuardar.Text = "Actualizar"; */
+            btnGuardar.Text = "Actualizar"; 
 
         }
 

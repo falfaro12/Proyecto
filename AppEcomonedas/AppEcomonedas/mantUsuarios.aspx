@@ -63,7 +63,11 @@
                  <asp:Button ID="btnLimpiar" CssClass="btn btn-success" runat="server"
                      Text="Limpiar" OnClick="btnLimpiar_Click" CausesValidation="false" />
 
-             </div>           
+             </div>    
+             <br />
+             <div class="form-group row" style="margin:5px;">
+                 <label class="control-label">PD: EL correo no se puede modificar una vez registrado el Usuario</label>
+             </div>       
          </div>
             </div>
         </div>
