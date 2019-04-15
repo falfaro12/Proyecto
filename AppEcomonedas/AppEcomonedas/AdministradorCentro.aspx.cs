@@ -33,7 +33,7 @@ namespace AppEcomonedas
             int idMaterial = Convert.ToInt32(lvMaterial.DataKeys[fila.DataItemIndex].Values[0]);          
             TextBox txtCantidad = (TextBox)fila.FindControl("txtCantidad");                  
             Carrito.Instancia.AgregarItem(idMaterial,Convert.ToInt32(txtCantidad.Text));
-            txtCantidad.Text = "0";
+            txtCantidad.Text = "1";
         }
    
 

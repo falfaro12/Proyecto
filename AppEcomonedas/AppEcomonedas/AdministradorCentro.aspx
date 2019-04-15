@@ -54,7 +54,7 @@
                     </div>
                 </LayoutTemplate>
             </asp:ListView>
-        <asp:Button ID="btnInvisible" style="display: none;" data-toggle="modal" data-target="#myModal"  runat="server"  Text="Button" />
+       
         </div>
    
    

@@ -70,6 +70,7 @@
   <ItemGroup>
     <Content Include="AdministradorCentro.aspx" />
     <Content Include="AutoRegistro.aspx" />
+    <Content Include="CanjeCupones.aspx" />
     <Content Include="CarritoCanje.aspx" />
     <Content Include="Content\bootstrap-grid.css" />
     <Content Include="Content\bootstrap-grid.min.css" />
@@ -369,6 +370,13 @@
     </Compile>
     <Compile Include="AutoRegistro.aspx.designer.cs">
       <DependentUpon>AutoRegistro.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CanjeCupones.aspx.cs">
+      <DependentUpon>CanjeCupones.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CanjeCupones.aspx.designer.cs">
+      <DependentUpon>CanjeCupones.aspx</DependentUpon>
     </Compile>
     <Compile Include="CarritoCanje.aspx.cs">
       <DependentUpon>CarritoCanje.aspx</DependentUpon>

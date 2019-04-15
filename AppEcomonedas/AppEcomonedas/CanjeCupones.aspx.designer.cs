@@ -10,7 +10,7 @@
 namespace AppEcomonedas {
     
     
-    public partial class AdministradorCentro {
+    public partial class CanjeCupones {
         
         /// <summary>
         /// lblMensaje control.
@@ -22,21 +22,21 @@ namespace AppEcomonedas {
         protected global::System.Web.UI.WebControls.Label lblMensaje;
         
         /// <summary>
-        /// hdId_Material control.
+        /// hdId_Cupon control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HiddenField hdId_Material;
+        protected global::System.Web.UI.WebControls.HiddenField hdId_Cupon;
         
         /// <summary>
-        /// lvMaterial control.
+        /// lvCupon control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ListView lvMaterial;
+        protected global::System.Web.UI.WebControls.ListView lvCupon;
     }
 }

@@ -16,7 +16,7 @@
         <asp:TextBox ID="senha" runat="server"></asp:TextBox>
         <br />
         <asp:Button ID="logIN" runat="server" Text="Iniciar Sesión" OnClick="logIN_Click" />
-          <asp:Button ID="Button1" runat="server" Text="Cerrar" OnClick="Button1_Click" />
+        
         <br />
         <br />
         <ul>
