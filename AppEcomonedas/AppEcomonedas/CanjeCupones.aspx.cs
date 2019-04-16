@@ -1,4 +1,5 @@
 ﻿using Contexto;
+using Contexto.ClaseReporte;
 using Contexto.LN;
 using Microsoft.Reporting.WebForms;
 using QRCoder;
@@ -72,8 +73,16 @@ namespace AppEcomonedas
             var rutaImagen = Server.MapPath("/images/cupones/" + cupon.imagen);
             var rutaQr = Server.MapPath("~/images/Qrs/" + cupon.nombre + "qr.Jpeg");
 
-            //llamamos al reporte
-            ReportParameter[] p = new ReportParameter[4];
+                //Hacemos las imagenes en byte 
+                CanjeCupon Canje = new CanjeCupon();
+                Canje.cliente = usuario2.NombreCompleto;
+                Canje.id = cupon.Id_Cupon;
+                Canje.imagenQR = CanjeCuponLN.ImagenByte(CanjeCuponLN.GeneraImagen(rutaQr));
+                Canje.imagenCupon = CanjeCuponLN.ImagenByte(CanjeCuponLN.GeneraImagen(rutaImagen));
+
+
+                //llamamos al reporte
+                ReportParameter[] p = new ReportParameter[4];
             p[0] = new ReportParameter("Cliente", usuario2.NombreCompleto);
             p[1] = new ReportParameter("nombre_Cupon", cupon.nombre);
             p[2] = new ReportParameter("QR", rutaQr);

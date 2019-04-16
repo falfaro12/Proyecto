@@ -272,6 +272,17 @@
     <Content Include="Content\bootstrap-reboot.css.map" />
     <Content Include="Content\bootstrap-grid.min.css.map" />
     <Content Include="Content\bootstrap-grid.css.map" />
+    <Content Include="EcomonedasBDDataSet.xsc">
+      <DependentUpon>EcomonedasBDDataSet.xsd</DependentUpon>
+    </Content>
+    <None Include="EcomonedasBDDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>EcomonedasBDDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="EcomonedasBDDataSet.xss">
+      <DependentUpon>EcomonedasBDDataSet.xsd</DependentUpon>
+    </Content>
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
@@ -409,6 +420,11 @@
       <DependentUpon>CarritoCanje.aspx</DependentUpon>
     </Compile>
     <Compile Include="CarritosLN\Carrito.cs" />
+    <Compile Include="EcomonedasBDDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EcomonedasBDDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="InicioSesion.aspx.cs">
       <DependentUpon>InicioSesion.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

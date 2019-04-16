@@ -9,7 +9,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>=Parameters!nombre_Cupon.Value</Value>
+                <Value />
                 <Style>
                   <FontSize>24pt</FontSize>
                 </Style>
@@ -21,7 +21,7 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox4</rd:DefaultName>
-        <Top>0.17639cm</Top>
+        <Top>0.14111cm</Top>
         <Height>1.21639cm</Height>
         <Width>16.51cm</Width>
         <Style>
@@ -75,7 +75,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>=Parameters!Cliente.Value</Value>
+                <Value />
                 <Style>
                   <FontSize>12pt</FontSize>
                 </Style>
@@ -103,9 +103,8 @@
         </Style>
       </Textbox>
       <Image Name="Image2">
-        <Source>Database</Source>
-        <Value>=System.Convert.FromBase64String(Parameters!Imagen.Value)</Value>
-        <MIMEType>image/png</MIMEType>
+        <Source>External</Source>
+        <Value />
         <Sizing>FitProportional</Sizing>
         <Top>3.24133cm</Top>
         <Left>1.11337cm</Left>
@@ -120,8 +119,8 @@
         </Style>
       </Image>
       <Image Name="Image3">
-        <Source>Database</Source>
-        <Value>=System.Convert.FromBase64String(Parameters!QR.Value)</Value>
+        <Source>External</Source>
+        <Value />
         <MIMEType>image/png</MIMEType>
         <Sizing>FitProportional</Sizing>
         <Top>3.24133cm</Top>
@@ -321,24 +320,6 @@
     <Style />
   </Page>
   <AutoRefresh>0</AutoRefresh>
-  <ReportParameters>
-    <ReportParameter Name="Cliente">
-      <DataType>String</DataType>
-      <Prompt>ReportParameter1</Prompt>
-    </ReportParameter>
-    <ReportParameter Name="nombre_Cupon">
-      <DataType>String</DataType>
-      <Prompt>ReportParameter1</Prompt>
-    </ReportParameter>
-    <ReportParameter Name="QR">
-      <DataType>String</DataType>
-      <Prompt>ReportParameter1</Prompt>
-    </ReportParameter>
-    <ReportParameter Name="Imagen">
-      <DataType>String</DataType>
-      <Prompt>ReportParameter1</Prompt>
-    </ReportParameter>
-  </ReportParameters>
   <EmbeddedImages>
     <EmbeddedImage Name="eco">
       <MIMEType>image/png</MIMEType>
