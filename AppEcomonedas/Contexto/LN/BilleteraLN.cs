@@ -32,6 +32,7 @@ namespace Contexto.LN
             return true;
             }else
             {
+                
                 miBilletera.Total_Canjeadas += Total_Canjeadas;
                 // yo canjeo 
                 miBilletera.Total_Disponible += Total_Disponible; 
@@ -53,5 +54,25 @@ namespace Contexto.LN
                     First<Billetera>();
             return billetera;
         }
+        public static bool  ObtenerCupon(string id, int? valorCupon)
+        {
+
+            EcomonedasContexto db = new EcomonedasContexto();
+            var miBilletera = new Billetera();
+            miBilletera = db.Billetera.Where(u => u.Id_Billetera == id).FirstOrDefault<Billetera>();
+
+            miBilletera.Total_Canjeadas += valorCupon ;
+            // yo canjeo 
+            miBilletera.Total_Disponible -= valorCupon;
+            //suma
+            miBilletera.Total_Generada = miBilletera.Total_Canjeadas + miBilletera.Total_Disponible;
+
+
+            db.SaveChanges();
+
+            return true;
+        }
+
+
     }
 }

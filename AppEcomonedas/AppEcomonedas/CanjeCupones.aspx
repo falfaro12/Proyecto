@@ -8,13 +8,14 @@
         <asp:Label ID="lblMensaje" runat="server"  CssClass="alert alert-dismissible alert-warning w-100" Visible="false" Text=""></asp:Label>
          </div>
      <br /> <br /> <br />  <br />
-       <h2 class="text-center w-100">CUPONES</h2>
+            <h2 class="text-center w-100" style="color:#1BBD36"> Cupones Canjeables</h2>
+       <h3 class="text-center w-100">¡Canjeá tus ecocolones por cupones que puedes canjear en puntos de venta y comercios afiliados!</h3>
    
       <div class="row ">       
          <asp:HiddenField ID="hdId_Cupon" runat="server" />
-          <center>
+        
      <asp:ListView ID="lvCupon" runat="server"
-        DataKeyNames="Id_Cupon" GroupItemCount="1"
+        DataKeyNames="Id_Cupon" GroupItemCount="2"
         ItemType="Contexto.Cupon" SelectMethod="listadoCupon">
         <EmptyDataTemplate>
             <div class="row">
@@ -22,7 +23,7 @@
                    <div class="row">
         </EmptyDataTemplate>
         <EmptyItemTemplate>
-            <div class="col-lg12">
+            <div class="col-lg10">
             </div>
         </EmptyItemTemplate>
         <GroupTemplate>
@@ -33,17 +34,17 @@
 
         <ItemTemplate>
              
-            <div class="col-lg-10 col-lg-offset-1 mb-5 ">
-                <div class="card border-dark mb-3">
-                    <center><div style="color: black; background-color:lightgrey;" class="card-header border-dark" ><%#:Item.nombre%></div>    </center>
-                    <div class="card-body">
+            <div class="panel panel-success col-lg-4 mb-5 col-lg-offset-1 ">
+                <div class="panel-heading ">
+                    <center><div style="color: black; margin-bottom:10px;" class="panel-title"  ><%#:Item.nombre%> </div>    </center>
+                    <div class="class="panel-body">
                         <asp:Image ID="Image1" ImageUrl='<%# Eval("imagen", "~/images/cupones/{0}")%>'
-                            Height="300px" Width="100%" ImageAlign="Middle" runat="server" />
-                        <center> <p class="card-text" style="color:black"><b>Precio </b><%#:String.Format("₡{0:N2}", Item.Precio_Canje)%></p></center>
+                            Height="280px" Width="100%" ImageAlign="Middle" runat="server" /><br />
+                        <center> <p class="card-text" style="color:black; margin-top:10px"><b>Precio </b><%#:String.Format("₡{0:N2}", Item.Precio_Canje)%></p></center>
                     </div>
-                    <div class="card-footer text-muted border-dark background-color:lightgrey;" style="color: black;"> 
+                    <div class="panel-success" style="color: black;"> 
                        <center>
-                         <asp:LinkButton id="btnAgregar"  CssClass="btn btn-light w-50" onclick="linkAgregar_Click" ValidationGroup="guardar" runat="server">Obtener Cupon</asp:LinkButton>                                           
+                         <asp:LinkButton id="btnAgregar"  CssClass="btn btn-success w-50" onclick="linkAgregar_Click" ValidationGroup="guardar" runat="server">Canjear</asp:LinkButton>                                           
                       </center>
                              
                     </div>
