@@ -489,16 +489,16 @@
     <Folder Include="images\Qrs\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Contexto\Contexto.csproj">
-      <Project>{41caa705-fd72-4614-916f-0b9cdb31ca6e}</Project>
-      <Name>Contexto</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Reportes\CuponObtenido.rdlc" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Contexto\Contexto.csproj">
+      <Project>{2c326eec-db83-43aa-8329-090d24826c4b}</Project>
+      <Name>Contexto</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

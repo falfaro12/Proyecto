@@ -41,11 +41,6 @@ namespace Contexto
         [StringLength(50)]
         public string contrasenna { get; set; }
 
-        public string NombreCompleto {
-            get {
-                return Nombre + " " + Apellido1 + " " + Apellido2;
-            } }
-
         public virtual Billetera Billetera { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
