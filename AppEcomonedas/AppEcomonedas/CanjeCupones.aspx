@@ -51,8 +51,9 @@
                         <center> <p class="card-text" style="color:black; margin-top:10px"><b>Precio </b><%#:String.Format("₡{0:N2}", Item.Precio_Canje)%></p></center>
                     </div>
                     <div class="panel-success" style="color: black;"> 
-                       <center>                       
-                           <button type="button" class="btn btn-success btn-lg" data-toggle="modal" data-target="#myModal">Obtener Cupón</button>
+                       <center>    
+                                                                         
+                           <div   class=""  ><asp:LinkButton runat="server" OnClick="linkOntener_Click" Text="Obtener Cupón"  CssClass="btn btn-success btn-lg " data-toggle="modal" data-target="#myModal" /></div>
                       </center>
                              
                     </div>

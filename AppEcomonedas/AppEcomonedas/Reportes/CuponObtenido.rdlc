@@ -9,7 +9,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value />
+                <Value>=Fields!nombreCupon.Value</Value>
                 <Style>
                   <FontSize>24pt</FontSize>
                 </Style>
@@ -21,7 +21,7 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox4</rd:DefaultName>
-        <Top>0.14111cm</Top>
+        <Top>0.17639cm</Top>
         <Height>1.21639cm</Height>
         <Width>16.51cm</Width>
         <Style>
@@ -75,7 +75,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value />
+                <Value>=Fields!cliente.Value</Value>
                 <Style>
                   <FontSize>12pt</FontSize>
                 </Style>
@@ -136,6 +136,42 @@
           <PaddingBottom>2pt</PaddingBottom>
         </Style>
       </Textbox>
+      <Image Name="Image2">
+        <Source>Database</Source>
+        <Value>=First(Fields!imagenCupon.Value, "DataSet1")</Value>
+        <MIMEType>image/png</MIMEType>
+        <Sizing>FitProportional</Sizing>
+        <Top>3.072cm</Top>
+        <Left>1.16418cm</Left>
+        <Height>5.35233cm</Height>
+        <Width>6.34716cm</Width>
+        <ZIndex>4</ZIndex>
+        <Style>
+          <Border>
+            <Color>LimeGreen</Color>
+            <Style>Solid</Style>
+            <Width>3pt</Width>
+          </Border>
+        </Style>
+      </Image>
+      <Image Name="Image3">
+        <Source>Database</Source>
+        <Value>=First(Fields!imagenQR.Value, "DataSet1")</Value>
+        <MIMEType>image/png</MIMEType>
+        <Sizing>FitProportional</Sizing>
+        <Top>3.072cm</Top>
+        <Left>8.40459cm</Left>
+        <Height>5.35233cm</Height>
+        <Width>6.34716cm</Width>
+        <ZIndex>5</ZIndex>
+        <Style>
+          <Border>
+            <Color>LimeGreen</Color>
+            <Style>Solid</Style>
+            <Width>3pt</Width>
+          </Border>
+        </Style>
+      </Image>
     </ReportItems>
     <Height>3.91667in</Height>
     <Style />
@@ -287,6 +323,52 @@
     <Style />
   </Page>
   <AutoRefresh>0</AutoRefresh>
+  <DataSources>
+    <DataSource Name="ContextoLN">
+      <ConnectionProperties>
+        <DataProvider>System.Data.DataSet</DataProvider>
+        <ConnectString>/* Local Connection */</ConnectString>
+      </ConnectionProperties>
+      <rd:DataSourceID>01471109-5499-4b2c-b0e9-a1f5b34b0220</rd:DataSourceID>
+    </DataSource>
+  </DataSources>
+  <DataSets>
+    <DataSet Name="DataSet1">
+      <Query>
+        <DataSourceName>ContextoLN</DataSourceName>
+        <CommandText>/* Local Query */</CommandText>
+      </Query>
+      <Fields>
+        <Field Name="id">
+          <DataField>id</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="cliente">
+          <DataField>cliente</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="nombreCupon">
+          <DataField>nombreCupon</DataField>
+          <rd:TypeName>System.Byte[]</rd:TypeName>
+        </Field>
+        <Field Name="imagenQR">
+          <DataField>imagenQR</DataField>
+          <rd:TypeName>System.Byte[]</rd:TypeName>
+        </Field>
+        <Field Name="imagenCupon">
+          <DataField>imagenCupon</DataField>
+          <rd:TypeName>System.Byte[]</rd:TypeName>
+        </Field>
+      </Fields>
+      <rd:DataSetInfo>
+        <rd:DataSetName>Contexto.LN</rd:DataSetName>
+        <rd:TableName>CanjeCuponLN</rd:TableName>
+        <rd:ObjectDataSourceSelectMethod>canjeCupon</rd:ObjectDataSourceSelectMethod>
+        <rd:ObjectDataSourceSelectMethodSignature>System.Collections.Generic.List`1[Contexto.LN.CanjeCupon] canjeCupon(Contexto.LN.CanjeCupon)</rd:ObjectDataSourceSelectMethodSignature>
+        <rd:ObjectDataSourceType>Contexto.LN.CanjeCuponLN, Contexto, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</rd:ObjectDataSourceType>
+      </rd:DataSetInfo>
+    </DataSet>
+  </DataSets>
   <EmbeddedImages>
     <EmbeddedImage Name="eco">
       <MIMEType>image/png</MIMEType>

@@ -40,6 +40,12 @@ namespace Contexto.LN
             }
         }
 
+        public static List<CanjeCupon> canjeCupon(CanjeCupon canjes)
+        {
+            List<CanjeCupon> canje = new List<CanjeCupon>();
+            canje.Add(canjes);
+            return canje;
+        }
       
         }
 }
