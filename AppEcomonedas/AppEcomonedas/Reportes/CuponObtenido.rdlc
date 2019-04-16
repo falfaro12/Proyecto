@@ -103,8 +103,9 @@
         </Style>
       </Textbox>
       <Image Name="Image2">
-        <Source>External</Source>
-        <Value>=Parameters!Imagen.Value</Value>
+        <Source>Database</Source>
+        <Value>=System.Convert.FromBase64String(Parameters!Imagen.Value)</Value>
+        <MIMEType>image/png</MIMEType>
         <Sizing>FitProportional</Sizing>
         <Top>3.24133cm</Top>
         <Left>1.11337cm</Left>
@@ -119,8 +120,9 @@
         </Style>
       </Image>
       <Image Name="Image3">
-        <Source>External</Source>
-        <Value>=Parameters!codigoBarra.Value</Value>
+        <Source>Database</Source>
+        <Value>=System.Convert.FromBase64String(Parameters!QR.Value)</Value>
+        <MIMEType>image/png</MIMEType>
         <Sizing>FitProportional</Sizing>
         <Top>3.24133cm</Top>
         <Left>9.0845cm</Left>
@@ -328,7 +330,7 @@
       <DataType>String</DataType>
       <Prompt>ReportParameter1</Prompt>
     </ReportParameter>
-    <ReportParameter Name="codigoBarra">
+    <ReportParameter Name="QR">
       <DataType>String</DataType>
       <Prompt>ReportParameter1</Prompt>
     </ReportParameter>

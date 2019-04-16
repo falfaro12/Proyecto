@@ -5,9 +5,10 @@
       
 
       <div class="row">
-        <asp:Label ID="lblMensaje" runat="server"  CssClass="alert alert-dismissible alert-warning w-100" Visible="false" Text=""></asp:Label>
+          <br /> <br /> <br />  <br /> <br /> <br />
+        <asp:Label ID="lblMensaje" runat="server"  CssClass="alert alert-dismissible alert-success col-lg-12 text-center "  Visible="false" Text=""></asp:Label>
          </div>
-     <br /> <br /> <br />  <br />
+     
             <h2 class="text-center w-100" style="color:#1BBD36"> Cupones Canjeables</h2>
        <h3 class="text-center w-100">¡Canjeá tus ecocolones por cupones que puedes canjear en puntos de venta y comercios afiliados!</h3>
    

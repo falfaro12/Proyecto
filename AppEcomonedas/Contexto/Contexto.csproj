@@ -54,7 +54,6 @@
     <Compile Include="Billetera.cs" />
     <Compile Include="CarritoCanje.cs" />
     <Compile Include="CentroAcopio.cs" />
-    <Compile Include="Class1.cs" />
     <Compile Include="Cupon.cs" />
     <Compile Include="Detall_Factura.cs" />
     <Compile Include="EcomonedasContexto.cs" />
