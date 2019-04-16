@@ -50,6 +50,12 @@ namespace Contexto
         public virtual ICollection<Enca_Factura> Enca_Factura { get; set; }
 
         public virtual Rol Rol { get; set; }
+        public string NombreCompleto {
+            get{
+                return Nombre + " " + Apellido1 + " " + Apellido2;
+            };
+            
+        }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Cupon> Cupon { get; set; }
