@@ -55,12 +55,12 @@
     <Compile Include="Billetera.cs" />
     <Compile Include="CarritoCanje.cs" />
     <Compile Include="CentroAcopio.cs" />
-    <Compile Include="CanjeCupon\CanjeCupon.cs" />
     <Compile Include="Cupon.cs" />
     <Compile Include="Detall_Factura.cs" />
     <Compile Include="EcomonedasContexto.cs" />
     <Compile Include="Enca_Factura.cs" />
     <Compile Include="LN\BilleteraLN.cs" />
+    <Compile Include="LN\CanjeCupon.cs" />
     <Compile Include="LN\CanjeCuponLN.cs" />
     <Compile Include="LN\CentroAcopioLN.cs" />
     <Compile Include="LN\CuponLN.cs" />

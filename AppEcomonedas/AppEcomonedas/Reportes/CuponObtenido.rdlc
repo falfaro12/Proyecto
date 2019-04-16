@@ -102,39 +102,6 @@
           <PaddingBottom>2pt</PaddingBottom>
         </Style>
       </Textbox>
-      <Image Name="Image2">
-        <Source>External</Source>
-        <Value />
-        <Sizing>FitProportional</Sizing>
-        <Top>3.24133cm</Top>
-        <Left>1.11337cm</Left>
-        <Height>4.3575cm</Height>
-        <Width>6.5165cm</Width>
-        <ZIndex>3</ZIndex>
-        <Style>
-          <Border>
-            <Color>Lime</Color>
-            <Style>Solid</Style>
-          </Border>
-        </Style>
-      </Image>
-      <Image Name="Image3">
-        <Source>External</Source>
-        <Value />
-        <MIMEType>image/png</MIMEType>
-        <Sizing>FitProportional</Sizing>
-        <Top>3.24133cm</Top>
-        <Left>9.0845cm</Left>
-        <Height>4.3575cm</Height>
-        <Width>6.41067cm</Width>
-        <ZIndex>4</ZIndex>
-        <Style>
-          <Border>
-            <Color>Lime</Color>
-            <Style>Solid</Style>
-          </Border>
-        </Style>
-      </Image>
       <Textbox Name="Textbox7">
         <CanGrow>true</CanGrow>
         <KeepTogether>true</KeepTogether>
@@ -158,7 +125,7 @@
         <Top>8.7235cm</Top>
         <Height>1.04844cm</Height>
         <Width>16.51cm</Width>
-        <ZIndex>5</ZIndex>
+        <ZIndex>3</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Contexto.ClaseReporte
+namespace Contexto.LN
 {
     public class CanjeCupon
     {

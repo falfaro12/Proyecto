@@ -8,11 +8,11 @@ namespace Contexto.LN
 {
     public class CuponLN
     {
-        public bool agregarCupones(
+        public static bool agregarCupones(
             string nombre,
             string descripcion,
             string precio,
-            string imagen,
+            string imagen,           
             string id = ""    
             )
         {
@@ -29,7 +29,11 @@ namespace Contexto.LN
 
             miCupon.nombre = nombre;
             miCupon.descripcion = descripcion;
-            miCupon.imagen = imagen;
+            miCupon.activo = true;
+            if (imagen != "")
+            {
+                miCupon.imagen = imagen;
+            }
             miCupon.Precio_Canje = Convert.ToInt32(precio);
 
             if(id.Equals("") || !esNumero)

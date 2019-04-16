@@ -27,11 +27,15 @@ namespace Contexto.LN
             {
                 //Buscar
                 miMaterial = db.Material.Where(p => p.Id_Material == idMaterial).First<Material>();
+
             }
 
             miMaterial.nombre = nombre;
             miMaterial.descripcion = descripcion;
-            miMaterial.imagen = imagen;
+            if (imagen != "")
+            {
+                miMaterial.imagen = imagen;
+            }           
             miMaterial.color = color;
             miMaterial.Precio_Material = Convert.ToInt32(precio);
            

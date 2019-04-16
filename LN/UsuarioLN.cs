@@ -15,6 +15,7 @@ namespace Contexto.LN
             string direccion,
             int idRol,
             string telefono,
+            string contrasenha,
             string idUsr
             )
         {
@@ -33,10 +34,13 @@ namespace Contexto.LN
                 miUsuario.Direccion = direccion;
                 miUsuario.Id_Rol = idRol;
                 miUsuario.Id_Usuario = idUsr;
-                BilleteraLN.AgregarBilletera(idUsr);
-                miUsuario.Id_Billetera = int.Parse(idUsr);
+                miUsuario.contrasenna = contrasenha;
                 db.Usuario.Add(miUsuario);
-            }else
+                db.SaveChanges();
+                if(miUsuario.Id_Rol == 3 )
+                BilleteraLN.AgregarBilletera(idUsr, 0, 0);
+            }
+            else
             {
                 miUsuario.Nombre = nombre;
                 miUsuario.Apellido1 = apellido1;
@@ -46,6 +50,7 @@ namespace Contexto.LN
                 miUsuario.Id_Rol = idRol;
             }
             db.SaveChanges();
+
             return true;
 
 

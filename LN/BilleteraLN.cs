@@ -8,25 +8,45 @@ namespace Contexto.LN
 {
     public class BilleteraLN
     {
-        public static bool AgregarBilletera(string id)
+        public static bool AgregarBilletera(string id, int Total_Canjeadas, int Total_Disponible)
         {
+
             EcomonedasContexto db = new EcomonedasContexto();
             var miBilletera = new Billetera();
+            miBilletera = db.Billetera.Where(u => u.Id_Billetera == id).FirstOrDefault<Billetera>();
 
-            //Creacion de la billetera
-            miBilletera.Id_Billetera = int.Parse(id);
-            miBilletera.Total_Disponible = 0;
-            miBilletera.Total_Generada = 0;
-            miBilletera.Total_Canjeadas = 0;
 
-            db.Billetera.Add(miBilletera);
+            if (miBilletera == null)
+            {
+                //Creacion de la billetera 
+                miBilletera = new Billetera();
+                miBilletera.Id_Billetera = id;
+                miBilletera.Total_Disponible = 0;
+                miBilletera.Total_Generada = 0;
+                miBilletera.Total_Canjeadas = 0;
+
+                db.Billetera.Add(miBilletera);
+                db.SaveChanges();       
+          
+            // Confirmacion
+            return true;
+            }else
+            {
+                
+                miBilletera.Total_Canjeadas += Total_Canjeadas;
+                // yo canjeo 
+                miBilletera.Total_Disponible += Total_Disponible; 
+                //suma
+                miBilletera.Total_Generada = miBilletera.Total_Canjeadas + miBilletera.Total_Disponible;
+
+            }
+
             db.SaveChanges();
 
-            // Confirmacion
             return true;
         }
 
-        public static Billetera obtenerBilletera(int id)
+        public static Billetera obtenerBilletera(string id)
         {
             EcomonedasContexto db = new EcomonedasContexto();
             Billetera billetera = db.Billetera.
@@ -34,5 +54,25 @@ namespace Contexto.LN
                     First<Billetera>();
             return billetera;
         }
+        public static bool  ObtenerCupon(string id, int? valorCupon)
+        {
+
+            EcomonedasContexto db = new EcomonedasContexto();
+            var miBilletera = new Billetera();
+            miBilletera = db.Billetera.Where(u => u.Id_Billetera == id).FirstOrDefault<Billetera>();
+
+            miBilletera.Total_Canjeadas += valorCupon ;
+            // yo canjeo 
+            miBilletera.Total_Disponible -= valorCupon;
+            //suma
+            miBilletera.Total_Generada = miBilletera.Total_Canjeadas + miBilletera.Total_Disponible;
+
+
+            db.SaveChanges();
+
+            return true;
+        }
+
+
     }
 }

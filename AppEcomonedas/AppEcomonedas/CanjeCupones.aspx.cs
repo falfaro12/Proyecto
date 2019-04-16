@@ -1,5 +1,5 @@
 ﻿using Contexto;
-using Contexto.ClaseReporte;
+using Contexto.LN;
 using Contexto.LN;
 using Microsoft.Reporting.WebForms;
 using QRCoder;
