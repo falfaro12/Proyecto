@@ -53,7 +53,7 @@ namespace Contexto
         public string NombreCompleto {
             get{
                 return Nombre + " " + Apellido1 + " " + Apellido2;
-            };
+            }
             
         }
 
