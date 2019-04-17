@@ -41,27 +41,7 @@
         </GroupTemplate>
 
         <ItemTemplate>
-               <div class="modal fade" id="myModal" role="dialog">
-                        <div class="modal-dialog">
-
-                            <!-- Modal content-->
-                            <div class="modal-content ">
-                                <div class="modal-header">
-                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                    <h4 class="modal-title text-center">¿Desea obtener este cupón?</h4>
-                                </div>
-                                <div class="modal-body">
-                                    <center>
-                              <asp:LinkButton id="btnAgregar"  CssClass="btn btn-success w-10" onclick="linkAgregar_Click" ValidationGroup="guardar" runat="server">Si, deseo obtener el cupón</asp:LinkButton>  
-                              <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>  
-                                    </center>
-                                </div>
-                                <div class="modal-footer">
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
+            
             <div class="panel panel-success col-lg-4 mb-5 col-lg-offset-1 ">
                 <div class="panel-heading ">
                     <center><div style="color: black; margin-bottom:10px;" class="panel-title"  ><%#:Item.nombre%> </div>    </center>
@@ -85,13 +65,34 @@
                 </div>
                  
             </div>
+               <div class="modal fade" id="myModal" role="dialog">
+                        <div class="modal-dialog">
+
+                            <!-- Modal content-->
+                            <div class="modal-content ">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                    <h4 class="modal-title text-center">¿Desea obtener este cupón?</h4>
+                                </div>
+                                <div class="modal-body">
+                                    <center>
+                              <asp:LinkButton id="btnAgregar"  CssClass="btn btn-success w-10" onclick="linkAgregar_Click" ValidationGroup="guardar" runat="server">Si, deseo obtener el cupón</asp:LinkButton>  
+                              <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>  
+                                    </center>
+                                </div>
+                                <div class="modal-footer">
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
                 </ItemTemplate>
                 <LayoutTemplate>
                      <div class="container">
                          <asp:PlaceHolder ID="groupPlaceHolder" runat="server"></asp:PlaceHolder>
                     </div>
                 </LayoutTemplate>
-
+         
             </asp:ListView>
     
         </div>
