@@ -57,8 +57,8 @@ namespace Contexto.LN
 
         public static IEnumerable<Cupon> listaCupones()
         {
-            IEnumerable<Cupon> lista = (IEnumerable<Cupon>)
-                CuponLN.queryListaCupones();
+            IEnumerable<Cupon> lista = ((IEnumerable<Cupon>)
+                CuponLN.queryListaCupones()).Where(p => p.activo == true);
             return lista;
         }
         public static Cupon obtenerCupon(int id)
