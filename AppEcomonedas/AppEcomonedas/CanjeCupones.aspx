@@ -41,7 +41,27 @@
         </GroupTemplate>
 
         <ItemTemplate>
-             
+               <div class="modal fade" id="myModal" role="dialog">
+                        <div class="modal-dialog">
+
+                            <!-- Modal content-->
+                            <div class="modal-content ">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                    <h4 class="modal-title text-center">¿Desea obtener este cupón?</h4>
+                                </div>
+                                <div class="modal-body">
+                                    <center>
+                              <asp:LinkButton id="btnAgregar"  CssClass="btn btn-success w-10" onclick="linkAgregar_Click" ValidationGroup="guardar" runat="server">Si, deseo obtener el cupón</asp:LinkButton>  
+                              <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>  
+                                    </center>
+                                </div>
+                                <div class="modal-footer">
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
             <div class="panel panel-success col-lg-4 mb-5 col-lg-offset-1 ">
                 <div class="panel-heading ">
                     <center><div style="color: black; margin-bottom:10px;" class="panel-title"  ><%#:Item.nombre%> </div>    </center>
@@ -50,14 +70,20 @@
                             Height="280px" Width="100%" ImageAlign="Middle" runat="server" /><br />
                         <center> <p class="card-text" style="color:black; margin-top:10px"><b>Precio </b><%#:String.Format("₡{0:N2}", Item.Precio_Canje)%></p></center>
                     </div>
-                    <div class="panel-success" style="color: black;"> 
-                       <center>    
-                                                                         
-                           <div   class=""  ><asp:LinkButton runat="server" OnClick="linkOntener_Click" Text="Obtener Cupón"  CssClass="btn btn-success btn-lg " data-toggle="modal" data-target="#myModal" /></div>
+                    <div class="panel-success" style="color: black;">
+                        <center>                                          
+                         
+                            <input type="button" runat="server" id="btnCanjeo" data-toggle="modal" data-target="#myModal" class="btn boton btn-success"  value="Canjear" />  
+             
+                 
                       </center>
-                             
+
                     </div>
+                         
+               
+
                 </div>
+                 
             </div>
                 </ItemTemplate>
                 <LayoutTemplate>
@@ -65,32 +91,10 @@
                          <asp:PlaceHolder ID="groupPlaceHolder" runat="server"></asp:PlaceHolder>
                     </div>
                 </LayoutTemplate>
+
             </asp:ListView>
     
         </div>
 
-     <!-- Modal -->
-  <div class="modal fade" id="myModal" role="dialog">
-    <div class="modal-dialog">
     
-      <!-- Modal content-->
-      <div class="modal-content ">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4 class="modal-title text-center">¿Desea obtener este cupón?</h4>
-        </div>
-        <div class="modal-body">
-            <center>
-           <asp:LinkButton id="btnAgregar"  CssClass="btn btn-success w-10" onclick="linkAgregar_Click" ValidationGroup="guardar" runat="server">Si, deseo obtener el cupón</asp:LinkButton>  
-            <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>  
-                </center>                                       
-        </div>
-        <div class="modal-footer">
-      
-        </div>
-      </div>
-      
-    </div>
-  </div>
-
 </asp:Content>

@@ -17,7 +17,7 @@ namespace AppEcomonedas
 {
     public partial class CanjeCupones : System.Web.UI.Page
     {
-        int idCupon = 0;
+      
         protected void Page_Load(object sender, EventArgs e)
         {
             string accioncarrito = Request.QueryString["accion"];
@@ -33,16 +33,15 @@ namespace AppEcomonedas
         }
 
 
-        protected void linkOntener_Click(object sender, EventArgs e) {
-            ListViewDataItem fila = (ListViewDataItem)(sender as Control).Parent;
-            idCupon = Convert.ToInt32(lvCupon.DataKeys[fila.DataItemIndex].Values[0]);
-
-        }
+       
         protected void linkAgregar_Click(object sender, EventArgs e)
         {
-            Usuario usuario2 = (Usuario)Session["usuario"];
+            //Usuario usuario2 = (Usuario)Session["usuario"];
+            Usuario usuario2 = UsuarioLN.obtenerUsuario("albin24mv@gmail.com");
 
             //Otra forma de obtener el id del producto
+            ListViewDataItem fila = (ListViewDataItem)(sender as Control).Parent;
+            int idCupon = Convert.ToInt32(lvCupon.DataKeys[fila.DataItemIndex].Values[0]);
 
             if (idCupon != 0)
             {
@@ -80,15 +79,17 @@ namespace AppEcomonedas
 
 
                     //Asignamos la ruta de las imagenes
-                    var rutaImagen = Server.MapPath("/images/cupones/" + cupon.imagen);
-                    var rutaQr = Server.MapPath("~/images/Qrs/" + cupon.nombre + "qr.Jpeg");
+                    System.Drawing.Image imagen = System.Drawing.Image.FromFile(Server.MapPath("~/images/cupones/"+cupon.imagen));
+
 
                     //Hacemos las imagenes en byte 
                     CanjeCupon Canje = new CanjeCupon();
                     Canje.cliente = usuario2.NombreCompleto;
                     Canje.id = cupon.Id_Cupon;
-                    Canje.imagenQR = CanjeCuponLN.ImagenByte(CanjeCuponLN.GeneraImagen(rutaQr));
-                    Canje.imagenCupon = CanjeCuponLN.ImagenByte(CanjeCuponLN.GeneraImagen(rutaImagen));
+                    Canje.imagenQR = CanjeCuponLN.ImagenByte(qrCodeImage);
+                    Canje.imagenCupon = CanjeCuponLN.ImagenByte(imagen);
+                    Canje.nombreCupon = cupon.nombre;
+                 
 
 
                     //llamamos al reporte 

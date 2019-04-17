@@ -54,7 +54,7 @@
         </Paragraphs>
         <rd:DefaultName>Textbox5</rd:DefaultName>
         <Top>2.03483cm</Top>
-        <Left>2.00237cm</Left>
+        <Left>3.65666cm</Left>
         <Height>0.6cm</Height>
         <Width>3.34667cm</Width>
         <ZIndex>1</ZIndex>
@@ -88,9 +88,9 @@
         </Paragraphs>
         <rd:DefaultName>Textbox6</rd:DefaultName>
         <Top>2.03483cm</Top>
-        <Left>5.77003cm</Left>
+        <Left>7.42432cm</Left>
         <Height>0.6cm</Height>
-        <Width>9.37917cm</Width>
+        <Width>5.9925cm</Width>
         <ZIndex>2</ZIndex>
         <Style>
           <Border>
@@ -136,15 +136,15 @@
           <PaddingBottom>2pt</PaddingBottom>
         </Style>
       </Textbox>
-      <Image Name="Image2">
+      <Image Name="Image3">
         <Source>Database</Source>
-        <Value>=First(Fields!imagenCupon.Value, "DataSet1")</Value>
+        <Value>=First(Fields!imagenQR.Value, "DataSet1")</Value>
         <MIMEType>image/png</MIMEType>
-        <Sizing>FitProportional</Sizing>
+        <Sizing>Fit</Sizing>
         <Top>3.072cm</Top>
-        <Left>1.16418cm</Left>
+        <Left>8.28414cm</Left>
         <Height>5.35233cm</Height>
-        <Width>6.34716cm</Width>
+        <Width>6.46289cm</Width>
         <ZIndex>4</ZIndex>
         <Style>
           <Border>
@@ -154,15 +154,15 @@
           </Border>
         </Style>
       </Image>
-      <Image Name="Image3">
+      <Image Name="Image4">
         <Source>Database</Source>
-        <Value>=First(Fields!imagenQR.Value, "DataSet1")</Value>
+        <Value>=First(Fields!imagenCupon.Value, "DataSet1")</Value>
         <MIMEType>image/png</MIMEType>
         <Sizing>FitProportional</Sizing>
         <Top>3.072cm</Top>
-        <Left>8.40459cm</Left>
+        <Left>1.48872cm</Left>
         <Height>5.35233cm</Height>
-        <Width>6.34716cm</Width>
+        <Width>6.46289cm</Width>
         <ZIndex>5</ZIndex>
         <Style>
           <Border>
@@ -176,7 +176,7 @@
     <Height>3.91667in</Height>
     <Style />
   </Body>
-  <Width>6.5in</Width>
+  <Width>6.61555in</Width>
   <Page>
     <PageHeader>
       <Height>3.7987cm</Height>
