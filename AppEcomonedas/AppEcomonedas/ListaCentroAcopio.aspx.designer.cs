@@ -10,15 +10,15 @@
 namespace AppEcomonedas {
     
     
-    public partial class ListaMaterialesCliente {
+    public partial class ListaCentroAcopio {
         
         /// <summary>
-        /// lvMaterial control.
+        /// lvCentros control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ListView lvMaterial;
+        protected global::System.Web.UI.WebControls.ListView lvCentros;
     }
 }

@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ListaTipoMateriales.aspx.cs" Inherits="AppEcomonedas.ListaTipoMateriales" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ListaCentroAcopio.aspx.cs" Inherits="AppEcomonedas.ListaCentroAcopio" %>
 
 <!DOCTYPE html>
 
@@ -8,6 +8,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Company-HTML Bootstrap theme</title>
+
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 
     <!-- Bootstrap -->
     <link href="Content/bootstrap.min.css" rel="stylesheet" />
@@ -43,7 +48,7 @@
 					<div class="navbar-collapse collapse col-12">							
 						<div class="menu">
 							<ul class="nav nav-tabs" role="tablist">
-										<li role="presentation"><a href="Inicio.aspx" class="active">Inicio</a></li>
+									<li role="presentation"><a href="Inicio.aspx" class="active">Inicio</a></li>
 								<li role="presentation"><a href="ListaCentroAcopio.aspx">Centros de Acopio</a></li>
 								<li role="presentation"><a href="ListaTipoMateriales.aspx">Tipos de Materiales</a></li>								
 								<li role="presentation"><a href="InicioSesion.aspx">Mi cuenta</a></li>													
@@ -59,17 +64,15 @@
       <br /><br />
      <div class="aboutus blog">
       <div class="container">
-           <h3>Materiales que Recibimos</h3>
+           <h3>Nuestros Centros de Acopio</h3>
 			<hr>
       </div>
          </div>
-      
-          <div class="container">
-              <div class="text-center">
-                  <div class="col-md-4">
-                       <asp:ListView ID="lvMaterial" runat="server"
-        DataKeyNames="Id_Material" GroupItemCount="4"
-        ItemType="Contexto.Material" SelectMethod="listadoMateriales">
+
+      <div class="container col-12">
+           <asp:ListView ID="lvCentros" runat="server"
+        DataKeyNames="Id_Centro" GroupItemCount="1" 
+        ItemType="Contexto.CentroAcopio" SelectMethod="listadoCentro">
         <EmptyDataTemplate>
             <div class="row">
                 No hay datos
@@ -84,18 +87,39 @@
                 <asp:PlaceHolder ID="itemPlaceholder" runat="server"></asp:PlaceHolder>
             </div>
         </GroupTemplate>
-        <ItemTemplate>
-            <div class="col-lg-3 mb-5 ">
-                <div class="card border-dark" style="color: black; background-color: <%#:Item.color%>"  >
-                  <div class="row">
-                        <asp:Image ID="Image1" CssClass="img-circle col-6" ImageUrl='<%# Eval("imagen", "~/images/materiales/{0}")%>'
-                            Height="150px" Width="100%" ImageAlign="Middle" runat="server" />
-                    
-                        <h3 style=" color: white;margin-top:18%;" class="col-6 "  ><%#:Item.nombre%></h3>  
-                     </div>
-                </div>
-            </div>
-                </ItemTemplate>
+               <ItemTemplate>
+                  
+                   <div class="panel-group col-lg-12 m-0" id="accordion " >
+                       <div class="panel panel-success  ">
+                           <div class="panel-heading">
+                               <h4 class="panel-title">
+                                   <a data-toggle="collapse" data-parent="#accordion" href="#collapse<%#:Item.Id_Centro%>"><%#:Item.nombre%></a>
+                               </h4>
+                           </div>
+                           <div id="collapse<%#:Item.Id_Centro%>" class="panel-collapse collapse">
+                               <div class="panel-body">
+                                   <div class="row">
+                                   <div class="col-4 offset-1">
+                                       <img width="300px" height="300px" src="images/Centro.jpg" />
+                                   </div>
+                                       <div class="col-6 order-1">
+                                            <br />
+                                           <h4 class="text-center">Provincia:   <%#:Item.Provincia.descripcion%></h4>
+                                           <br />
+                                           <h4 class="text-center">Dirección Exacta:   <%#:Item.direccionExacta%></h4>
+                                           <br />
+                                           <h4 class="text-center">Encargado:   <%#:Item.Usuario.NombreCompleto%></h4>
+                                           <br />
+                                           <h4 class="text-center">Teléfono del encargado:   <%#:Item.Usuario.telefono%></h4>
+                                       </div> 
+                                       </div>                           
+                               </div>
+                           </div>
+                       </div>
+                       </div>
+                  
+                   
+               </ItemTemplate>
                 <LayoutTemplate>
                      <div class="container">
                          <asp:PlaceHolder ID="groupPlaceHolder" runat="server"></asp:PlaceHolder>
@@ -103,9 +127,9 @@
                 </LayoutTemplate>
             </asp:ListView>
 
-                  </div>
-              </div>
-          </div>
+      </div>
+      
+         
      
    
 </body>

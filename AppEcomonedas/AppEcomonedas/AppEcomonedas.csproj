@@ -101,8 +101,8 @@
     <Content Include="css\registro.css" />
     <Content Include="InicioSesion.aspx" />
     <Content Include="ListaCanjesRealizados.aspx" />
+    <Content Include="ListaCentroAcopio.aspx" />
     <Content Include="ListaCuponesCanjeados.aspx" />
-    <Content Include="ListaMaterialesCliente.aspx" />
     <Content Include="ListaTipoMateriales.aspx" />
     <Content Include="MantCentroAcopio.aspx" />
     <Content Include="css\animate.css" />
@@ -426,15 +426,19 @@
     <Compile Include="ListaCanjesRealizados.aspx.designer.cs">
       <DependentUpon>ListaCanjesRealizados.aspx</DependentUpon>
     </Compile>
+    <Compile Include="ListaCentroAcopio.aspx.cs">
+      <DependentUpon>ListaCentroAcopio.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ListaCentroAcopio.aspx.designer.cs">
+      <DependentUpon>ListaCentroAcopio.aspx</DependentUpon>
+    </Compile>
     <Compile Include="ListaCuponesCanjeados.aspx.cs">
       <DependentUpon>ListaCuponesCanjeados.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="ListaCuponesCanjeados.aspx.designer.cs">
       <DependentUpon>ListaCuponesCanjeados.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="ListaMaterialesCliente.aspx.designer.cs">
-      <DependentUpon>ListaMaterialesCliente.aspx</DependentUpon>
     </Compile>
     <Compile Include="ListaTipoMateriales.aspx.cs">
       <DependentUpon>ListaTipoMateriales.aspx</DependentUpon>
