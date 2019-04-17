@@ -9,7 +9,7 @@ namespace Contexto.LN
    public class OrdenCompraLN
     {
         public static bool registrarOrden(
-           string idCliente,int idCentro , List<CarritoCanje> carritoItems
+           string idCliente,int idCentro , List<CarritoCanjes> carritoItems
               )
         {
             EcomonedasContexto db = new EcomonedasContexto();

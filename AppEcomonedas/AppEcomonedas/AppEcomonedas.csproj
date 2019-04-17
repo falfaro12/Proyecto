@@ -408,7 +408,6 @@
     <Compile Include="CarritoCanje.aspx.designer.cs">
       <DependentUpon>CarritoCanje.aspx</DependentUpon>
     </Compile>
-    <Compile Include="CarritoCanje.cs" />
     <Compile Include="CarritosLN\Carrito.cs" />
     <Compile Include="InicioSesion.aspx.cs">
       <DependentUpon>InicioSesion.aspx</DependentUpon>

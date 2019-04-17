@@ -53,7 +53,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Billetera.cs" />
-    <Compile Include="CarritoCanje.cs" />
+    <Compile Include="CarritoCanjes.cs" />
     <Compile Include="CentroAcopio.cs" />
     <Compile Include="Class1.cs" />
     <Compile Include="Cupon.cs" />

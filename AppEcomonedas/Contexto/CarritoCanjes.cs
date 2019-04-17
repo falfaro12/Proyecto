@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Contexto
 {
-  public  class CarritoCanje
+  public  class CarritoCanjes
     {
         public int Id_Cliente { get; set; }
         public int Id_CentroAcopio { get; set; }
@@ -38,11 +38,11 @@ namespace Contexto
             return precioMaterial * cantidad;
         }
 
-        public CarritoCanje()
+        public CarritoCanjes()
         {
 
         }
-        public CarritoCanje(int idMaterial)
+        public CarritoCanjes(int idMaterial)
         {
             this.Id_Material = idMaterial;
             this.material = new Material();

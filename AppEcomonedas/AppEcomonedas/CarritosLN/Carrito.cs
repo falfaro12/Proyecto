@@ -3,8 +3,9 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using Contexto;
 
-namespace appLibros.CarritosLN
+namespace AppEcomonedas.CarritosLN 
 {
     /**
 * 
@@ -13,7 +14,7 @@ namespace appLibros.CarritosLN
 */
     public class Carrito
     {
-        public List<CarritoCanje> Items { get; private set; }
+        public List<CarritoCanjes> Items { get; private set; }
 
         //Implementación Singleton
 
@@ -27,7 +28,7 @@ namespace appLibros.CarritosLN
             if (HttpContext.Current.Session["carrito"] == null)
             {
                 Instancia = new Carrito();
-                Instancia.Items = new List<CarritoCanje>();
+                Instancia.Items = new List<CarritoCanjes>();
                 HttpContext.Current.Session["carrito"] = Instancia;
             }
             else
@@ -46,13 +47,13 @@ namespace appLibros.CarritosLN
         public void AgregarItem(int materialId, int cantidad)
         {
             // Crear un nuevo artículo para agregar al carrito
-            CarritoCanje nuevoItem = new CarritoCanje(materialId);
+            CarritoCanjes nuevoItem = new CarritoCanjes(materialId);
             // Si este artículo ya existe en lista de libros, aumente la cantidad
             // De lo contrario, agregue el nuevo elemento a la lista
 
             if (Items.Exists(x => x.Id_Material == materialId))
             {
-                CarritoCanje item = Items.Find(x => x.Id_Material == materialId);
+                CarritoCanjes item = Items.Find(x => x.Id_Material == materialId);
                 item.cantidad+= cantidad;
                 return;
             }
@@ -75,10 +76,10 @@ namespace appLibros.CarritosLN
             }
 
             // Encuentra el artículo y actualiza la cantidad
-            CarritoCanje actualizarItem = new CarritoCanje(libroId);
+            CarritoCanjes actualizarItem = new CarritoCanjes(libroId);
             if (Items.Exists(x => x.Id_Material == libroId))
             {
-                CarritoCanje item = Items.Find(x => x.Id_Material == libroId);
+                CarritoCanjes item = Items.Find(x => x.Id_Material == libroId);
                 item.cantidad = cantidad;
             
                 return;

@@ -1,5 +1,6 @@
-﻿using AppEcomonedas.LogIn;
-using appLibros.CarritosLN;
+﻿using AppEcomonedas.CarritosLN;
+using AppEcomonedas.LogIn;
+
 using Contexto;
 using Contexto.LN;
 using System;
@@ -37,7 +38,7 @@ namespace AppEcomonedas
 
         private void llenarListaCarrito()
         {
-            List<Contexto.CarritoCanje> items = Carrito.Instancia.Items;
+            List<Contexto.CarritoCanjes> items = Carrito.Instancia.Items;
             grvCarrito.DataSource = items.ToList();
             grvCarrito.DataBind();           
             lblTotal.Text = String.Format("${0:N2}", Carrito.Instancia.GetTotal());
