@@ -101,6 +101,7 @@
     <Content Include="css\registro.css" />
     <Content Include="InicioSesion.aspx" />
     <Content Include="ListaCanjesRealizados.aspx" />
+    <Content Include="ListaCuponesCanjeados.aspx" />
     <Content Include="MantCentroAcopio.aspx" />
     <Content Include="css\animate.css" />
     <Content Include="css\animate.min.css" />
@@ -422,6 +423,13 @@
     </Compile>
     <Compile Include="ListaCanjesRealizados.aspx.designer.cs">
       <DependentUpon>ListaCanjesRealizados.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ListaCuponesCanjeados.aspx.cs">
+      <DependentUpon>ListaCuponesCanjeados.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ListaCuponesCanjeados.aspx.designer.cs">
+      <DependentUpon>ListaCuponesCanjeados.aspx</DependentUpon>
     </Compile>
     <Compile Include="LogIn\SesionUsr.cs" />
     <Compile Include="MantCentroAcopio.aspx.cs">

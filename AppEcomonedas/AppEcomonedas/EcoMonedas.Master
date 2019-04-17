@@ -45,14 +45,21 @@
                                         <li role="presentation"><a href="Inicio.aspx" class="active">Inicio</a></li>
                                         <li role="presentation" class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Gestiones</a>
                                             <ul class="dropdown-menu">
-                                                <li role="presentation"><a href="#">Centros de Acopio</a></li>
-                                                <li role="presentation"><a href="#">Materiales</a></li>
-                                                <li role="presentation"><a href="#">Usuarios</a> </li>
-                                                <li role="presentation"><a href="#">Canjeo de Materiales</a></li>
-                                                <li role="presentation"><a href="#">Cupones</a></li>
+                                                <li role="presentation"><a href="MiPerfil.aspx">Centros de Acopio</a></li>
+                                                <li role="presentation"><a href="#">Materiales</a></li>                                               
+                                                <li role="presentation"><a href="CanjeCupones.aspx">Canje de Cupones</a></li>
+                                                <li role="presentation"><a href="ListaCuponesCanjeados.aspx">Cupones Obtenidos</a></li>
                                             </ul>
                                         </li>
-                                        <li role="presentation"><a href="#">Mi Perfil</a></li>
+                                        <li role="presentation">  
+                                             <div class="menu pull-right logout" style="margin-top: 13px">
+                   <div class="dropdown pull-right logout" style="margin-top: 20px">
+             <a class="dropdown-toggle top-menu" data-toggle="dropdown" href="#" > <asp:Label runat="server" ID="txtUsuario" CssClass="text-white"><span class="caret"></span></asp:Label></a> 
+                                  	<ul class="nav dropdown-menu">                  
+                    <li><asp:LinkButton runat="server" ID="cerrar" OnClick="Unnamed_Click" Text="Cerrar"></asp:LinkButton></li>
+            	</ul>
+            </div>
+              </div></li>
                                     </ul>
                                 </div>
                             </div>

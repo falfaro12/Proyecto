@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Contexto;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -11,7 +12,14 @@ namespace AppEcomonedas
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            Usuario usuario2 = (Usuario)Session["usuario"];
+            txtUsuario.Text = usuario2.NombreCompleto;
+        }
+        protected void Unnamed_Click(object sender, EventArgs e)
+        {
+            //Cerrar           
+            LogIn.SesionUsr.CerrarSesion();
+            Response.Redirect("Inicio.aspx");
         }
     }
 }

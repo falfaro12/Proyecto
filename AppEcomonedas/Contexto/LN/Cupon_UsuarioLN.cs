@@ -28,6 +28,16 @@ namespace Contexto.LN
             return true;
         }
 
-
+        public static IQueryable queryCupon_Usuario()
+        {
+            var db = new EcomonedasContexto();
+            IQueryable query = db.Cupon_Usuario;
+            return query;
+        }
+        public static IEnumerable<Cupon_Usuario> listaCupon_UsuarioporUsuario(string id_Usuario)
+        {
+            IEnumerable<Cupon_Usuario> lista = ((IEnumerable<Cupon_Usuario>)queryCupon_Usuario()).Where(p => p.Id_Usuario == id_Usuario);
+            return lista;
+        }
     }
 }

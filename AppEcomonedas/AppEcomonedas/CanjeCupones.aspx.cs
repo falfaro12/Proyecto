@@ -26,6 +26,9 @@ namespace AppEcomonedas
                 lblMensaje.Visible = true;
                 lblMensaje.Text = "Cupon Obtenido con éxito";
             }
+            Usuario usuario2 = (Usuario)Session["usuario"];
+           Billetera billetera = BilleteraLN.obtenerBilletera(usuario2.Billetera.Id_Billetera);
+            lblTotalEcomonedas.Text = billetera.Total_Disponible.ToString();
         }
         public IEnumerable<Cupon> listadoCupon()
         {
@@ -41,7 +44,8 @@ namespace AppEcomonedas
 
             //Otra forma de obtener el id del producto
             ListViewDataItem fila = (ListViewDataItem)(sender as Control).Parent;
-            int idCupon = Convert.ToInt32(lvCupon.DataKeys[fila.DataItemIndex].Values[0]);
+            HiddenField hi =(HiddenField) fila.FindControl("hiddenID");
+            int idCupon =Convert.ToInt32(hi.Value);
 
             if (idCupon != 0)
             {
@@ -127,8 +131,8 @@ namespace AppEcomonedas
                     Response.ContentType = "application/pdf";
 
                     Response.AddHeader("content-disposition", "inline;filename=" + FileName + ".pdf");
-                    Response.WriteFile(Server.MapPath("~/images/DescargasCupones/" + FileName));
-                    Response.Flush();
+                    Response.WriteFile(Server.MapPath(Path.Combine("~/images/DescargasCupones/" + FileName)));
+                    Response.End();
 
 
                 }
@@ -143,6 +147,10 @@ namespace AppEcomonedas
 
 
         }
-       
+
+        protected void btnDescarga_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -20,6 +20,8 @@ namespace Contexto
 
         public DateTime? Fecha { get; set; }
 
+    
+
         public bool? estado { get; set; }
 
         public virtual Cupon Cupon { get; set; }
