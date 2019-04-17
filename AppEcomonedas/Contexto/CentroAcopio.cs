@@ -29,11 +29,23 @@ namespace Contexto
 
         public int? Id_Provincia { get; set; }
 
-        public bool? activo { get; set; }
+        public bool? activo { get ; set; }
 
         public virtual Provincia Provincia { get; set; }
 
         public virtual Usuario Usuario { get; set; }
+
+        public string Estado {
+            get
+            {
+                if (this.activo == true)
+                {
+                    return "Activo";
+                }else
+                {
+                    return "Desactivo";
+                }
+            } }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Enca_Factura> Enca_Factura { get; set; }

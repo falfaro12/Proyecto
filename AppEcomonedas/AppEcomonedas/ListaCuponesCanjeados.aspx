@@ -10,33 +10,45 @@
          <asp:HiddenField ID="hiddenID" runat="server" />
           <!-- Listado -->
       
-         <asp:GridView ID="grvListado" runat="server"
-             AutoGenerateColumns="false"
-             CssClass="table"
-             DataKeyNames="Id_Cupon"
-          
-           >
-             <Columns>
-                 <asp:BoundField HeaderText="Codigo" DataField="Id_Cupon" DataFormatString=" #{0:N0} "></asp:BoundField>
-                 <asp:BoundField DataField="Fecha" HeaderText="Fecha" DataFormatString="{0:dd-M-yyyy}"></asp:BoundField>
-                 <asp:BoundField DataField="Usuario.NombreCompleto" HeaderText="Cliente"></asp:BoundField>
-                 <asp:BoundField DataField="Cupon.Precio_Canje" HeaderText="Precio" DataFormatString="₡{0:N2}"></asp:BoundField>
-              
+          <asp:GridView ID="grvListado" runat="server"
+              AutoGenerateColumns="false"
+              CssClass="table  table-bordered table-hover text-center "
+              DataKeyNames="Id_Cupon">
+              <Columns>
+                  <asp:TemplateField HeaderStyle-CssClass="text-center" HeaderText="Acción">
+                      <ItemTemplate>
+
+                          <asp:HyperLink ID="HyperLink1" runat="server" ForeColor="#1BBD36"
+                              NavigateUrl='<%# Eval("Cupon.nombre", @"images/DescargasCupones/Cupon-{0}.pdf") %>'
+                              Text='Descargar'>
+                          </asp:HyperLink>
+
+                      </ItemTemplate>
+                  </asp:TemplateField>
+                  <asp:BoundField HeaderStyle-CssClass="text-center" HeaderText="Codigo" DataField="Id_Cupon" DataFormatString=" #{0:N0} "></asp:BoundField>
+                    <asp:BoundField HeaderStyle-CssClass="text-center" HeaderText="Cupón" DataField="Cupon.nombre" ></asp:BoundField>
+                  <asp:BoundField HeaderStyle-CssClass="text-center" DataField="Fecha" HeaderText="Fecha" DataFormatString="{0:dd-M-yyyy}"></asp:BoundField>
+                  <asp:BoundField HeaderStyle-CssClass="text-center" DataField="Usuario.NombreCompleto" HeaderText="Cliente"></asp:BoundField>
+                  <asp:BoundField HeaderStyle-CssClass="text-center" DataField="Cupon.Precio_Canje" HeaderText="Precio" DataFormatString="₡{0:N2}"></asp:BoundField>
 
 
-                 <asp:TemplateField HeaderText="Foto">
-                     <ItemTemplate>
-                         <asp:Image ImageUrl="~/images/cupones/<%# Eval("Cupon.imagen")%>" />
-                     </ItemTemplate>
 
-                 </asp:TemplateField>
-             </Columns>
+                  <asp:TemplateField  HeaderStyle-CssClass="text-center" HeaderText="Foto">
+                      <ItemTemplate>
+                          <center>     
+                       <asp:Image style="width:200px; height:150px" ID="Image1" runat="server" ImageUrl='<%# Eval("Cupon.imagen", "~/images/cupones/{0}")%>' />
+                     </center>
+                      </ItemTemplate>
 
-             <HeaderStyle CssClass="table text-white" ForeColor="#3c763d" BorderColor="Black" />
+                  </asp:TemplateField>
+              </Columns>
 
-         </asp:GridView>
+              <HeaderStyle CssClass="text-center" BackColor="#dff0d8" ForeColor="#3c763d"  />
+             
 
-
+          </asp:GridView>
+             
+        
     </div>
 
 

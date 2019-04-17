@@ -30,7 +30,7 @@
              <br />
                <div class="form-group row" style="margin:5px;">
                  <label for="lblNombre" class="control-label">Imagen</label>
-                   <asp:Image ID="imgLibro"  CssClass="img-thumbnail" AlternateText="Imagen libro" runat="server" />
+                   <asp:Image ID="imgLibro"  CssClass="img-thumbnail img-circle"  AlternateText="Imagen libro" runat="server" />
                 <asp:FileUpload ID="archivoImagen" CssClass="form-control-file" runat="server" />
                 <asp:RequiredFieldValidator ID="rfImagen"
                     runat="server" Text="* Imagen requerida."
@@ -87,7 +87,8 @@
                  </datalist>
              </div>
              <asp:CustomValidator ID="validaColor" ControlToValidate="txtColor" SetFocusOnError="true" ForeColor="Red" Display="Dynamic" OnServerValidate="validaColor_ServerValidate" runat="server" ErrorMessage="* El color ya esta asignado a otro material"></asp:CustomValidator>
-             <br />
+            
+              <br />
              <div class="form-group row" style="margin:5px;">
 
                  <asp:Button ID="btnGuardar" CssClass="btn btn-success" runat="server"
@@ -111,10 +112,10 @@
             OnSelectedIndexChanged="grvListado_SelectedIndexChanged"
             OnRowDataBound="grvListado_RowDataBound">
             <Columns>
-                <asp:BoundField DataField="nombre" HeaderText="Nombre"></asp:BoundField>
-                 <asp:BoundField DataField="descripcion" HeaderText="Descripción"></asp:BoundField>
-                <asp:BoundField DataField="Precio_Material" HeaderText="Precio"></asp:BoundField>
-                <asp:BoundField  DataField="color" HeaderText="Color"></asp:BoundField>                     
+                <asp:BoundField HeaderStyle-CssClass="text-center" DataField="nombre" HeaderText="Nombre"></asp:BoundField>
+                 <asp:BoundField HeaderStyle-CssClass="text-center" DataField="descripcion" HeaderText="Descripción"></asp:BoundField>
+                <asp:BoundField HeaderStyle-CssClass="text-center" DataField="Precio_Material" HeaderText="Precio"></asp:BoundField>
+                <asp:BoundField HeaderStyle-CssClass="text-center" DataField="color" HeaderText="Color"></asp:BoundField>                     
                  </Columns>
 
                  <HeaderStyle CssClass="table-success" ForeColor="#dff0d8"  />

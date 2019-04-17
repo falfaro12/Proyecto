@@ -13,7 +13,7 @@ namespace Contexto.LN
             string nombre,
             string direccion,
             string idUsr,
-            string idProvincia,
+            string idProvincia, bool estado,
             string id = ""
             )
         {
@@ -32,6 +32,7 @@ namespace Contexto.LN
             miCentro.Id_Provincia = Convert.ToInt32(idProvincia);
             miCentro.Id_Usuario = idUsr;
             miCentro.direccionExacta = direccion;
+            miCentro.activo = estado;
             
             if(id.Equals("")|| !esNumero)
             { //agrega

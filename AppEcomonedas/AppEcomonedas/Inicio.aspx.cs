@@ -1,4 +1,7 @@
-﻿using System;
+﻿using Contexto;
+using Contexto.LN;
+using System;
+using System.Collections.Generic;
 
 namespace AppEcomonedas
 {
@@ -8,6 +11,6 @@ namespace AppEcomonedas
         {
             
         }
-
+       
     }
 }

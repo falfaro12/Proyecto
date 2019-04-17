@@ -102,6 +102,8 @@
     <Content Include="InicioSesion.aspx" />
     <Content Include="ListaCanjesRealizados.aspx" />
     <Content Include="ListaCuponesCanjeados.aspx" />
+    <Content Include="ListaMaterialesCliente.aspx" />
+    <Content Include="ListaTipoMateriales.aspx" />
     <Content Include="MantCentroAcopio.aspx" />
     <Content Include="css\animate.css" />
     <Content Include="css\animate.min.css" />
@@ -430,6 +432,16 @@
     </Compile>
     <Compile Include="ListaCuponesCanjeados.aspx.designer.cs">
       <DependentUpon>ListaCuponesCanjeados.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ListaMaterialesCliente.aspx.designer.cs">
+      <DependentUpon>ListaMaterialesCliente.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ListaTipoMateriales.aspx.cs">
+      <DependentUpon>ListaTipoMateriales.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ListaTipoMateriales.aspx.designer.cs">
+      <DependentUpon>ListaTipoMateriales.aspx</DependentUpon>
     </Compile>
     <Compile Include="LogIn\SesionUsr.cs" />
     <Compile Include="MantCentroAcopio.aspx.cs">

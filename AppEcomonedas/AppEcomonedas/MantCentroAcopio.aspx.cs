@@ -51,7 +51,7 @@ namespace AppEcomonedas
 
         protected void ddlAdministrador_SelectedIndexChanged(object sender, EventArgs e)
         {
-            // si ninguna provincia es seleccionada
+          
             if (ddlAdministrador.SelectedValue == null || ddlAdministrador.SelectedValue == "")
             {
                 ddlAdministrador.SelectedValue = "1";
@@ -64,7 +64,19 @@ namespace AppEcomonedas
         {
             //guardar Centro
             CentroAcopioLN centro = new CentroAcopioLN();
-            bool confirmarGuardar = CentroAcopioLN.AgregarCentroAcopio(txtNombre.Text, txtDireccion.Text, ddlAdministrador.SelectedValue, ddlProvincia.SelectedValue,hiddenID.Value);
+            bool estado = true;
+            if (RadioButton1.Checked)
+            {
+                estado = true;
+            }
+            else
+            {
+                if (RadioButton2.Checked)
+                {
+                    estado = false;
+                }
+            }
+            bool confirmarGuardar = CentroAcopioLN.AgregarCentroAcopio(txtNombre.Text, txtDireccion.Text, ddlAdministrador.SelectedValue, ddlProvincia.SelectedValue,estado, hiddenID.Value);
             if (confirmarGuardar)
             {
                 //recarga la pagina
@@ -101,6 +113,14 @@ namespace AppEcomonedas
             ddlAdministrador.SelectedValue = centro.Id_Usuario.ToString();
             hiddenID.Value = centro.Id_Centro.ToString();              
             txtDireccion.Text = centro.direccionExacta;
+            if (centro.activo == true)
+            {
+                RadioButton1.Checked=true;
+            }
+            else
+            {
+                RadioButton1.Checked = false;
+            }
           
 
             btnGuardar.Text = "Actualizar";
@@ -117,6 +137,7 @@ namespace AppEcomonedas
             txtNombre.Text = "";
             hiddenID.Value = "";
             btnGuardar.Text = "Guardar";
+            RadioButton1.Checked=true;
         }
     }
 }

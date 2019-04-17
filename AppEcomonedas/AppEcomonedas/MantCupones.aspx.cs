@@ -56,7 +56,7 @@ namespace AppEcomonedas
             txtDescripcion.Text = mat.descripcion;
             txtPrecio.Text = mat.Precio_Canje.ToString();          
             hiddenID.Value = mat.Id_Cupon.ToString();
-            imgLibro.ImageUrl = "~/images/materiales/" + mat.imagen;
+            imgLibro.ImageUrl = "~/images/cupones/" + mat.imagen;
             btnGuardar.Text = "Actualizar";
             rfImagen.Enabled = false;
         }

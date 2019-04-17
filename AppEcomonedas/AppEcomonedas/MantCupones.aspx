@@ -30,7 +30,7 @@
              <br />
                <div class="form-group row" style="margin:5px;">
                  <label for="lblNombre" class="control-label">Imagen</label>
-                   <asp:Image ID="imgLibro"  CssClass="img-thumbnail" AlternateText="Imagen libro" runat="server" />
+                   <asp:Image ID="imgLibro"  CssClass="img-thumbnail " AlternateText="Imagen Cupón" runat="server" />
                 <asp:FileUpload ID="archivoImagen" CssClass="form-control-file" runat="server" />
                 <asp:RequiredFieldValidator ID="rfImagen"
                     runat="server" Text="* Imagen requerida."
@@ -86,13 +86,13 @@
             AutoGenerateSelectButton="true"
             OnSelectedIndexChanged="grvListado_SelectedIndexChanged">
             <Columns>
-                <asp:BoundField DataField="nombre" HeaderText="Nombre"></asp:BoundField>
-                <asp:BoundField DataField="descripcion" HeaderText="Descripción"></asp:BoundField>
-                <asp:BoundField DataField="Precio_Canje" HeaderText="Precio Equivalente"></asp:BoundField>
+                <asp:BoundField HeaderStyle-CssClass="text-center" DataField="nombre" HeaderText="Nombre"></asp:BoundField>
+                <asp:BoundField HeaderStyle-CssClass="text-center" DataField="descripcion" HeaderText="Descripción"></asp:BoundField>
+                <asp:BoundField HeaderStyle-CssClass="text-center" DataField="Precio_Canje" HeaderText="Precio Equivalente"></asp:BoundField>
 
             </Columns>
 
-            <HeaderStyle CssClass="table-success" ForeColor="#dff0d8" />
+            <HeaderStyle CssClass="table-success text-center" ForeColor="#3c763d"  />
         </asp:GridView>
 
 
