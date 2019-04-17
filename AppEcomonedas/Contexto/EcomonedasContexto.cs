@@ -15,12 +15,12 @@ namespace Contexto
         public virtual DbSet<Billetera> Billetera { get; set; }
         public virtual DbSet<CentroAcopio> CentroAcopio { get; set; }
         public virtual DbSet<Cupon> Cupon { get; set; }
+        public virtual DbSet<Cupon_Usuario> Cupon_Usuario { get; set; }
         public virtual DbSet<Detall_Factura> Detall_Factura { get; set; }
         public virtual DbSet<Enca_Factura> Enca_Factura { get; set; }
         public virtual DbSet<Material> Material { get; set; }
         public virtual DbSet<Provincia> Provincia { get; set; }
         public virtual DbSet<Rol> Rol { get; set; }
-        public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
         public virtual DbSet<Usuario> Usuario { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
@@ -50,9 +50,13 @@ namespace Contexto
                 .IsUnicode(false);
 
             modelBuilder.Entity<Cupon>()
-                .HasMany(e => e.Usuario)
-                .WithMany(e => e.Cupon)
-                .Map(m => m.ToTable("Cupon_Usuario").MapLeftKey("Id_Cupon").MapRightKey("Id_Usuario"));
+                .HasMany(e => e.Cupon_Usuario)
+                .WithRequired(e => e.Cupon)
+                .WillCascadeOnDelete(false);
+
+            modelBuilder.Entity<Cupon_Usuario>()
+                .Property(e => e.Id_Usuario)
+                .IsUnicode(false);
 
             modelBuilder.Entity<Enca_Factura>()
                 .Property(e => e.Id_Usuario)
@@ -105,6 +109,11 @@ namespace Contexto
             modelBuilder.Entity<Usuario>()
                 .HasOptional(e => e.Billetera)
                 .WithRequired(e => e.Usuario);
+
+            modelBuilder.Entity<Usuario>()
+                .HasMany(e => e.Cupon_Usuario)
+                .WithRequired(e => e.Usuario)
+                .WillCascadeOnDelete(false);
         }
 
         //Si sigue dando el error de ProviderName

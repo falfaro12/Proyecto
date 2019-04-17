@@ -24,7 +24,7 @@ namespace Contexto
         [StringLength(50)]
         public string descripcion { get; set; }
 
-        public decimal? Precio_Material { get; set; }
+        public int? Precio_Material { get; set; }
 
         public string imagen { get; set; }
 

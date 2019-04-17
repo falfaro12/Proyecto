@@ -408,6 +408,7 @@
     <Compile Include="CarritoCanje.aspx.designer.cs">
       <DependentUpon>CarritoCanje.aspx</DependentUpon>
     </Compile>
+    <Compile Include="CarritoCanje.cs" />
     <Compile Include="CarritosLN\Carrito.cs" />
     <Compile Include="InicioSesion.aspx.cs">
       <DependentUpon>InicioSesion.aspx</DependentUpon>
@@ -496,7 +497,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Contexto\Contexto.csproj">
-      <Project>{2c326eec-db83-43aa-8329-090d24826c4b}</Project>
+      <Project>{ba2c3ed8-0d20-452e-8516-156ea3d34d91}</Project>
       <Name>Contexto</Name>
     </ProjectReference>
   </ItemGroup>

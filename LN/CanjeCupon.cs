@@ -10,7 +10,7 @@ namespace Contexto.LN
     {
         public int id { get; set; }
         public string cliente { get; set; }
-        public byte[] nombreCupon { get; set; }
+        public string nombreCupon { get; set; }
 
         public byte[] imagenQR { get; set; }
         
@@ -20,6 +20,7 @@ namespace Contexto.LN
         {
 
         }
+       
         
     }
 }

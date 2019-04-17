@@ -15,6 +15,8 @@ namespace Contexto
 
         public int? Id_Material { get; set; }
 
+        public int? Id_Cupon { get; set; }
+
         public int? Cantidad { get; set; }
 
         public decimal? SubTotal { get; set; }

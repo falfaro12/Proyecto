@@ -3,11 +3,10 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
-using System.Drawing;
 
-using System.Drawing.Imaging;
 using System.Net;
+using System.Drawing.Imaging;
+using System.Drawing;
 
 namespace Contexto.LN
 {
@@ -30,7 +29,7 @@ namespace Contexto.LN
         {
             using (var wc = new WebClient())
             {
-                using (var imagenSteam = new MemoryStream(wc.DownloadData(ruta)))
+                using (var imagenSteam = new MemoryStream(wc.DownloadData("~/images/cupones/" + ruta)))
                 {
                     using(var imagen = Image.FromStream(imagenSteam))
                     {
@@ -40,6 +39,12 @@ namespace Contexto.LN
             }
         }
 
+        public static List<CanjeCupon> canjeCupon(CanjeCupon canjes)
+        {
+            List<CanjeCupon> canje = new List<CanjeCupon>();
+            canje.Add(canjes);
+            return canje;
+        }
       
         }
 }

@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{2C326EEC-DB83-43AA-8329-090D24826C4B}</ProjectGuid>
+    <ProjectGuid>{BA2C3ED8-0D20-452E-8516-156EA3D34D91}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Contexto</RootNamespace>
@@ -31,17 +31,16 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Drawing" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
     <Reference Include="System.Xml.Linq" />
@@ -55,7 +54,9 @@
     <Compile Include="Billetera.cs" />
     <Compile Include="CarritoCanje.cs" />
     <Compile Include="CentroAcopio.cs" />
+    <Compile Include="Class1.cs" />
     <Compile Include="Cupon.cs" />
+    <Compile Include="Cupon_Usuario.cs" />
     <Compile Include="Detall_Factura.cs" />
     <Compile Include="EcomonedasContexto.cs" />
     <Compile Include="Enca_Factura.cs" />
@@ -75,7 +76,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Provincia.cs" />
     <Compile Include="Rol.cs" />
-    <Compile Include="sysdiagrams.cs" />
     <Compile Include="Usuario.cs" />
   </ItemGroup>
   <ItemGroup>

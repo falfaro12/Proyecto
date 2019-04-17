@@ -12,7 +12,7 @@ namespace Contexto
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Cupon()
         {
-            Usuario = new HashSet<Usuario>();
+            Cupon_Usuario = new HashSet<Cupon_Usuario>();
         }
 
         [Key]
@@ -31,6 +31,6 @@ namespace Contexto
         public bool? activo { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Usuario> Usuario { get; set; }
+        public virtual ICollection<Cupon_Usuario> Cupon_Usuario { get; set; }
     }
 }

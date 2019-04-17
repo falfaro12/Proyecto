@@ -13,8 +13,8 @@ namespace Contexto
         public Usuario()
         {
             CentroAcopio = new HashSet<CentroAcopio>();
+            Cupon_Usuario = new HashSet<Cupon_Usuario>();
             Enca_Factura = new HashSet<Enca_Factura>();
-            Cupon = new HashSet<Cupon>();
         }
 
         [Key]
@@ -47,17 +47,11 @@ namespace Contexto
         public virtual ICollection<CentroAcopio> CentroAcopio { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Cupon_Usuario> Cupon_Usuario { get; set; }
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Enca_Factura> Enca_Factura { get; set; }
 
         public virtual Rol Rol { get; set; }
-        public string NombreCompleto {
-            get{
-                return Nombre + " " + Apellido1 + " " + Apellido2;
-            }
-            
-        }
-
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Cupon> Cupon { get; set; }
     }
 }
