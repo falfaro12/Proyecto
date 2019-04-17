@@ -12,21 +12,21 @@
              <div class="panel-body">
                  <div class="form-group row" style="margin: 15px;">
                      <label for="lblNombre" class="control-label">Nombre</label>
-                     <asp:textbox id="txtNombre" runat="server" cssclass="form-control"></asp:textbox>
+                     <asp:textbox Enabled="false" id="txtNombre" runat="server" cssclass="form-control"></asp:textbox>
                      <asp:requiredfieldvalidator id="RequiredFieldValidator1" runat="server" errormessage="*El nombre del usuario es requerido"
                          controltovalidate="txtNombre" forecolor="Red" setfocusonerror="true" display="Dynamic" validationgroup="guardar"></asp:requiredfieldvalidator>
                  </div>
                  <br />
                  <div class="form-group row" style="margin: 15px;">
                      <label for="lblApellido1" class="control-label">Primer Apellido</label>
-                     <asp:textbox id="txtApellido1" runat="server" cssclass="form-control"></asp:textbox>
+                     <asp:textbox Enabled="false" id="txtApellido1" runat="server" cssclass="form-control"></asp:textbox>
                      <asp:requiredfieldvalidator id="RequiredFieldValidator3" runat="server" errormessage="*El primer apellido del usuario es requerido"
                          controltovalidate="txtApellido1" forecolor="Red" setfocusonerror="true" display="Dynamic" validationgroup="guardar"></asp:requiredfieldvalidator>
                  </div>
                  <br />
                  <div class="form-group row" style="margin: 15px;">
                      <label for="lblApellido2" class="control-label">Segundo Apellido</label>
-                     <asp:textbox id="txtApellido2" runat="server" cssclass="form-control"></asp:textbox>
+                     <asp:textbox Enabled="false" id="txtApellido2" runat="server" cssclass="form-control"></asp:textbox>
                      <asp:requiredfieldvalidator id="RequiredFieldValidator4" runat="server" errormessage="*El segundo apellido del usuario es requerido"
                          controltovalidate="txtApellido2" forecolor="Red" setfocusonerror="true" display="Dynamic" validationgroup="guardar"></asp:requiredfieldvalidator>
                  </div>
@@ -34,7 +34,7 @@
 
                  <div class="form-group row" style="margin: 15px;">
                      <label for="lblDireccion" class="control-label">Dirección</label>
-                     <asp:textbox id="txtDireccion" rows="3" cols="20" cssclass="form-control"
+                     <asp:textbox Enabled="false" id="txtDireccion" rows="3" cols="20" cssclass="form-control"
                          runat="server" textmode="MultiLine"></asp:textbox>
                      <asp:requiredfieldvalidator id="RequiredFieldValidator2"
                          runat="server" text="* La Dirección es requirido."
@@ -44,7 +44,7 @@
                  <br />
                  <div class="form-group row" style="margin: 15px;">
                      <label for="lblTelefono" class="control-label">Telefono</label>
-                     <asp:textbox id="txtTelefono" runat="server" cssclass="form-control"></asp:textbox>
+                     <asp:textbox Enabled="false" id="txtTelefono" runat="server" cssclass="form-control"></asp:textbox>
                      <asp:requiredfieldvalidator id="RequiredFieldValidator5" runat="server" errormessage="*El telefono del usuario es requerido"
                          controltovalidate="txtNombre" forecolor="Red" setfocusonerror="true" display="Dynamic" validationgroup="guardar"></asp:requiredfieldvalidator>
                  </div>
@@ -66,7 +66,7 @@
 
                  </div >
                  <div class="form-group row" style="margin: 15px;">
-                     <asp:Label Visible="false" ID="lblContrasenha" runat="server" Text="Contraseña" CssClass="control-label"></asp:Label>>
+                     <asp:Label Visible="false" ID="lblContrasenha" runat="server" Text="Contraseña" CssClass="control-label"></asp:Label>
                      <asp:textbox Enabled="false" Visible="false" ID="txtContrasenha"  runat="server" cssclass="form-control"></asp:textbox>
                  </div>
                  <br />

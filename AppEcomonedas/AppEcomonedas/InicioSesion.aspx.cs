@@ -41,6 +41,22 @@ namespace AppEcomonedas
                 Telefono.Visible = true;
                 Direccion.Visible = true;
                 Rol.Visible = true;
+                if(Rol.Text.Equals("Administrador"))
+                {
+                    Response.Redirect("MantCentroAcopio.aspx");
+                }
+                else
+                {
+                    if (Rol.Text.Equals("AdministradorCentro"))
+                    {
+                        Response.Redirect("AdministradorCentro.aspx");
+                    }
+                    else
+                    {
+                        Response.Redirect("MiPerfil.aspx");
+                    }
+                }
+                //Response.Redirect()
        
             }
             else

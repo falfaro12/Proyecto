@@ -7,9 +7,9 @@
          <div class="row">
         <asp:Label ID="lblMensaje" runat="server" CssClass="alert alert-dismissible alert-warning" Visible="false" Text=""></asp:Label>
          </div>
-       <h3><i class="fa fa-angle-right"></i>Centros de Acopio</h3>
+       <h3><i class="fa fa-angle-right"></i>Administradores de C.A.</h3>
          <div class="panel panel-success">
-         <div class="panel-heading">Información del Centro de Acopio</div>
+         <div class="panel-heading">Información de usuarios</div>
          <div class="panel-body">
               <div class="form-group row" style="margin:5px;">
                  <label for="lblNombre" class="control-label">Nombre</label>

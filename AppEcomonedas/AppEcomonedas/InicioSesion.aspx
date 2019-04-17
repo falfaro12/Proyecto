@@ -26,7 +26,9 @@
             <li><asp:Label ID="Telefono" runat="server" Text=""></asp:Label></li>
             <li><asp:Label ID="Direccion" runat="server" Text=""></asp:Label></li>
             <li><asp:Label ID="Rol" runat="server" Text=""></asp:Label></li>
-        </ul>               
+        </ul> 
+        <br />
+        <asp:Button ID="btnPerfil" runat="server" Text="Button" />              
     </div>
     </form>
 </body>

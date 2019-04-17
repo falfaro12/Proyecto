@@ -4,7 +4,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <title>Creative Colorlib SignUp Form</title>
+    <title>Auto Registro</title>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
@@ -78,7 +78,7 @@
 					</div>
                     <asp:Button CssClass="buttonReg" ID="ButtonReg" runat="server" Text="Registrarse" OnClick="ButtonReg_Click" />
 				</form>
-				<p>Ya tienes una cuenta?<a href="#"> Inicia Sesión!</a></p>
+				<p>Ya tienes una cuenta?<a href="InicioSesion.aspx"> Inicia Sesión!</a></p>
 			</div>
 		</div>
 		<ul class="colorlib-bubbles">
