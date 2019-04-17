@@ -54,12 +54,12 @@ namespace AppEcomonedas
 
                     BilleteraLN.ObtenerCupon(billetera.Id_Billetera, cupon.Precio_Canje);
 
-
-
-
+                    //Cambiamos el estado del cupon
+                    CuponLN.agregarCupones(cupon.nombre, cupon.descripcion, cupon.Precio_Canje.ToString(), cupon.imagen, false,cupon.Id_Cupon.ToString());   
 
 
                     //Agregamos el cupon a la bd
+                    Cupon_UsuarioLN.registrarCupon_Usuario(usuario2.Id_Usuario, cupon.Id_Cupon, cupon.activo.Value);
 
 
 

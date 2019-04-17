@@ -12,8 +12,8 @@ namespace Contexto.LN
             string nombre,
             string descripcion,
             string precio,
-            string imagen,           
-            string id = ""    
+            string imagen, bool activo,
+            string id = "" 
             )
         {
             EcomonedasContexto db = new EcomonedasContexto();
@@ -29,7 +29,7 @@ namespace Contexto.LN
 
             miCupon.nombre = nombre;
             miCupon.descripcion = descripcion;
-            miCupon.activo = true;
+            miCupon.activo = activo;
             if (imagen != "")
             {
                 miCupon.imagen = imagen;

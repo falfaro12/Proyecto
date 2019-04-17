@@ -60,12 +60,7 @@
 
                     </div>
                          
-               
-
-                </div>
-                 
-            </div>
-               <div class="modal fade" id="myModal" role="dialog">
+                 <div class="modal fade" id="myModal" role="dialog">
                         <div class="modal-dialog">
 
                             <!-- Modal content-->
@@ -76,7 +71,7 @@
                                 </div>
                                 <div class="modal-body">
                                     <center>
-                              <asp:LinkButton id="btnAgregar"  CssClass="btn btn-success w-10" onclick="linkAgregar_Click" ValidationGroup="guardar" runat="server">Si, deseo obtener el cupón</asp:LinkButton>  
+                              <asp:LinkButton id="btnAgregar" target=”_blank” CssClass="btn btn-success w-10" onclick="linkAgregar_Click" ValidationGroup="guardar" runat="server">Si, deseo obtener el cupón</asp:LinkButton>  
                               <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>  
                                     </center>
                                 </div>
@@ -85,8 +80,14 @@
                             </div>
 
                         </div>
-                    </div>
+                    </div> 
+
+                </div>
+                
+            </div>
+            
                 </ItemTemplate>
+          
                 <LayoutTemplate>
                      <div class="container">
                          <asp:PlaceHolder ID="groupPlaceHolder" runat="server"></asp:PlaceHolder>

@@ -118,7 +118,7 @@ namespace AppEcomonedas
 
             // Agregar producto a la BD
 
-            bool confirmar = CuponLN.agregarCupones(txtNombre.Text, txtDescripcion.Text, txtPrecio.Text, archivoImagen.FileName, hiddenID.Value);
+            bool confirmar = CuponLN.agregarCupones(txtNombre.Text, txtDescripcion.Text, txtPrecio.Text, archivoImagen.FileName, true,hiddenID.Value);
             if (confirmar)
             {
 

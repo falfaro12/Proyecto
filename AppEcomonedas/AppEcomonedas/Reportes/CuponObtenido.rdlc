@@ -158,7 +158,7 @@
         <Source>Database</Source>
         <Value>=First(Fields!imagenCupon.Value, "DataSet1")</Value>
         <MIMEType>image/png</MIMEType>
-        <Sizing>FitProportional</Sizing>
+        <Sizing>Fit</Sizing>
         <Top>3.072cm</Top>
         <Left>1.48872cm</Left>
         <Height>5.35233cm</Height>

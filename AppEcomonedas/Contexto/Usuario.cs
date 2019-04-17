@@ -24,6 +24,10 @@ namespace Contexto
         [StringLength(50)]
         public string Nombre { get; set; }
 
+        public string NombreCompleto {
+            get { return Nombre + " " + Apellido1 + " " + Apellido2; }
+                }
+
         [StringLength(50)]
         public string Apellido1 { get; set; }
 

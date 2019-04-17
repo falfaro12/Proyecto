@@ -87,8 +87,7 @@ namespace AppEcomonedas
             if (grvCarrito.Rows.Count >= 1)
             {
                 if (OrdenCompraLN.registrarOrden
-                    (ddlClientes.SelectedValue,centro.Id_Centro,
-                    Carrito.Instancia.Items))
+                    (ddlClientes.SelectedValue,centro.Id_Centro, Carrito.Instancia.Items))
                 {
 
 
