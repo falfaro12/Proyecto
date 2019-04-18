@@ -35,9 +35,6 @@
         </div>
  <div>
    
-           <rsweb:ReportViewer ID="ReportViewer1" runat="server">
-           </rsweb:ReportViewer>
-     
    
  </div>
   

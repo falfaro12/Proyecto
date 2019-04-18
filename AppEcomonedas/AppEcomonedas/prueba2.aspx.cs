@@ -58,10 +58,7 @@ namespace AppEcomonedas
             report.SetParameters(p);
             report.Refresh();
 
-            ReportViewer1.LocalReport.DataSources.Add(rds);          
-            ReportViewer1.LocalReport.ReportPath = Server.MapPath("~/Reportes/ReporteEcomonedasporCentro.rdlc");
-            ReportViewer1.LocalReport.SetParameters(p);
-            ReportViewer1.LocalReport.Refresh();
+          
 
             string FileName = "Reporte.pdf";
             string extension;
