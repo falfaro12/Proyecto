@@ -16,7 +16,10 @@ namespace AppEcomonedas
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (!IsPostBack)
+            {
+             
+            }
         }
 
         protected void btnLimpiar_Click(object sender, EventArgs e)
@@ -54,6 +57,11 @@ namespace AppEcomonedas
 
             report.SetParameters(p);
             report.Refresh();
+
+            ReportViewer1.LocalReport.DataSources.Add(rds);          
+            ReportViewer1.LocalReport.ReportPath = Server.MapPath("~/Reportes/ReporteEcomonedasporCentro.rdlc");
+            ReportViewer1.LocalReport.SetParameters(p);
+            ReportViewer1.LocalReport.Refresh();
 
             string FileName = "Reporte.pdf";
             string extension;
