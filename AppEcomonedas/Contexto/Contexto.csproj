@@ -71,6 +71,7 @@
     <Compile Include="LN\MaterialLN.cs" />
     <Compile Include="LN\OrdenCompraLN.cs" />
     <Compile Include="LN\ProvinciaLN.cs" />
+    <Compile Include="LN\ReporteCentroAcopios.cs" />
     <Compile Include="LN\RolLN.cs" />
     <Compile Include="LN\UsuarioLN.cs" />
     <Compile Include="Material.cs" />

@@ -34,6 +34,7 @@ namespace Contexto
         public virtual Provincia Provincia { get; set; }
 
         public virtual Usuario Usuario { get; set; }
+    
 
         public string Estado {
             get

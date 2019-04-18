@@ -93,6 +93,7 @@ namespace AppEcomonedas
 
 
                     BilleteraLN.AgregarBilletera(cliente.Billetera.Id_Billetera, 0, Convert.ToInt32(Carrito.Instancia.GetTotal()));
+                 
                     Carrito.Instancia.eliminarCarrito();
                     Response.Redirect("AdministradorCentro.aspx?accion=registro");
                 }

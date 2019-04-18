@@ -15,7 +15,8 @@ namespace Contexto.LN
             EcomonedasContexto db = new EcomonedasContexto();
             //Orden
             var miOrden = new Enca_Factura();
-            miOrden.Fecha = DateTime.Now;
+
+            miOrden.Fecha =Convert.ToDateTime( DateTime.Now.ToShortDateString());
             miOrden.Id_Usuario = idCliente;
             miOrden.Id_Centro = idCentro;
             //Calcular total
