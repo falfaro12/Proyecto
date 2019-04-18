@@ -246,7 +246,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="Mantenimiento.Master" />
-    <Content Include="prueba2.aspx" />
+    <Content Include="ReporteCentros.aspx" />
     <Content Include="RecursoMante\font-awesome\fonts\fontawesome-webfont.eot" />
     <Content Include="RecursoMante\font-awesome\fonts\fontawesome-webfont.ttf" />
     <Content Include="RecursoMante\font-awesome\fonts\fontawesome-webfont.woff" />
@@ -560,12 +560,12 @@
       <DependentUpon>MiPerfil.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="prueba2.aspx.cs">
-      <DependentUpon>prueba2.aspx</DependentUpon>
+    <Compile Include="ReporteCentros.aspx.cs">
+      <DependentUpon>ReporteCentros.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="prueba2.aspx.designer.cs">
-      <DependentUpon>prueba2.aspx</DependentUpon>
+    <Compile Include="ReporteCentros.aspx.designer.cs">
+      <DependentUpon>ReporteCentros.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

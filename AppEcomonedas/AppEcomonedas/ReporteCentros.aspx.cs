@@ -85,6 +85,7 @@ namespace AppEcomonedas
             Response.ContentType = "application/pdf";
 
             Response.AddHeader("content-disposition", "inline;filename=" + FileName + ".pdf");
+           
             Response.WriteFile(Server.MapPath(Path.Combine("~/images/DescargasCupones/" + FileName)));
             Response.End();
 

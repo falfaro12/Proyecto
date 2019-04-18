@@ -13,8 +13,7 @@ namespace AppEcomonedas
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            Usuario usuario2 = (Usuario)Session["usuario"];
-             usuario2 = UsuarioLN.obtenerUsuario("albin24mv@gmail.com");
+            Usuario usuario2 = (Usuario)Session["usuario"];            
             txtUsuario.Text = usuario2.NombreCompleto;
         }
         protected void Unnamed_Click(object sender, EventArgs e)

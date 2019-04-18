@@ -37,16 +37,20 @@
           <header class="header black-bg">
             <div class="sidebar-toggle-box">
                 <div class="fa fa-bars tooltips"style="background-color:#dff0d8" data-placement="right" data-original-title="Menú"></div>
-            </div>
-           
-            <div class="dropdown pull-right logout" style="margin-top: 20px">
-                <a class="dropdown-toggle top-menu" data-toggle="dropdown" href="#"><span>Fabiola Alfaro</span>
-                <span class="caret"></span></a>
-            	<ul class="nav dropdown-menu">
-                    <li><a href="faces/../view/InicioSesion.xhtml">Configuraciones</a></li>
-                    <li><a href="faces/../view/InicioSesion.xhtml">Cerrar Sesión</a></li>
+            </div>           
+        <div class="navbar-collapse collapse">
+                 <ul>
+                     <li role="presentation">  
+                                             <div class="menu pull-right logout" style="margin-top: 13px">
+                   <div class="dropdown pull-right logout" style="margin-top: 20px">
+             <a class="dropdown-toggle top-menu" data-toggle="dropdown" href="#" > <asp:Label runat="server" ID="txtUsuario" CssClass="text-white"></asp:Label></a> 
+                                  	<ul class="nav dropdown-menu">                  
+                    <li><asp:LinkButton runat="server" ID="cerrar" OnClick="cerrar_Click1" Text="Cerrar"></asp:LinkButton></li>
             	</ul>
             </div>
+              </div></li>
+                 </ul>
+           </div>
       </header>
 
 
@@ -67,7 +71,7 @@
                   </li>
 
                   <li class="sub-menu" >
-                      <a href="MantCentroAcopio.aspx" >
+                      <a href="mantUsuarios.aspx" >
                           <i class="fa fa-desktop"></i>
                           <span>Administradores Centro de Acopio</span>
 
@@ -80,6 +84,7 @@
                           <span>Clientes</span>
                       </a>
                   </li>
+                
                   <li class="sub-menu">
                       <a href="MantCentroAcopio.aspx" >
                           <i class="fa fa-book"></i>
@@ -99,7 +104,7 @@
                       </a>
                   </li>                 
                   <li class="sub-menu">
-                      <a href="#">
+                      <a href="ReporteCentros.aspx">
                           <i class=" fa fa-bar-chart-o"></i>
                           <span>Reportes</span>
                       </a>
