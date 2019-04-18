@@ -7,7 +7,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Company-HTML Bootstrap theme</title>
+    <title>Inicio</title>
 
     <!-- Bootstrap -->
       
@@ -24,6 +24,7 @@
     <![endif]-->
   </head>
   <body>
+      <form runat="server">
 <header class="blog-content container-fluid">		
 		<nav class="navbar navbar-fixed-top " role="navigation">
 			<div class="navigation w-100">
@@ -59,13 +60,14 @@
 	<section id="main-slider" class="no-margin">
         <div class="carousel slide">      
             <div class="carousel-inner">
-                <div class="item active" style="background-image: url(images/slider/bg1.png)">
+                <div class="item active" style="background-image: url(images/slider/bg1.jpg)">
                     <div class="container">
                         <div class="row slide-margin">
                             <div class="col-sm-6">
                                 <div class="carousel-content">
                                     <h2 class="animation animated-item-1">Bienvenidos a <span>Ecomonedas</span></h2>
-                                    <p class="animation animated-item-2">Una forma diferente de reciclar....</p>                            
+                                    <p class="animation animated-item-2">Una forma diferente de reciclar....</p>      
+                                    <asp:LinkButton runat="server" ID="btnCrear" CssClass="btn btn-primary btn-lg">Creá tu cuenta</asp:LinkButton>                      
                                 </div>
                             </div>
 
@@ -111,17 +113,18 @@
 	</div>
 	
 	<div class="about">
-		<div class="container">
+		<div class="container row">
 			<div class="col-md-6 wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="300ms" >
 				<h2>Acerca de</h2>
-				<img src="images/62.jpg" class="img-responsive"/>			
+				<img src="images/62.jpg" width="500px" class="img-responsive"/>			
 			</div>
 			
             <div class="col-md-6 wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="600ms">
+                <br />
                 <h2>¿Que es Ecomonedas?</h2>
-                <p>
-                    Ecomonedas es una moneda virtual que ayuda al medio ambiente.Se realiza mediante el cambio de materiales reciclables, previamente limpiador y ordenados según tipo,luego son llevados a diferentes centros de acopio para ser cambiados por] cupones dediferentes productos y servicios.
-                </p>
+                <h3>
+                    Ecomonedas es una moneda virtual que ayuda al medio ambiente.Se realiza mediante el cambio de materiales reciclables, previamente limpiador y ordenados según tipo,luego son llevados a diferentes centros de acopio para ser cambiados por cupones dediferentes productos y servicios.
+                </h3>
             </div>
 		</div>
 	</div>
@@ -186,6 +189,6 @@
     <script src="js/jquery.isotope.min.js"></script>  
 	<script src="js/wow.min.js"></script>
 	<script src="js/functions.js"></script>
-	
+	</form>
   </body>
 </html>
