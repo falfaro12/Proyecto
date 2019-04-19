@@ -15,17 +15,28 @@ namespace AppEcomonedas
         protected void Page_Load(object sender, EventArgs e)
         {
             if (Session["usuario"] == null)
-                Response.Redirect("InicioSesio.aspx");
+                Response.Redirect("InicioSesion.aspx");
             cargarDatos();
         }
 
         protected void btnEditar_Click(object sender, EventArgs e)
         {
-            txtNombre.Enabled = true;
-            txtApellido1.Enabled = true;
-            txtApellido2.Enabled = true;
-            txtDireccion.Enabled = true;
-            txtTelefono.Enabled = true;
+            if (txtNombre.Enabled)
+            {
+                txtNombre.Enabled = false;
+                txtApellido1.Enabled = false;
+                txtApellido2.Enabled = false;
+                txtDireccion.Enabled = false;
+                txtTelefono.Enabled = false;
+            }else
+            {
+                txtNombre.Enabled = true;
+                txtApellido1.Enabled = true;
+                txtApellido2.Enabled = true;
+                txtDireccion.Enabled = true;
+                txtTelefono.Enabled = true;
+            }
+            
         }
 
         protected void btnGuardar_Click(object sender, EventArgs e)
@@ -41,9 +52,18 @@ namespace AppEcomonedas
 
         protected void btnContrasenha_Click(object sender, EventArgs e)
         {
-            lblContrasenha.Visible = true;
-            txtContrasenha.Visible = true;
-            txtContrasenha.Enabled = true;
+            if (lblContrasenha.Visible)
+            {
+                lblContrasenha.Visible = false;
+                txtContrasenha.Visible = false;
+                txtContrasenha.Enabled = false;
+            }else
+            {
+                lblContrasenha.Visible = true;
+                txtContrasenha.Visible = true;
+                txtContrasenha.Enabled = true;
+            }
+            
         }
 
         protected void cargarDatos()
@@ -55,6 +75,9 @@ namespace AppEcomonedas
             txtDireccion.Text = miUsuario.Direccion;
             txtTelefono.Text = miUsuario.telefono;
             txtCorreo.Text = miUsuario.Id_Usuario;
+            lblEco.Text = miUsuario.Billetera.Total_Disponible.ToString();
+            lblEcoCan.Text = miUsuario.Billetera.Total_Canjeadas.ToString();
+            lblEcoTo.Text = miUsuario.Billetera.Total_Generada.ToString();
         }
     }
 }

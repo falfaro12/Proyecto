@@ -103,6 +103,7 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="css\registro.css" />
+    <Content Include="images\coinstack.png" />
     <Content Include="InicioSesion.aspx" />
     <Content Include="ListaCanjesRealizados.aspx" />
     <Content Include="ListaCentroAcopio.aspx" />

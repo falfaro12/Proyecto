@@ -18,6 +18,7 @@
         <asp:Button ID="logIN" runat="server" Text="Iniciar Sesión" OnClick="logIN_Click" />
         
         <br />
+        <i>Aún no tienes cuenta? <<a href="AutoRegistro.aspx"><b>Create una aqui! </b><a></i>
         <br />
         <ul>
             <li><asp:Label ID="mensaje" runat="server" Text="Inicie sesion"></asp:Label></li>
