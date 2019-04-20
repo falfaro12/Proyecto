@@ -45,7 +45,10 @@
                    <div class="dropdown pull-right logout" style="margin-top: 20px">
              <a class="dropdown-toggle top-menu" data-toggle="dropdown" href="#" > <asp:Label runat="server" ID="txtUsuario" CssClass="text-white"></asp:Label></a> 
                                   	<ul class="nav dropdown-menu">                  
-                    <li><asp:LinkButton runat="server" ID="cerrar" OnClick="cerrar_Click1" Text="Cerrar"></asp:LinkButton></li>
+                    <li>
+                        <asp:LinkButton runat="server" ID="perfil" OnClick="perfil_Click" Text="Mi Cuenta"></asp:LinkButton>
+                        <asp:LinkButton runat="server" ID="cerrar" OnClick="cerrar_Click1" Text="Cerrar"></asp:LinkButton>
+                    </li>
             	</ul>
             </div>
               </div></li>

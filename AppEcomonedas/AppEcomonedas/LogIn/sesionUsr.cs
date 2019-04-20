@@ -49,6 +49,19 @@ namespace AppEcomonedas.LogIn
             }
 
         }
+
+        public static void actualizarSesion(string nombre, string apellido1, string apellido2, string direccion, string telefono, string contrasenha)
+        {
+            Usuario usr = new Usuario();
+            usr.Nombre = nombre;
+            usr.Apellido1 = apellido1;
+            usr.Apellido2 = apellido2;
+            usr.Direccion = direccion;
+            usr.telefono = telefono;
+            usr.contrasenna = contrasenha;
+            HttpContext.Current.Session["usuario"] = usr;
+        }
+
         public static bool CerrarSesion()
         {
             if (HttpContext.Current.Session["usuario"] != null)
