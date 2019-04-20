@@ -67,9 +67,9 @@
               	  <h5 class="centered">Panel de Administración</h5>
               	  	
                   <li class="mt">
-                      <a class="active" href="faces/Mantenimiento.xhtml">
+                      <a class="active" href="PerfilAdmin.aspx">
                           <i class="fa fa-dashboard"></i>
-                          <span>Inicio</span>
+                          <span>Mi Perfil</span>
                       </a>
                   </li>
 

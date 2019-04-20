@@ -61,6 +61,12 @@
                
               	  <h5 class="centered">Panel de Administrador de Centro Acopio</h5>
               	  	
+                   <li class="mt">
+                      <a class="active" href="PerfilAdmnCA.aspx">
+                          <i class="fa fa-dashboard"></i>
+                          <span>Mi Perfil</span>
+                      </a>
+                  </li>
                    <li class="sub-menu" >
                       <a href="AdministradorCentro.aspx" >
                           <i class="fa fa-desktop"></i>

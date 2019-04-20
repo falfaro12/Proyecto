@@ -2,7 +2,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <div class="col-lg-5 main-chart">
+    <div class="col-lg-12 main-chart">
         <div class="row">
             <asp:label id="lblMensaje" runat="server" cssclass="alert alert-dismissible alert-warning" visible="false" text=""></asp:label>
         </div>

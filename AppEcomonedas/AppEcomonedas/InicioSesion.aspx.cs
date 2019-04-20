@@ -41,15 +41,22 @@ namespace AppEcomonedas
                 Telefono.Visible = true;
                 Direccion.Visible = true;
                 Rol.Visible = true;
-                if(Rol.Text.Equals("Administrador"))
+                CentroAcopio centro = CentroAcopioLN.obtenerUsuariodeCentroAcopio(usuario.Id_Usuario);
+                if (Rol.Text.Equals("Administrador"))
                 {
-                    Response.Redirect("MantCentroAcopio.aspx");
+                    Response.Redirect("PerfilAdmin.aspx");
                 }
                 else
                 {
                     if (Rol.Text.Equals("AdministradorCentro"))
                     {
-                        Response.Redirect("AdministradorCentro.aspx");
+                        if (centro.activo==true) {
+                            Response.Redirect("PerfilAdmnCA.aspx");
+                        }
+                        else
+                        {
+                            mensaje.Text = "El centro de acopio al que pertenece ya no se encuentra activo";
+                        }
                     }
                     else
                     {
