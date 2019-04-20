@@ -16,7 +16,10 @@ namespace AppEcomonedas
         {
             if (Session["usuario"] == null)
                 Response.Redirect("InicioSesion.aspx");
-            cargarDatos();
+            if (!IsPostBack)
+            {
+                cargarDatos();
+            }
         }
 
         protected void btnEditar_Click(object sender, EventArgs e)
@@ -42,11 +45,10 @@ namespace AppEcomonedas
         protected void btnGuardar_Click(object sender, EventArgs e)
         {
             Usuario urs = (Usuario)Session["usuario"];
-            int rol = urs.Rol.Id_Rol;
             string contrasenha = txtContrasenha.Text;
             if (contrasenha.Equals(""))
                 contrasenha = urs.contrasenna;
-            UsuarioLN.AgregarUsuario(txtNombre.Text, txtApellido1.Text, txtApellido2.Text, txtDireccion.Text, rol, txtTelefono.Text, contrasenha, txtCorreo.Text);
+            UsuarioLN.AgregarUsuario(txtNombre.Text, txtApellido1.Text, txtApellido2.Text, txtDireccion.Text, 3, txtTelefono.Text, contrasenha, txtCorreo.Text);
                 
         }
 

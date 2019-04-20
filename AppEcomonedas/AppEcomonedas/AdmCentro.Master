@@ -43,7 +43,7 @@
                    <div class="dropdown pull-right logout" style="margin-top: 20px">
              <a class="dropdown-toggle top-menu" data-toggle="dropdown" href="#" > <asp:Label runat="server" ID="txtUsuario" CssClass="text-white"><span class="caret"></span></asp:Label></a> 
                                   	<ul class="nav dropdown-menu">
-                    <li><a href="faces/../view/InicioSesion.xhtml">Configuraciones</a></li>
+                    <li><a href="PerfilAdmnCA.aspx">Mi Cuenta</a></li>
                     <li><asp:LinkButton runat="server" ID="cerrar" OnClick="Unnamed_Click" Text="Cerrar"></asp:LinkButton></li>
             	</ul>
             </div>

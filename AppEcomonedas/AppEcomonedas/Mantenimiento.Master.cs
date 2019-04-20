@@ -24,5 +24,10 @@ namespace AppEcomonedas
             LogIn.SesionUsr.CerrarSesion();
             Response.Redirect("Inicio.aspx");
         }
+
+        protected void perfil_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("PerfilAdmin.aspx");
+        }
     }
 }

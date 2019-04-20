@@ -22,7 +22,7 @@
 		<div class="main-agileinfo">
 			<div class="agileits-top">
 				<form runat="server" >
-                    <p>Cédula</p>
+                    <p>Correo Electrónico</p>
                     <asp:TextBox CssClass="text" ID="id" runat="server"></asp:TextBox>
                     <asp:RequiredFieldValidator ID="RequiredFieldValidator7" runat="server" ErrorMessage="La identificación es requerida" ControlToValidate="id"
                     ForeColor="red"

@@ -48,6 +48,7 @@ namespace Contexto.LN
                 miUsuario.telefono = telefono;
                 miUsuario.Direccion = direccion;
                 miUsuario.Id_Rol = idRol;
+                miUsuario.contrasenna = contrasenha;
             }
             db.SaveChanges();
 
