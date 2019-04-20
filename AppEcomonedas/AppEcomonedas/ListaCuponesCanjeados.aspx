@@ -10,6 +10,7 @@
          <asp:HiddenField ID="hiddenID" runat="server" />
           <!-- Listado -->
       
+       <asp:Label ID="lblMensaje" runat="server" CssClass="alert alert-dismissible alert-success" Visible="false" Text=""></asp:Label>
           <asp:GridView ID="grvListado" runat="server"
               AutoGenerateColumns="false"
               CssClass="table  table-bordered table-hover text-center "

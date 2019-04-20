@@ -118,7 +118,7 @@
                 <asp:BoundField HeaderStyle-CssClass="text-center" DataField="color" HeaderText="Color"></asp:BoundField>                     
                  </Columns>
 
-                 <HeaderStyle CssClass="table-success" ForeColor="#dff0d8"  />
+               <HeaderStyle CssClass="table-success text-center" ForeColor="#3c763d"  />
             </asp:GridView>
 
 

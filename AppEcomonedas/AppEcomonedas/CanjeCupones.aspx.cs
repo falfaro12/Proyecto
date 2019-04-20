@@ -39,8 +39,8 @@ namespace AppEcomonedas
        
         protected void linkAgregar_Click(object sender, EventArgs e)
         {
-            //Usuario usuario2 = (Usuario)Session["usuario"];
-            Usuario usuario2 = UsuarioLN.obtenerUsuario("albin24mv@gmail.com");
+            Usuario usuario2 = (Usuario)Session["usuario"];
+            
 
             //Otra forma de obtener el id del producto
             ListViewDataItem fila = (ListViewDataItem)(sender as Control).Parent;
@@ -57,6 +57,7 @@ namespace AppEcomonedas
                     // Cambiamos la billetera
 
                     BilleteraLN.ObtenerCupon(billetera.Id_Billetera, cupon.Precio_Canje);
+                    lblTotalEcomonedas.Text = billetera.Total_Disponible.ToString();
 
                     //Cambiamos el estado del cupon
                     CuponLN.agregarCupones(cupon.nombre, cupon.descripcion, cupon.Precio_Canje.ToString(), cupon.imagen, false,cupon.Id_Cupon.ToString());   

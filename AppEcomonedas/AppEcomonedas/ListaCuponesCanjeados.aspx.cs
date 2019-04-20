@@ -17,12 +17,19 @@ namespace AppEcomonedas
         }
         private void cargarGrid()
         {
-            //Usuario usuario2 = (Usuario)Session["usuario"];
-            Usuario usuario2 = UsuarioLN.obtenerUsuario("albin24mv@gmail.com");
+            Usuario usuario2 = (Usuario)Session["usuario"];
+          
 
             IEnumerable<Cupon_Usuario> lista = (IEnumerable<Cupon_Usuario>)Cupon_UsuarioLN.listaCupon_UsuarioporUsuario(usuario2.Id_Usuario);
-            grvListado.DataSource = lista.ToList();
-            grvListado.DataBind();
+            if (lista != null || lista.Any())
+            {
+                grvListado.DataSource = lista.ToList();
+                grvListado.DataBind();
+            }else
+            {
+                lblMensaje.Visible = true;
+                lblMensaje.Text = "Aún no tienes cupones canjeados";
+            }
         }
 
       

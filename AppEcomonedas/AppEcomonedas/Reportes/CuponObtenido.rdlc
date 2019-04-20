@@ -190,7 +190,7 @@
             <Paragraph>
               <TextRuns>
                 <TextRun>
-                  <Value>Cupon Canjeado</Value>
+                  <Value>Cupón Canjeado</Value>
                   <Style>
                     <FontSize>20pt</FontSize>
                     <Color>LimeGreen</Color>
@@ -252,7 +252,6 @@
                   <Value>=Globals!PageNumber</Value>
                   <Style>
                     <FontSize>12pt</FontSize>
-                    <Color>LimeGreen</Color>
                   </Style>
                 </TextRun>
               </TextRuns>
@@ -283,6 +282,7 @@
                 <TextRun>
                   <Value>*Solo la persona que lo adquirio puede realizar el canje del cupón</Value>
                   <Style>
+                    <FontWeight>Bold</FontWeight>
                     <Color>Red</Color>
                   </Style>
                 </TextRun>

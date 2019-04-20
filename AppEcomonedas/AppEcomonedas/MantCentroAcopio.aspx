@@ -97,7 +97,7 @@
                          <asp:BoundField HeaderText="Estado" DataField="Estado"></asp:BoundField>
                  </Columns>
 
-                 <HeaderStyle CssClass="table text-white" ForeColor="#3c763d"  BorderColor="Black"  />
+               <HeaderStyle CssClass="table-success text-center" ForeColor="#3c763d"  />
             </asp:GridView>
 
 

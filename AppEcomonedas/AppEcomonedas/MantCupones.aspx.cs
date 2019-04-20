@@ -40,7 +40,7 @@ namespace AppEcomonedas
 
         public void cargarGrid()
         {
-            IEnumerable<Cupon> lista = (IEnumerable<Cupon>)CuponLN.listaCupones();
+            IEnumerable<Cupon> lista = (IEnumerable<Cupon>)CuponLN.listaCuponesMantenimiento();
             grvListado.DataSource = lista.ToList();
             grvListado.DataBind();
         }
