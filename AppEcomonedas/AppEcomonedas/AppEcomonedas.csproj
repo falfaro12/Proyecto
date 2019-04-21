@@ -586,6 +586,11 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="estiloInicioSesion\css\" />
+    <Folder Include="estiloInicioSesion\fonts\" />
+    <Folder Include="estiloInicioSesion\images\" />
+    <Folder Include="estiloInicioSesion\js\" />
+    <Folder Include="estiloInicioSesion\vendor\" />
     <Folder Include="images\cupones\" />
     <Folder Include="images\DescargasCupones\" />
     <Folder Include="images\materiales\" />

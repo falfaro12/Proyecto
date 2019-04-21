@@ -66,7 +66,7 @@
                     Display="Dynamic"></asp:RequiredFieldValidator>
                     <br />
                     <p>Contraseña</p>
-                    <asp:TextBox CssClass="text" ID="password" placeholder="Contraseña" runat="server"></asp:TextBox>
+                    <asp:TextBox CssClass="text" TextMode="Password" ID="password" placeholder="Contraseña" runat="server"></asp:TextBox>
                     <asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" ErrorMessage="RequiredFieldValidator" ControlToValidate="password"
                     ForeColor="red"
                     SetFocusOnError="true"

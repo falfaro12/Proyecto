@@ -78,7 +78,7 @@
                     <ContentTemplate>
                         <div class="form-group row" style="margin: 15px;">
                             <asp:Label Visible="false" ID="lblContrasenha" runat="server" Text="Contraseña" CssClass="control-label"></asp:Label>
-                            <asp:TextBox Enabled="false" Visible="false" ID="txtContrasenha" runat="server" CssClass="form-control"></asp:TextBox>
+                            <asp:TextBox Enabled="false" Visible="false" ID="txtContrasenha" TextMode="Password" runat="server" CssClass="form-control"></asp:TextBox>
                         </div>
                     </ContentTemplate>
                     <Triggers>

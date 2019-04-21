@@ -13,16 +13,7 @@ namespace AppEcomonedas
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            Nombre.Visible = false;
-            Nombre.Text = "";
-            Apellido.Visible = false;
-            Apellido.Text = "";
-            Telefono.Visible = false;
-            Telefono.Text = "";
-            Direccion.Visible = false;
-            Direccion.Text = "";
-            Rol.Visible = false;
-            Rol.Text = "";
+           
         }
 
         protected void logIN_Click(object sender, EventArgs e)
@@ -30,31 +21,21 @@ namespace AppEcomonedas
             if(LogIn.SesionUsr.iniciarSesion(usrID.Text, senha.Text))
             {
                 Usuario usuario = (Usuario)Session["usuario"];
-                Nombre.Text = usuario.Nombre;
-                Apellido.Text = usuario.Apellido1;
-                Telefono.Text = usuario.telefono;
-                Direccion.Text = usuario.Direccion;
-                Rol.Text = usuario.Rol.descripcion;
-                mensaje.Text = "Sesión iniciada con éxito.";
-                Nombre.Visible = true;
-                Apellido.Visible = true;
-                Telefono.Visible = true;
-                Direccion.Visible = true;
-                Rol.Visible = true;
                 CentroAcopio centro = CentroAcopioLN.obtenerUsuariodeCentroAcopio(usuario.Id_Usuario);
-                if (Rol.Text.Equals("Administrador"))
+                if (usuario.Rol.Id_Rol == 1)
                 {
                     Response.Redirect("PerfilAdmin.aspx");
                 }
                 else
                 {
-                    if (Rol.Text.Equals("AdministradorCentro"))
+                    if (usuario.Rol.Id_Rol == 2)
                     {
-                        if (centro.activo==true) {
+                        if (centro != null && centro.activo==true) {
                             Response.Redirect("PerfilAdmnCA.aspx");
                         }
                         else
                         {
+                            mensaje.Visible = true;
                             mensaje.Text = "El centro de acopio al que pertenece ya no se encuentra activo";
                         }
                     }
@@ -68,6 +49,7 @@ namespace AppEcomonedas
             }
             else
             {
+                mensaje.Visible = true;
                 mensaje.Text = "Usuario on contraseña incorrectos. Intentelo de nuevo.";
             }
         }

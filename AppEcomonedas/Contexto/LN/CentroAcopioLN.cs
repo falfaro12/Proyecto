@@ -74,7 +74,7 @@ namespace Contexto.LN
             EcomonedasContexto db = new EcomonedasContexto();
             CentroAcopio centro = db.CentroAcopio.
                     Where(p => p.Id_Usuario == id).
-                    First<CentroAcopio>();
+                    FirstOrDefault<CentroAcopio>();
             return centro;
         }
 
