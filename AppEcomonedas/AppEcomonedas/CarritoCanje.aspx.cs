@@ -25,8 +25,7 @@ namespace AppEcomonedas
             if (Session["encabezadoOrden"] != null)
            {
                Enca_Factura enca = (Enca_Factura)Session["encabezadoOrden"];
-               ddlClientes.SelectedValue = enca.Usuario.Id_Usuario;
-
+       
             }
         }
 
@@ -48,9 +47,12 @@ namespace AppEcomonedas
 
         protected void btnGuardar_Click(object sender, EventArgs e)
         {
+            string correo = ddlClientes.SelectedValue;
+            Session["encabezadoOrden"] = null;
             Enca_Factura enca = new Enca_Factura();
             enca.Usuario = UsuarioLN.obtenerUsuario(ddlClientes.SelectedValue);
             Session["encabezadoOrden"] = enca;
+            ddlClientes.SelectedValue = enca.Usuario.Id_Usuario;
         }
 
         protected void grvCarrito_RowDeleting(object sender, GridViewDeleteEventArgs e)

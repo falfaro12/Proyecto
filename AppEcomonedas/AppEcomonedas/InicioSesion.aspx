@@ -4,7 +4,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title>Login V8</title>
+    <title>Ecomonedas - Inicio Sesión</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 <!--===============================================================================================-->	
@@ -38,17 +38,25 @@
 					</span>
 
 					<div class="wrap-input100 validate-input m-b-16" data-validate="Por favor ingrese un correo electrónico">
-                        <asp:TextBox ID="usrID" CssClass="input100" type="text" placeholder="Correo electronico" runat="server"></asp:TextBox>
+                        <asp:TextBox ID="usrID" CssClass="input100" type="text" placeholder="Correo electrónico" runat="server"></asp:TextBox>
+                          <asp:RequiredFieldValidator ID="RequiredFieldValidator2"
+                     runat="server" Text="*El correo electrónico es requirido."
+                     ControlToValidate="usrID"
+                     SetFocusOnError="true" ForeColor="Red" Display="Dynamic" ValidationGroup="guardar"></asp:RequiredFieldValidator>
 						<span class="focus-input100"></span>
 					</div>
 
 					<div class="wrap-input100 validate-input" data-validate = "Por favor ingrese una contraseña">
                         <asp:TextBox TextMode="Password" ID="senha" CssClass="input100" runat="server" placeholder="Contraseña"></asp:TextBox>
+                          <asp:RequiredFieldValidator ID="RequiredFieldValidator1"
+                     runat="server" Text="* La contreseña es requirida."
+                     ControlToValidate="senha"
+                     SetFocusOnError="true" ForeColor="Red" Display="Dynamic" ValidationGroup="guardar"></asp:RequiredFieldValidator>
 						<span class="focus-input100"></span>
 					</div>
                     <br />
 					<div class="container-login100-form-btn">
-                        <asp:Button ID="logIN" runat="server" CssClass="login100-form-btn" Text="Iniciar Sesión" OnClick="logIN_Click" />
+                        <asp:Button ID="logIN" runat="server" CssClass="login100-form-btn" Text="Iniciar Sesión" OnClick="logIN_Click" ValidationGroup="guardar" />
 					</div>
                     <div class="flex-col-c p-t-130 p-b-40">
                         <asp:Label ID="mensaje" runat="server" CssClass="alert alert-dismissible alert-danger" Text="" Visible="false"></asp:Label>

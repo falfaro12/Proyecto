@@ -24,7 +24,7 @@
 				<form runat="server" >
                     <p>Correo Electrónico</p>
                     <asp:TextBox CssClass="text" ID="id" runat="server"></asp:TextBox>
-                    <asp:RequiredFieldValidator ID="RequiredFieldValidator7" runat="server" ErrorMessage="La identificación es requerida" ControlToValidate="id"
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator7" runat="server" ErrorMessage="* La identificación es requerida" ControlToValidate="id"
                     ForeColor="red"
                     SetFocusOnError="true"
                     Display="Dynamic"></asp:RequiredFieldValidator>
@@ -32,42 +32,42 @@
                     <br />
                     <p>Nombre</p>
                     <asp:TextBox CssClass="text" placeholder="Nombre"  ID="nombre" runat="server"></asp:TextBox>
-                    <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="El nombre es requerido" ControlToValidate="nombre"
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="* El nombre es requerido" ControlToValidate="nombre"
                     ForeColor="red"
                     SetFocusOnError="true"
                     Display="Dynamic"></asp:RequiredFieldValidator>
                     <br />
                     <p>Primer Apellido</p>
                     <asp:TextBox CssClass="text" ID="apellido1" placeholder="Primer Apellido" runat="server"></asp:TextBox>
-                    <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="RequiredFieldValidator" ControlToValidate="apellido1"
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="* El primer apellido es requerido" ControlToValidate="apellido1"
                     ForeColor="red"
                     SetFocusOnError="true"
                     Display="Dynamic"></asp:RequiredFieldValidator>
                     <br />
                     <p>Segundo Apellido</p>
                     <asp:TextBox CssClass="text" ID="apellido2" placeholder="Segundo Apellido" runat="server"></asp:TextBox>
-                    <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ErrorMessage="RequiredFieldValidator" ControlToValidate="apellido2"
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ErrorMessage="* El segundo apellido es requerido" ControlToValidate="apellido2"
                     ForeColor="red"
                     SetFocusOnError="true"
                     Display="Dynamic"></asp:RequiredFieldValidator>
                     <br />
-                    <p>Direccion</p>
+                    <p>Dirección</p>
                     <asp:TextBox CssClass="text" ID="direccion" placeholder="Dirección" runat="server"></asp:TextBox>
-                    <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ErrorMessage="RequiredFieldValidator" ControlToValidate="direccion"
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ErrorMessage="* La dirección Apellido es requerido" ControlToValidate="direccion"
                     ForeColor="red"
                     SetFocusOnError="true"
                     Display="Dynamic"></asp:RequiredFieldValidator>
                     <br />
-                    <p>Telefono</p>
+                    <p>Teléfono</p>
                     <asp:TextBox CssClass="text" ID="telefono" placeholder="Telefono" runat="server"></asp:TextBox>
-                    <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ErrorMessage="RequiredFieldValidator" ControlToValidate="telefono"
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ErrorMessage="* El número de teléfono es requerido" ControlToValidate="telefono"
                     ForeColor="red"
                     SetFocusOnError="true"
                     Display="Dynamic"></asp:RequiredFieldValidator>
                     <br />
                     <p>Contraseña</p>
                     <asp:TextBox CssClass="text" TextMode="Password" ID="password" placeholder="Contraseña" runat="server"></asp:TextBox>
-                    <asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" ErrorMessage="RequiredFieldValidator" ControlToValidate="password"
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" ErrorMessage="* La contraseña es requerida" ControlToValidate="password"
                     ForeColor="red"
                     SetFocusOnError="true"
                     Display="Dynamic"></asp:RequiredFieldValidator>

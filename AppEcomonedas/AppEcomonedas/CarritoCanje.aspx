@@ -15,8 +15,7 @@
                     <asp:Label ID="Label1" runat="server" Text="Cliente"></asp:Label>
                     <asp:DropDownList ID="ddlClientes" 
                     runat="server" 
-                    CssClass="form-control"
-                    AutoPostBack="true"
+                    CssClass="form-control"                  
                     ItemType="Contexto.Usuario" DataTextField="Nombre" 
                     DataValueField="Id_Usuario"
                     >

@@ -81,7 +81,7 @@
     <div class="col-lg-7 main-chart">
          <asp:HiddenField ID="hiddenID" runat="server" />
           <!-- Listado -->
-            <h3><i class="fa fa-angle-right"></i>Listado Centros de Acopio</h3>
+            <h3><i class="fa fa-angle-right"></i>Listado Centros de Acopio</h3>      
              <asp:GridView ID="grvListado" runat="server"
                 AutoGenerateColumns="false"
                  CssClass="table" 
@@ -102,5 +102,6 @@
 
 
     </div>
+   
 
 </asp:Content>
