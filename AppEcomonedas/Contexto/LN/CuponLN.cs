@@ -61,6 +61,12 @@ namespace Contexto.LN
                 CuponLN.queryListaCupones()).Where(p => p.activo == true);
             return lista;
         }
+        public static IEnumerable<Cupon> listaCuponesActivos()
+        {
+            IEnumerable<Cupon> lista = ((IEnumerable<Cupon>)
+                CuponLN.queryListaCupones());
+            return lista;
+        }
         public static IEnumerable<Cupon> listaCuponesMantenimiento()
         {
             IEnumerable<Cupon> lista = ((IEnumerable<Cupon>)

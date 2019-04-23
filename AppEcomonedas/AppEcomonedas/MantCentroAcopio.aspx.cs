@@ -139,5 +139,7 @@ namespace AppEcomonedas
             btnGuardar.Text = "Guardar";
             RadioButton1.Checked=true;
         }
+
+ 
     }
 }

@@ -79,26 +79,31 @@
         </div>
      <!--Este es el de la lista-->
     <div class="col-lg-7 main-chart">
-         <asp:HiddenField ID="hiddenID" runat="server" />
-          <!-- Listado -->
-            <h3><i class="fa fa-angle-right"></i>Listado Centros de Acopio</h3>      
-             <asp:GridView ID="grvListado" runat="server"
-                AutoGenerateColumns="false"
-                 CssClass="table" 
-                 GridLines="Both"
-                DataKeyNames="Id_Centro"                
-                AutoGenerateSelectButton="true"
-                OnSelectedIndexChanged="grvListado_SelectedIndexChanged">
-                 <Columns>
-                     <asp:BoundField DataField="nombre" HeaderText="Nombre"></asp:BoundField>
-                     <asp:BoundField DataField="Provincia.descripcion" HeaderText="Provincia"></asp:BoundField>
-                     <asp:BoundField DataField="direccionExacta" HeaderText="Direcci&#243;n"></asp:BoundField>
-                     <asp:BoundField HeaderText="Administrador" DataField="Usuario.nombre"></asp:BoundField>
-                         <asp:BoundField HeaderText="Estado" DataField="Estado"></asp:BoundField>
-                 </Columns>
+        <h3><i class="fa fa-angle-right"></i>Listado Centros de Acopio</h3>
+   
+   
+                <!-- Listado -->
 
-               <HeaderStyle CssClass="table-success text-center" ForeColor="#3c763d"  />
-            </asp:GridView>
+                <asp:GridView ID="grvListado" runat="server"
+                    AutoGenerateColumns="false"
+                    CssClass="table"
+                    GridLines="Both"
+                    DataKeyNames="Id_Centro"
+                    AutoGenerateSelectButton="true"
+                    OnSelectedIndexChanged="grvListado_SelectedIndexChanged">
+                    <Columns>
+                        <asp:BoundField DataField="nombre" HeaderText="Nombre"></asp:BoundField>
+                        <asp:BoundField DataField="Provincia.descripcion" HeaderText="Provincia"></asp:BoundField>
+                        <asp:BoundField DataField="direccionExacta" HeaderText="Direcci&#243;n"></asp:BoundField>
+                        <asp:BoundField HeaderText="Administrador" DataField="Usuario.nombre"></asp:BoundField>
+                        <asp:BoundField HeaderText="Estado" DataField="Estado"></asp:BoundField>
+                    </Columns>
+
+                      <HeaderStyle CssClass="table-success text-center" ForeColor="#3c763d" />
+                </asp:GridView>
+       
+        <asp:HiddenField ID="hiddenID" runat="server" />
+
 
 
     </div>

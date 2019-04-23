@@ -236,7 +236,7 @@ ul.top-menu > li > .logout {
 }
 
 #sidebar h5 {
-	color: #3c763d;
+	color: #1BBD36;
 	font-weight: 700;
 }
 
@@ -350,7 +350,7 @@ ul.sidebar-menu li a span{
 }
 
 ul.sidebar-menu li a{
-    color: #3c763d;
+    color: #1BBD36;
     text-decoration: none;
     display: block;
     padding: 15px 0 15px 10px;
@@ -364,7 +364,7 @@ ul.sidebar-menu li a{
 }
 
 ul.sidebar-menu li a.active, ul.sidebar-menu li a:hover, ul.sidebar-menu li a:focus {
-    background: #73757e;
+    background: #1BBD36;
     color: #fff;
     display: block;
 
@@ -413,7 +413,7 @@ ul.sidebar-menu li a.active i {
 }
 
 .black-bg {
-    background: #3c763d;
+    background: #1BBD36;
     border-bottom: 1px solid #c9aa5f;
 }
 

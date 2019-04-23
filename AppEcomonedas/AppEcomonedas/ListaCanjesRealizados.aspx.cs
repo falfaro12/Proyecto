@@ -30,5 +30,16 @@ namespace AppEcomonedas
         {
            
         }
+
+        protected void btnBuscar_Click(object sender, EventArgs e)
+        {
+            Usuario usuario2 = (Usuario)Session["usuario"];
+            CentroAcopio centro = CentroAcopioLN.obtenerUsuariodeCentroAcopio(usuario2.Id_Usuario);
+            string termino = txtBuscar.Text;
+
+            IEnumerable<Enca_Factura> lista = (IEnumerable<Enca_Factura>)Enca_FacturaLN.listaEnca_FacturaporCentro(centro.Id_Centro);
+            grvListado.DataSource = lista.ToList().Where(x => x.Usuario.NombreCompleto.Contains(termino));
+            grvListado.DataBind();
+        }
     }
 }

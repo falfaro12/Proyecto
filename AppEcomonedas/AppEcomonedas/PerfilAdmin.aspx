@@ -63,13 +63,13 @@
                 </asp:updatepanel>
 
                 <br />
-                <div class="form-group row" style="margin: 5px;">
+              <div class="form-group row" style="margin: 15px;">
 
-                    <asp:button id="btnGuardar" cssclass="btn btn-success" runat="server"
-                        text="Guardar" validationgroup="guardar" onclick="btnGuardar_Click" />
-                    <asp:button id="btnEditar" cssclass="btn btn-success" runat="server"
-                        text="Editar" onclick="btnEditar_Click" causesvalidation="false" />
-                    <asp:button id="btnContrasenha" cssclass="btn btn-warning" runat="server" text="Cambiar Contraseña" onclick="btnContrasenha_Click" />
+                    <asp:Button ID="btnGuardar" CssClass="btn btn-success" runat="server"
+                        Text="Guardar" ValidationGroup="guardar" OnClick="btnGuardar_Click" />
+                    <asp:Button ID="btnEditar" CssClass="btn btn-success ml-4" runat="server"
+                        Text="Editar" OnClick="btnEditar_Click" CausesValidation="false" />
+                    <asp:Button ID="btnContrasenha" CssClass="btn btn-warning ml-4" runat="server" Text="Cambiar Contraseña" OnClick="btnContrasenha_Click" />
 
 
                 </div>

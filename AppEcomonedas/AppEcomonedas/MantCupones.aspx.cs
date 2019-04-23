@@ -50,7 +50,7 @@ namespace AppEcomonedas
             int id = Convert.ToInt32(grvListado.DataKeys[grvListado.SelectedIndex].Values[0]);
 
             Cupon mat =
-                   CuponLN.listaCupones().
+                   CuponLN.listaCuponesActivos().
                    Where(p => p.Id_Cupon == id).FirstOrDefault<Cupon>();
             txtNombre.Text = mat.nombre;
             txtDescripcion.Text = mat.descripcion;
@@ -79,6 +79,18 @@ namespace AppEcomonedas
 
         protected void btnGuardar_Click(object sender, EventArgs e)
         {
+            bool estado = true;
+            if (RadioButton1.Checked)
+            {
+                estado = true;
+            }
+            else
+            {
+                if (RadioButton2.Checked)
+                {
+                    estado = false;
+                }
+            }
             Boolean archivoOK = false;
             String path = Server.MapPath("~/images/");
             if (archivoImagen.HasFile)
@@ -118,7 +130,7 @@ namespace AppEcomonedas
 
             // Agregar producto a la BD
 
-            bool confirmar = CuponLN.agregarCupones(txtNombre.Text, txtDescripcion.Text, txtPrecio.Text, archivoImagen.FileName, true,hiddenID.Value);
+            bool confirmar = CuponLN.agregarCupones(txtNombre.Text, txtDescripcion.Text, txtPrecio.Text, archivoImagen.FileName, estado,hiddenID.Value);
             if (confirmar)
             {
 

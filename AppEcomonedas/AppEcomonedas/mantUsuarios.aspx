@@ -60,7 +60,7 @@
 
                  <asp:Button ID="btnGuardar" CssClass="btn btn-success" runat="server"
                      Text="Guardar" ValidationGroup="guardar" OnClick="btnGuardar_Click" />
-                 <asp:Button ID="btnLimpiar" CssClass="btn btn-success" runat="server"
+                 <asp:Button ID="btnLimpiar" CssClass="btn btn-success ml-4" runat="server"
                      Text="Limpiar" OnClick="btnLimpiar_Click" CausesValidation="false" />
 
              </div>    
@@ -73,29 +73,31 @@
         </div>
      <!--Este es el de la lista-->
     <div class="col-lg-7 main-chart">
-         <!--<asp:HiddenField ID="hiddenID" runat="server" />
+        <!--<asp:HiddenField ID="hiddenID" runat="server" />
           <!-- Listado -->
-            <h3><i class="fa fa-angle-right"></i>Listado de usuarios adminstradores</h3>
-        <asp:GridView ID="grvListado" runat="server"
-            AutoGenerateColumns="false"
-            CssClass="table"
-            DataKeyNames="Id_Usuario"
-            AutoGenerateSelectButton="true"
-            OnSelectedIndexChanged="grvListado_SelectedIndexChanged">
-            <Columns>
-                
-                <asp:BoundField DataField="Nombre" HeaderText="Nombre"></asp:BoundField>
-                <asp:BoundField DataField="Apellido1" HeaderText="Apellido"></asp:BoundField>
-                <asp:BoundField DataField="Apellido2" HeaderText="Apellido"></asp:BoundField>
-                <asp:BoundField DataField="telefono" HeaderText="Telefono"></asp:BoundField>
-            </Columns>
+        <h3><i class="fa fa-angle-right"></i>Listado de usuarios adminstradores</h3>
+      
+                <asp:GridView ID="grvListado" runat="server"
+                    AutoGenerateColumns="false"
+                    CssClass="table"
+                    DataKeyNames="Id_Usuario"
+                    AutoGenerateSelectButton="true"
+                    OnSelectedIndexChanged="grvListado_SelectedIndexChanged">
+                    <Columns>
+                         <asp:BoundField DataField="Id_Usuario" HeaderText="Correo electrónico"></asp:BoundField>
+                        <asp:BoundField DataField="Nombre" HeaderText="Nombre"></asp:BoundField>
+                        <asp:BoundField DataField="Apellido1" HeaderText="Apellido"></asp:BoundField>
+                        <asp:BoundField DataField="Apellido2" HeaderText="Apellido"></asp:BoundField>
+                        <asp:BoundField DataField="telefono" HeaderText="Telefono"></asp:BoundField>
+                    </Columns>
 
-            <Columns>
-                     
-                 </Columns>
+                    <Columns>
+                    </Columns>
 
-               <HeaderStyle CssClass="table-success text-center" ForeColor="#3c763d"  />
-            </asp:GridView>
+                    <HeaderStyle CssClass="table-success text-center" ForeColor="#3c763d" />
+                </asp:GridView>
+    
+
 
 
     </div>

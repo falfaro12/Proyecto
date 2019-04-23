@@ -65,6 +65,7 @@ namespace AppEcomonedas
             imgLibro.ImageUrl = "~/images/materiales/" + mat.imagen;                     
             btnGuardar.Text = "Actualizar";
             rfImagen.Enabled = false;
+            cargarGrid();
 
         }
 
@@ -149,5 +150,7 @@ namespace AppEcomonedas
         {
 
         }
+
+       
     }
 }

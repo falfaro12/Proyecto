@@ -75,5 +75,7 @@ namespace AppEcomonedas
             txtCorreo.Text = "";
             btnGuardar.Text = "Guardar";
         }
+
+      
     }
 }

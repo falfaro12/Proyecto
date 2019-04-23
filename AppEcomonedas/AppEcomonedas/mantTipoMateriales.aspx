@@ -45,9 +45,11 @@
                 <div class="input-group mb-3">
                     <div class="input-group-prepend">
                         <span class="input-group-text">&cent;</span>
-                    </div>
-                    <asp:TextBox ID="txtPrecio" CssClass="form-control" runat="server"></asp:TextBox>
-                </div>
+                    
+                    <asp:TextBox  ID="txtPrecio" CssClass="form-control " runat="server"></asp:TextBox>
+               </div>
+               
+                         </div>
                   </div>
                 <asp:RequiredFieldValidator
                     ID="RequiredFieldValidator3"
@@ -93,7 +95,7 @@
 
                  <asp:Button ID="btnGuardar" CssClass="btn btn-success" runat="server"
                      Text="Guardar" ValidationGroup="guardar" OnClick="btnGuardar_Click" />
-                 <asp:Button ID="btnLimpiar" CssClass="btn btn-success" runat="server"
+                 <asp:Button ID="btnLimpiar" CssClass="btn btn-success ml-4" runat="server"
                      Text="Limpiar" OnClick="btnLimpiar_Click" CausesValidation="false"/>
              </div>            
      </div>
@@ -101,25 +103,35 @@
         </div>
      <!--Este es el de la lista-->
     <div class="col-lg-7 main-chart">
-         <asp:HiddenField ID="hiddenID" runat="server" />
-          <!-- Listado -->
-            <h3><i class="fa fa-angle-right"></i>Listado Tipo de Materiales</h3>
-        <asp:GridView ID="grvListado" runat="server"
-            AutoGenerateColumns="false"
-            CssClass="table"
-            DataKeyNames="Id_Material"
-            AutoGenerateSelectButton="true"
-            OnSelectedIndexChanged="grvListado_SelectedIndexChanged"
-            OnRowDataBound="grvListado_RowDataBound">
-            <Columns>
-                <asp:BoundField HeaderStyle-CssClass="text-center" DataField="nombre" HeaderText="Nombre"></asp:BoundField>
-                 <asp:BoundField HeaderStyle-CssClass="text-center" DataField="descripcion" HeaderText="Descripción"></asp:BoundField>
-                <asp:BoundField HeaderStyle-CssClass="text-center" DataField="Precio_Material" HeaderText="Precio"></asp:BoundField>
-                <asp:BoundField HeaderStyle-CssClass="text-center" DataField="color" HeaderText="Color"></asp:BoundField>                     
-                 </Columns>
+        <asp:HiddenField ID="hiddenID" runat="server" />
+        <!-- Listado -->
+        <h3><i class="fa fa-angle-right"></i>Listado Tipo de Materiales</h3>
+   
+                <asp:GridView ID="grvListado" runat="server"
+                    AutoGenerateColumns="false"
+                    CssClass="table"
+                    DataKeyNames="Id_Material"
+                    AutoGenerateSelectButton="true"
+                    OnSelectedIndexChanged="grvListado_SelectedIndexChanged"
+                    OnRowDataBound="grvListado_RowDataBound">
+                    <Columns>
+                        <asp:BoundField HeaderStyle-CssClass="text-center" DataField="nombre" HeaderText="Nombre"></asp:BoundField>
+                        <asp:BoundField HeaderStyle-CssClass="text-center" DataField="descripcion" HeaderText="Descripción"></asp:BoundField>
+                        <asp:BoundField HeaderStyle-CssClass="text-center" DataField="Precio_Material" HeaderText="Precio"></asp:BoundField>
+                        <asp:BoundField HeaderStyle-CssClass="text-center" DataField="color" HeaderText="Color"></asp:BoundField>
+                   <asp:TemplateField  HeaderStyle-CssClass="text-center" HeaderText="Foto">
+                      <ItemTemplate>
+                          <center>     
+                       <asp:Image style="width:200px; height:150px" ID="Image1" runat="server" ImageUrl='<%# Eval("imagen", "~/images/materiales/{0}")%>' />
+                     </center>
+                      </ItemTemplate>
+                     </asp:TemplateField>
+                         </Columns>
 
-               <HeaderStyle CssClass="table-success text-center" ForeColor="#3c763d"  />
-            </asp:GridView>
+                    <HeaderStyle CssClass="table-success text-center" ForeColor="#3c763d" />
+                </asp:GridView>
+       
+
 
 
     </div>

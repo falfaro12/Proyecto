@@ -3,13 +3,14 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
       <!--Este es el primer div que divide el panel de info-->
+    <div class="row">
     <div class="col-lg-5 main-chart">
          <div class="row">
         <asp:Label ID="lblMensaje" runat="server" CssClass="alert alert-dismissible alert-warning" Visible="false" Text=""></asp:Label>
          </div>
        <h3><i class="fa fa-angle-right"></i>Cupones de Canje</h3>
          <div class="panel panel-success">
-         <div class="panel-heading">Información de Cupones de Canje</div>
+         <div class="panel-heading" style="color:#1BBD36">Información de Cupones de Canje</div>
          <div class="panel-body">
               <div class="form-group row" style="margin:5px;">
                  <label for="lblNombre" class="control-label">Nombre</label>
@@ -41,12 +42,14 @@
               <br />
              <div class="form-group row" style="margin: 5px;">
                   <label for="lblDireccion" class="control-label">Precio equivalente</label>
-                 <div class="input-group mb-3">
+                <div class="input-group mb-3">
                     <div class="input-group-prepend">
                         <span class="input-group-text">&cent;</span>
-                    </div>
-                    <asp:TextBox ID="txtPrecio" CssClass="form-control" runat="server"></asp:TextBox>
-                </div>
+                    
+                    <asp:TextBox  ID="txtPrecio" CssClass="form-control " runat="server"></asp:TextBox>
+               </div>
+               
+                         </div>
 
                 <asp:RequiredFieldValidator
                     ID="RequiredFieldValidator3"
@@ -60,13 +63,24 @@
                     ControlToValidate="txtPrecio"
                     SetFocusOnError="true" ForeColor="Red" Display="Dynamic"
                     ValidationExpression="^[0-9]*(\,)?[0-9]?[0-9]?$"></asp:RegularExpressionValidator>
-            </div>
-              <br />            
+            <br />
+            
+             <div class="form-group row col-12" style="margin: 5px;">
+                  <label for="lblDireccion" class="control-label">Estado</label>
+                <div class="input-group ">
+                    <div class="input-group-prepend">
+                        <asp:RadioButton ID="RadioButton1" Checked="true" Text="Activo" runat="server" GroupName="estado" />
+                        <asp:RadioButton ID="RadioButton2" Text="Desactivo" CssClass="ml-4" runat="server"  GroupName="estado"  />
+                    </div>                   
+                </div>
+                  </div>
+               
+             <br />       
              <div class="form-group row" style="margin:5px;">
 
                  <asp:Button ID="btnGuardar" CssClass="btn btn-success" runat="server"
                      Text="Guardar" ValidationGroup="guardar" OnClick="btnGuardar_Click" />
-                 <asp:Button ID="btnLimpiar" CssClass="btn btn-success" runat="server"
+                 <asp:Button ID="btnLimpiar" CssClass="btn btn-success ml-4" runat="server"
                      Text="Limpiar" OnClick="btnLimpiar_Click" CausesValidation="false"
                      />
 
@@ -74,6 +88,7 @@
          </div>
             </div>
         </div>
+         </div>
      <!--Este es el de la lista-->
     <div class="col-lg-7 main-chart">
          <asp:HiddenField ID="hiddenID" runat="server" />
@@ -89,13 +104,21 @@
                 <asp:BoundField HeaderStyle-CssClass="text-center" DataField="nombre" HeaderText="Nombre"></asp:BoundField>
                 <asp:BoundField HeaderStyle-CssClass="text-center" DataField="descripcion" HeaderText="Descripción"></asp:BoundField>
                 <asp:BoundField HeaderStyle-CssClass="text-center" DataField="Precio_Canje" HeaderText="Precio Equivalente"></asp:BoundField>
-
+                     <asp:BoundField HeaderStyle-CssClass="text-center" DataField="Estado" HeaderText="Estado"></asp:BoundField>
+                 <asp:TemplateField  HeaderStyle-CssClass="text-center" HeaderText="Foto">
+                      <ItemTemplate>
+                          <center>     
+                       <asp:Image style="width:200px; height:150px" ID="Image1" runat="server" ImageUrl='<%# Eval("imagen", "~/images/cupones/{0}")%>' />
+                     </center>
+                      </ItemTemplate>
+                     </asp:TemplateField>
             </Columns>
 
-            <HeaderStyle CssClass="table-success text-center" ForeColor="#3c763d"  />
+             <HeaderStyle CssClass="table-success text-center" ForeColor="#3c763d" />
         </asp:GridView>
 
 
     </div>
-
+       
+        </div>
 </asp:Content>

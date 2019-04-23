@@ -32,6 +32,22 @@ namespace AppEcomonedas
             }
         }
 
-      
+        protected void btnBuscar_Click(object sender, EventArgs e)
+        {
+            Usuario usuario2 = (Usuario)Session["usuario"];
+            string termino = txtBuscarCliente.Text;
+
+            IEnumerable<Cupon_Usuario> lista = (IEnumerable<Cupon_Usuario>)Cupon_UsuarioLN.listaCupon_UsuarioporUsuario(usuario2.Id_Usuario);
+            if (lista != null || lista.Any())
+            {
+                grvListado.DataSource = lista.ToList().Where(x => x.Cupon.nombre.Contains(termino));
+                grvListado.DataBind();
+            }
+            else
+            {
+                lblMensaje.Visible = true;
+                lblMensaje.Text = "Aún no tienes cupones canjeados";
+            }
+        }
     }
 }
