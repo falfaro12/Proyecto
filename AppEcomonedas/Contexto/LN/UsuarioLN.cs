@@ -106,7 +106,7 @@ namespace Contexto.LN
             EcomonedasContexto db = new EcomonedasContexto();
             Usuario Usuario = db.Usuario.
                     Where(p => p.Id_Usuario == id).
-                    First<Usuario>();
+                    FirstOrDefault<Usuario>();
             return Usuario;
         }
 

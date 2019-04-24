@@ -87,7 +87,7 @@
                     <li class="sub-menu">
                      
                       
-                      <asp:LinkButton runat="server" ID="LinkButton1" OnClick="Unnamed_Click"><i class="glyphicon glyphicon-log-out"></i> Cerrar</asp:LinkButton>
+                      <asp:LinkButton runat="server" CausesValidation="false" ID="LinkButton1" OnClick="Unnamed_Click"><i class="glyphicon glyphicon-log-out"></i> Cerrar</asp:LinkButton>
                    
                   </li>  
               </ul>

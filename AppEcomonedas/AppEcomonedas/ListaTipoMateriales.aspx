@@ -68,7 +68,7 @@
               <div class="text-center">
                   <div class="col-md-4">
                        <asp:ListView ID="lvMaterial" runat="server"
-        DataKeyNames="Id_Material" GroupItemCount="4"
+        DataKeyNames="Id_Material" GroupItemCount="3"
         ItemType="Contexto.Material" SelectMethod="listadoMateriales">
         <EmptyDataTemplate>
             <div class="row">
@@ -76,7 +76,7 @@
                    <div class="row">
         </EmptyDataTemplate>
         <EmptyItemTemplate>
-            <div class="col-lg-3">
+            <div class="col-lg-4">
             </div>
         </EmptyItemTemplate>
         <GroupTemplate>
@@ -85,7 +85,7 @@
             </div>
         </GroupTemplate>
         <ItemTemplate>
-            <div class="col-lg-3 mb-5 ">
+            <div class="col-lg-4 mb-5 ">
                 <div class="card border-dark" style="color: black; background-color: <%#:Item.color%>"  >
                   <div class="row">
                         <asp:Image ID="Image1" CssClass="img-circle col-6" ImageUrl='<%# Eval("imagen", "~/images/materiales/{0}")%>'

@@ -110,7 +110,7 @@
                      <li class="sub-menu">
                      
                       
-                      <asp:LinkButton runat="server" ID="cerrar" OnClick="cerrar_Click1"><i class="glyphicon glyphicon-log-out"></i> Cerrar</asp:LinkButton>
+                      <asp:LinkButton runat="server"  ID="cerrarSesion" OnClick="cerrar_Click1" CausesValidation="false"><i class="glyphicon glyphicon-log-out"></i> Cerrar</asp:LinkButton>
                    
                   </li>
 

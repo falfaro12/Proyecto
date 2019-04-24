@@ -58,10 +58,7 @@ namespace AppEcomonedas
 
                     BilleteraLN.ObtenerCupon(billetera.Id_Billetera, cupon.Precio_Canje);
                     lblTotalEcomonedas.Text = billetera.Total_Disponible.ToString();
-
-                    //Cambiamos el estado del cupon
-                    CuponLN.agregarCupones(cupon.nombre, cupon.descripcion, cupon.Precio_Canje.ToString(), cupon.imagen, false,cupon.Id_Cupon.ToString());   
-
+                
 
                     //Agregamos el cupon a la bd
                     Cupon_UsuarioLN.registrarCupon_Usuario(usuario2.Id_Usuario, cupon.Id_Cupon, cupon.activo.Value);
@@ -71,7 +68,7 @@ namespace AppEcomonedas
 
                     //Creamos un qr
 
-                    var txtQRCode = cupon.imagen;
+                    var txtQRCode = cupon.nombre+ numeroAleatorio();
                     QRCodeGenerator qrGenerator = new QRCodeGenerator();
                     QRCodeData qrCodeData = qrGenerator.CreateQrCode(txtQRCode, QRCodeGenerator.ECCLevel.Q);
                     QRCode qrCode = new QRCode(qrCodeData);
@@ -149,6 +146,15 @@ namespace AppEcomonedas
 
         }
 
+        public int numeroAleatorio()
+        {
+            //Creamos un objeto random, simplemente
+            Random r = new Random();
+            // ó podriamos agregar un agregado de aleatoriedad de la siguiente forma:
+            r = new Random(DateTime.Now.Millisecond);
+
+            return r.Next();
+        }
         protected void btnDescarga_Click(object sender, EventArgs e)
         {
 

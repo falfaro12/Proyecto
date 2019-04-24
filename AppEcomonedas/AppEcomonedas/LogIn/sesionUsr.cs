@@ -39,7 +39,7 @@ namespace AppEcomonedas.LogIn
         public static bool iniciarSesion(string id, string password)
         {
             Usuario miUsuario = UsuarioLN.obtenerUsuario(id);
-            if (miUsuario.contrasenna.Equals(password))
+            if (miUsuario != null && miUsuario.contrasenna.Equals(password))
             {
                 HttpContext.Current.Session["usuario"] = miUsuario;               
                 return true;
