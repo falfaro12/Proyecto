@@ -21,12 +21,13 @@ namespace AppEcomonedas
             {
                 llenarListaCarrito();
                 llenarComboClientes();
+                if (Session["encabezadoOrden"] != null)
+                {
+                    Enca_Factura enca = (Enca_Factura)Session["encabezadoOrden"];
+                    ddlClientes.SelectedValue = enca.Usuario.Id_Usuario;
+                }
             }
-            if (Session["encabezadoOrden"] != null)
-           {
-               Enca_Factura enca = (Enca_Factura)Session["encabezadoOrden"];
-       
-            }
+      
         }
 
         private void llenarComboClientes()

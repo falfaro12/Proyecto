@@ -21,7 +21,7 @@
                 <asp:BoundField DataField="Nombre" HeaderText="Nombre"></asp:BoundField>
                 <asp:BoundField DataField="Apellido1" HeaderText="Apellido"></asp:BoundField>
                 <asp:BoundField DataField="Apellido2" HeaderText="Apellido"></asp:BoundField>
-                <asp:BoundField DataField="telefono" HeaderText="Telefono"></asp:BoundField>
+                <asp:BoundField DataField="telefono" HeaderText="Teléfono"></asp:BoundField>
             </Columns>
 
             <Columns>

@@ -56,8 +56,8 @@
                                   <asp:BoundField  DataField="subtotal" DataFormatString="₡{0:N2}" HeaderText="Subtotal"></asp:BoundField>
                                   
                                 </Columns>
-                                <HeaderStyle CssClass="table-primary" />
-                                <AlternatingRowStyle CssClass="table-secondary" />
+                                 <HeaderStyle CssClass="table-success text-center" ForeColor="#3c763d" />                              
+             
                             </asp:GridView>
                             <div class="float-right">
                                 <strong>                                   

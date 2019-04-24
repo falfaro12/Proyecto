@@ -18,78 +18,104 @@ namespace AppEcomonedas
         {
             if (!IsPostBack)
             {
-             
+              
             }
         }
+         
+        public bool validarfechas() {
+         DateTime FechaHoy = Convert.ToDateTime(DateTime.Now.ToShortDateString());
+         DateTime Fecha1 = Convert.ToDateTime(txtFechaInicio.Text);
+         DateTime Fecha2 = Convert.ToDateTime(txtFechaFinal.Text);
+        
+            if (Fecha2 <= FechaHoy)
+            {
+                if (Fecha1 <= Fecha2) {
+                    return true;
 
+                } else {
+                    lblMensaje.Visible = true;
+                    lblMensaje.Text = "La fecha Inicio tiene que ser menor o igual a la fecha Final";
+                    return false;
+                }
+            }else
+            {
+                lblMensaje.Visible = true;
+                lblMensaje.Text = "La fecha final tiene que ser menor o igual a la fecha de hoy";
+                return false;
+            }
+
+           
+        }
         protected void btnLimpiar_Click(object sender, EventArgs e)
         {
-
+            txtFechaFinal.Text = "";
+            txtFechaInicio.Text = "";
         }
 
         protected void btnGuardar_Click(object sender, EventArgs e)
         {
-            DateTime fecha = Convert.ToDateTime(txtFechaInicio.Text);
-            DateTime fecha2 = Convert.ToDateTime(txtFechaFinal.Text);
-          
-
-            //Data sourse
-            DataTable dt = getData(fecha, fecha2);
-            ReportDataSource rds = new ReportDataSource("DataSet2", dt);
-         
+            if (validarfechas())
+            {
+                DateTime fecha = Convert.ToDateTime(txtFechaInicio.Text);
+                DateTime fecha2 = Convert.ToDateTime(txtFechaFinal.Text);
 
 
-            //llamamos al reporte 
-            LocalReport report = new LocalReport();
+                //Data sourse
+                DataTable dt = getData(fecha, fecha2);
+                ReportDataSource rds = new ReportDataSource("DataSet2", dt);
+
+
+
+                //llamamos al reporte 
+                LocalReport report = new LocalReport();
                 report.DataSources.Add(rds);
 
 
-            ReportParameter[] p = new ReportParameter[2];
+                ReportParameter[] p = new ReportParameter[2];
 
-            p[0] = new ReportParameter("Fecha1", fecha.ToShortDateString());
-            p[1] = new ReportParameter("Fecha2", fecha2.ToShortDateString());
-
-
-
-
-            report.ReportPath = Server.MapPath("~/Reportes/ReporteEcomonedasporCentro.rdlc");
-            report.EnableExternalImages = true;
-
-            report.SetParameters(p);
-            report.Refresh();
-
-          
-
-            string FileName = "Reporte.pdf";
-            string extension;
-            string encoding;
-            string mimeType;
-            string[] streams;
-            Warning[] warnings;
+                p[0] = new ReportParameter("Fecha1", fecha.ToShortDateString());
+                p[1] = new ReportParameter("Fecha2", fecha2.ToShortDateString());
 
 
 
-            Byte[] mybytes = report.Render("PDF", null,
-                            out extension, out encoding,
-                            out mimeType, out streams, out warnings); //for exporting to PDF  
-            using (FileStream fs = File.Create(Server.MapPath("~/images/DescargasCupones/") + FileName))
-            {
-                fs.Write(mybytes, 0, mybytes.Length);
+
+                report.ReportPath = Server.MapPath("~/Reportes/ReporteEcomonedasporCentro.rdlc");
+                report.EnableExternalImages = true;
+
+                report.SetParameters(p);
+                report.Refresh();
+
+
+
+                string FileName = "Reporte.pdf";
+                string extension;
+                string encoding;
+                string mimeType;
+                string[] streams;
+                Warning[] warnings;
+
+
+
+                Byte[] mybytes = report.Render("PDF", null,
+                                out extension, out encoding,
+                                out mimeType, out streams, out warnings); //for exporting to PDF  
+                using (FileStream fs = File.Create(Server.MapPath("~/images/DescargasCupones/") + FileName))
+                {
+                    fs.Write(mybytes, 0, mybytes.Length);
+                }
+
+                Response.Buffer = true;
+
+                Response.ContentType = "application/pdf";
+
+                Response.AddHeader("content-disposition", "inline;filename=" + FileName + ".pdf");
+
+
+                Response.WriteFile(Server.MapPath(Path.Combine("~/images/DescargasCupones/" + FileName)));
+                Response.End();
+
+
             }
-
-
-
-
-            Response.Buffer = true;
-
-            Response.ContentType = "application/pdf";
-
-            Response.AddHeader("content-disposition", "inline;filename=" + FileName + ".pdf");
-
-           
-            Response.WriteFile(Server.MapPath(Path.Combine("~/images/DescargasCupones/" + FileName)));
-            Response.End();
-
         }
         public DataTable getData(DateTime fecha, DateTime fecha2)
         {

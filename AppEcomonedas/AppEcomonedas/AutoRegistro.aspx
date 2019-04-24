@@ -78,7 +78,7 @@
 					</div>
                     <asp:Button CssClass="buttonReg" ID="ButtonReg" runat="server" Text="Registrarse" OnClick="ButtonReg_Click" />
 				</form>
-				<p>Ya tienes una cuenta?<a href="InicioSesion.aspx"> Inicia Sesión!</a></p>
+				<p>¿Ya tienes una cuenta?<a href="InicioSesion.aspx"> ¡Inicia Sesión!</a></p>
 			</div>
 		</div>
 		<ul class="colorlib-bubbles">

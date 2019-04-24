@@ -35,7 +35,7 @@
 
                             </ItemTemplate>
                         </asp:TemplateField>
-                        <asp:BoundField HeaderStyle-CssClass="text-center" HeaderText="Codigo" DataField="Id_Cupon" DataFormatString=" #{0:N0} "></asp:BoundField>
+                        <asp:BoundField HeaderStyle-CssClass="text-center" HeaderText="Código" DataField="Id_Cupon" DataFormatString=" #{0:N0} "></asp:BoundField>
                         <asp:BoundField HeaderStyle-CssClass="text-center" HeaderText="Cupón" DataField="Cupon.nombre"></asp:BoundField>
                         <asp:BoundField HeaderStyle-CssClass="text-center" DataField="Fecha" HeaderText="Fecha" DataFormatString="{0:dd-M-yyyy}"></asp:BoundField>
                         <asp:BoundField HeaderStyle-CssClass="text-center" DataField="Usuario.NombreCompleto" HeaderText="Cliente"></asp:BoundField>

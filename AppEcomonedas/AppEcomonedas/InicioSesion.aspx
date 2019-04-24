@@ -64,7 +64,7 @@
 
 					<div class="flex-col-c p-b-40">
 						<span class="txt1 p-b-9">
-							No tienes cuenta?
+							¿No tienes cuenta?
 						</span>
 
 						<a href="Autoregistro.aspx" class="txt3">

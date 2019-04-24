@@ -6,7 +6,7 @@
         <div class="row">
             <asp:label id="lblMensaje" runat="server" cssclass="alert alert-dismissible alert-warning" visible="false" text=""></asp:label>
         </div>
-        <h3><i class="fa fa-angle-right"></i>Administrador de C.A.</h3>
+        <h3><i class="fa fa-angle-right"></i>Administrador</h3>
         <div class="panel panel-success">
             <div class="panel-heading">Información de usuario</div>
             <div class="panel-body">
@@ -45,13 +45,13 @@
                         </div>
                         <br />
                         <div class="form-group row" style="margin: 5px;">
-                            <label for="lblTelefono" class="control-label">Telefono</label>
+                            <label for="lblTelefono" class="control-label">Teléfono</label>
                             <asp:TextBox Enabled="false" ID="txtTelefono" runat="server" CssClass="form-control"></asp:TextBox>
                             <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ErrorMessage="*El telefono del usuario es requerido"
                                 ControlToValidate="txtNombre" ForeColor="Red" SetFocusOnError="true" Display="Dynamic" ValidationGroup="guardar"></asp:RequiredFieldValidator>
                         </div>
                         <div class="form-group row" style="margin: 5px;">
-                            <label for="lblCorreo" class="control-label">Correo Electronico</label>
+                            <label for="lblCorreo" class="control-label">Correo Electrónico</label>
                             <asp:TextBox Enabled="false" ID="txtCorreo" runat="server" CssClass="form-control"></asp:TextBox>
                             <asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" ErrorMessage="*El correo electronico del usuario es requerido"
                                 ControlToValidate="txtNombre" ForeColor="Red" SetFocusOnError="true" Display="Dynamic" ValidationGroup="guardar"></asp:RequiredFieldValidator>

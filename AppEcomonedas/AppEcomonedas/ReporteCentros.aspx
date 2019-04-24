@@ -9,7 +9,10 @@
     <div class="col-lg-12 main-chart">
         
        <h3><i class="fa fa-angle-right"></i>Reporte de eco-monedas producidas por Centro de Acopio</h3>
-         <div class="panel panel-success">
+          <asp:Label ID="lblMensaje" runat="server"  CssClass="alert alert-dismissible alert-success col-lg-12 text-center "  Visible="false" Text=""></asp:Label>
+        <br />  <br /> 
+            <br />  <br /> 
+        <div class="panel panel-success">
          <div class="panel-heading">Rango de fechas</div>
          <div class="panel-body">
               <div class="form-group row text-center" style="margin:5px;">
@@ -33,9 +36,6 @@
          </div>
             </div>
         </div>
- <div>
-   
-   
- </div>
+  
   
 </asp:Content>

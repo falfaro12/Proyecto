@@ -121,7 +121,7 @@
 			
             <div class="col-md-6 wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="600ms">
                 <br />
-                <h2>¿Que es Ecomonedas?</h2>
+                <h2>¿Qué es Ecomonedas?</h2>
                 <h3>
                     Ecomonedas es una moneda virtual que ayuda al medio ambiente.Se realiza mediante el cambio de materiales reciclables, previamente limpiador y ordenados según tipo,luego son llevados a diferentes centros de acopio para ser cambiados por cupones dediferentes productos y servicios.
                 </h3>
@@ -142,8 +142,8 @@
                             <i class="fa fa-phone"></i>
                         </div>
                         <div class="media-body">
-                            <h2>Tienes alguna duda?</h2>
-                            <p>Visitanos en cualquier centro de acopio o contactenos al 2454-1544</p>
+                            <h2>¿Tienes alguna duda?</h2>
+                            <p>Visítanos en cualquier centro de acopio o contáctenos al 2454-1544</p>
                         </div>
                     </div>
                 </div>

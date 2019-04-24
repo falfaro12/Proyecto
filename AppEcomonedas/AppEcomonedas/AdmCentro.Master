@@ -42,10 +42,7 @@
               <div class="menu pull-right logout" style="margin-top: 2px">
                    <div class="dropdown pull-right logout" style="margin-top: 20px">
              <a class="dropdown-toggle top-menu" data-toggle="dropdown" href="#" > <asp:Label runat="server" ID="txtUsuario" CssClass="text-white"><span class="caret"></span></asp:Label></a> 
-                                  	<ul class="nav dropdown-menu">
-                    <li><a href="PerfilAdmnCA.aspx">Mi Cuenta</a></li>
-                    <li><asp:LinkButton runat="server" ID="cerrar" OnClick="Unnamed_Click" Text="Cerrar"></asp:LinkButton></li>
-            	</ul>
+                                  
             </div>
               </div>
       </header>
@@ -86,7 +83,13 @@
                           <i class="fa fa-book"></i>
                           <span>Todos los Canjes</span>
                       </a>
-                  </li>   
+                  </li> 
+                    <li class="sub-menu">
+                     
+                      
+                      <asp:LinkButton runat="server" ID="LinkButton1" OnClick="Unnamed_Click"><i class="glyphicon glyphicon-log-out"></i> Cerrar</asp:LinkButton>
+                   
+                  </li>  
               </ul>
               <!-- sidebar menu end-->
           </div>
@@ -110,9 +113,7 @@
      <footer class="footer ">
           <div class="text-center">
               &copy;2019 UTN Todos los Derechos Reservados.
-              <a href="Mantenimiento.xhtml#" class="go-top">
-                  <i class="fa fa-angle-up"></i>
-              </a>
+           
           </div>
       </footer>
      <!-- js placed at the end of the document so the pages load faster -->
