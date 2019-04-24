@@ -168,7 +168,7 @@
 				
 				<div class="col-md-4 col-md-offset-4">
 					<div class="copyright">
-						&copy; Proyeto UTN Jose Ramon Rodiguez y Fabiola Alfaro. Todos los derechos reservados
+						&copy; Proyeto UTN José Ramón Rodríguez y Fabiola Alfaro. Todos los derechos reservados
 					</div>                  
 				</div>						
 			</div>
