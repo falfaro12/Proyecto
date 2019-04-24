@@ -58,6 +58,7 @@ namespace AppEcomonedas
             hiddenID.Value = mat.Id_Cupon.ToString();
             imgLibro.ImageUrl = "~/images/cupones/" + mat.imagen;
             btnGuardar.Text = "Actualizar";
+
             rfImagen.Enabled = false;
         }
 

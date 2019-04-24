@@ -75,7 +75,7 @@
         ItemType="Contexto.CentroAcopio" SelectMethod="listadoCentro">
         <EmptyDataTemplate>
             <div class="row">
-                No hay datos
+                  <label class="alert alert-dismissible alert-success col-lg-12 text-center"> No hay Centros de Acopio disponibles en este momento</label>
                    <div class="row">
         </EmptyDataTemplate>
         <EmptyItemTemplate>

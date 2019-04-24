@@ -72,7 +72,7 @@
         ItemType="Contexto.Material" SelectMethod="listadoMateriales">
         <EmptyDataTemplate>
             <div class="row">
-                No hay datos
+               <label class="alert alert-dismissible alert-success col-lg-12 text-center">¡Lo siento! No hay materiales en este momento</label>
                    <div class="row">
         </EmptyDataTemplate>
         <EmptyItemTemplate>
